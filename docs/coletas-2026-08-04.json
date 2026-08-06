@@ -1,0 +1,29 @@
+{
+ "data": "2026-08-04",
+ "gerado_em": "2026-08-04T23:12:12.781714-03:00",
+ "total": 2,
+ "itens": [
+  {
+   "title": "Cotação Cobre Trading Economics",
+   "snippet": "Cobre: US$ 6.5900/lb",
+   "link": "https://tradingeconomics.com/commodity/copper",
+   "source": "Trading Economics",
+   "quando": "2026-08-04T23:12:12",
+   "layer": "commodity",
+   "commodity": "cobre",
+   "preco": 6.59,
+   "unidade": "US$/lb"
+  },
+  {
+   "title": "Cotação Minério de Ferro 62% Fe CFR China Trading Economics",
+   "snippet": "Minério de Ferro 62% Fe CFR China: US$ 93.70/t",
+   "link": "https://tradingeconomics.com/commodity/iron-ore",
+   "source": "Trading Economics",
+   "quando": "2026-08-04T23:12:12",
+   "layer": "commodity",
+   "commodity": "minerio_ferro",
+   "preco": 93.7,
+   "unidade": "US$/t"
+  }
+ ]
+}

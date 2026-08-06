@@ -1,0 +1,428 @@
+# sources.yml - montado a partir do diagnostico real de 05/08/2026
+# (docs/diagnostico-fontes.json). Nenhuma URL aqui e chute: todas responderam 200
+# com itens parseaveis, ou entraram via Google News porque o RSS proprio deu 403/404.
+
+cepea:
+  # O widget CEPEA devolve HTTP 403 para requests, mas renderiza normalmente num
+  # navegador. Com enabled: true o robo abre um Chromium headless (playwright) no
+  # Actions, renderiza o widget oficial e le a tabela. O parser e o mesmo de antes.
+  # DESLIGADO em 05/08/2026: as tres estrategias falharam. HTTP 403 na URL direta
+  # DENTRO de um Chromium de verdade, 403 no script via servidor local, timeout na
+  # pagina publica. Nao e cabecalho: e bloqueio por IP de datacenter, e navegador
+  # nao resolve. O widget continua na pagina e funciona, porque roda no navegador de
+  # quem visita. Para GRAVAR o valor no historico, ver cepea_canalrural abaixo.
+  enabled: false
+  # Lista de indicadores. Para acrescentar produto, some &id_indicador%5B%5D=NN
+  # aqui: o parser le o nome e a unidade da propria pagina, nao precisa mexer no
+  # codigo. Indicadores nesta URL: 2, 77, 12, 178, 179 e 92.
+  widget_url: "https://cepea.org.br/br/widgetproduto.js.php?fonte=arial&tamanho=10&largura=400px&corfundo=dbd6b2&cortexto=333333&corlinha=ede7bf&id_indicador%5B%5D=2&id_indicador%5B%5D=77&id_indicador%5B%5D=12&id_indicador%5B%5D=178&id_indicador%5B%5D=179&id_indicador%5B%5D=92"
+
+# --- CEPEA por via indireta: R$/saca e R$/@ ---
+# O numero e do CEPEA/ESALQ, mas a leitura e de materia do Canal Rural, cujo RSS
+# ja responde 200 aqui. Cada registro sai com e_derivado=true e a ressalva de que
+# a data e a de PUBLICACAO da materia, nao necessariamente o dia do indicador.
+cepea_canalrural:
+  enabled: true
+  rss: "https://www.canalrural.com.br/feed"
+  max_materias: 3
+  max_idade_dias: 5
+
+# --- Cotacoes coletadas pelo robo ---
+# Somente endpoints que responderam HTTP 200 no diagnostico de 05/08/2026.
+# LME e CME (ureia UFB, MAP MFC) devolvem 403: ureia e MAP NAO tem fonte aberta
+# confirmada, logo nao aparecem no painel. LBMA responde 200 mas moveu as tabelas
+# de preco para o portal MyLBMA, sem valor na pagina: ouro vem do Trading Economics.
+usda_ams:
+  # DESLIGADO em 05/08/2026. O layout do PDF mudou e o parser passou a devolver
+  # "linha sem preco decimal legivel" para soja, milho e trigo: 6 notas de falha por
+  # execucao, zero valor. Os graos agora vem do Trading Economics, convertidos de
+  # US centavos/bushel para US$/t. Se um dia voce quiser fechamento OFICIAL de bolsa
+  # em vez de referencia CFD, este parser volta, refeito para o layout novo.
+  enabled: false
+  url: "https://www.ams.usda.gov/mnreports/ams_2850.pdf"
+  max_idade_dias: 5
+
+trading_economics:
+  enabled: true
+  max_idade_dias: 5
+  alvos:
+    # Ouro saiu daqui: agora vem da LBMA, que e o benchmark oficial e tem JSON
+    # estavel. O parser do TE dependia da frase "last updated on <mes> <dia> of <ano>".
+    # - {url: "https://tradingeconomics.com/commodity/gold", label: "Ouro"}
+    # Cobre em US$/lb foi removido: ficava duplicado com a versao convertida
+    # abaixo, que e a que casa com a unidade da serie historica (US$/t).
+    - {url: "https://tradingeconomics.com/commodity/iron-ore", label: "Minério de ferro 62% Fe CFR China"}
+    # Graos CBOT. Entram aqui porque o parser do USDA AMS quebrou (o layout do PDF
+    # mudou: "linha sem preco decimal legivel") e porque o TE ja provou funcionar
+    # nesta conta, com cobre e minerio voltando 200 e parseando.
+    # O TE cota grao em US centavos por bushel. fator_usd_t converte para US$/t:
+    #   soja e trigo: bushel = 27,2155 kg -> 1000/27,2155/100 = 0,367437
+    #   milho:        bushel = 25,4012 kg -> 1000/25,4012/100 = 0,393683
+    # Conferencia contra o painel de referencia: 1206,7 c/bu x 0,367437 = 443,39 US$/t.
+    # faixa_original e guarda: se o TE trocar de unidade, nada e convertido nem publicado.
+    - {url: "https://tradingeconomics.com/commodity/soybeans", label: "Soja CBOT",
+       fator_usd_t: 0.367437, faixa_original: [700, 2200]}
+    - {url: "https://tradingeconomics.com/commodity/corn", label: "Milho CBOT",
+       fator_usd_t: 0.393683, faixa_original: [250, 900]}
+    - {url: "https://tradingeconomics.com/commodity/wheat", label: "Trigo CBOT (SRW)",
+       fator_usd_t: 0.367437, faixa_original: [350, 1400]}
+    # Metais. Entram para que TODA serie do historico.json tenha cotacao atual e,
+    # com isso, linha de preco no grafico. O TE cota estes em USD/T e USD/t.oz, que
+    # sao as mesmas unidades das series do World Bank, entao nao ha conversao.
+    - {url: "https://tradingeconomics.com/commodity/silver",    label: "Prata"}
+    - {url: "https://tradingeconomics.com/commodity/platinum",  label: "Platina"}
+    - {url: "https://tradingeconomics.com/commodity/aluminum",  label: "Alumínio"}
+    - {url: "https://tradingeconomics.com/commodity/lead",      label: "Chumbo"}
+    - {url: "https://tradingeconomics.com/commodity/tin",       label: "Estanho"}
+    - {url: "https://tradingeconomics.com/commodity/nickel",    label: "Níquel"}
+    - {url: "https://tradingeconomics.com/commodity/zinc",      label: "Zinco"}
+    # Cobre: o TE cota em US$/lb e a serie do World Bank esta em US$/t. Libra ->
+    # tonelada e constante fisica (1 t = 2.204,6226 lb), entao a conversao e
+    # legitima e destrava a linha do preco atual no grafico. O valor original e a
+    # unidade original ficam gravados no registro.
+    - {url: "https://tradingeconomics.com/commodity/copper", label: "Cobre",
+       fator_usd_t: 2204.6226, faixa_original: [1.5, 15]}
+    # Minerio de ferro NAO recebe conversao: o TE cota em US$/t e o World Bank em
+    # US$/dmtu (dry metric tonne unit), que depende do teor de Fe. Nao e regra de
+    # tres. O grafico dele fica sem linha, com o motivo escrito na tela.
+
+bcb_ptax:
+  enabled: true
+  url: "https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados/ultimos/10?formato=json"
+  max_idade_dias: 7
+  # O modulo novo busca por intervalo de datas, nao por "ultimos N". Na PRIMEIRA
+  # execucao rode o backfill (ver PASSO-A-PASSO, passo 8) para puxar 5 anos.
+  dias_backfill: 30
+
+# --- Ouro e prata: LBMA (benchmark oficial, JSON aberto, sem chave) ---
+lbma:
+  enabled: true
+  max_idade_dias: 6          # leilao so em dia util de Londres; feriado longo cabe aqui
+  # gold_am.json e silver.json responderam HTTP 200 no probe de 05/08/2026, entao
+  # entraram. O ouro AM serve de conferencia independente do PM.
+  alvos: ["ouro_pm", "ouro_am", "prata"]
+
+# --- Fertilizantes: serie mensal (ureia, KCl, DAP, TSP, rocha fosfatica) ---
+# Espelho da serie World Bank / Fertilizer Week. Atraso normal de 1 a 4 meses,
+# por isso tem limite de idade proprio, separado do limite das cotacoes diarias.
+indexmundi:
+  # DESLIGADO em 05/08/2026. Ele espelha a MESMA serie do World Bank que o coletor
+  # do Pink Sheet ja baixa, so que com meses de atraso: chegou a publicar KCl com
+  # 157 dias enquanto a serie historica ja estava em julho. Resultado: o site
+  # mostrava dois valores para o mesmo indicador. O painel mensal agora sai de
+  # painel_do_historico.py, que le o ultimo ponto ja gravado no historico.json.
+  # Mantido no arquivo como reserva, caso o Pink Sheet mude de formato.
+  enabled: false
+  base_url: "https://www.indexmundi.com/commodities/?commodity="
+  meses_historico: 60
+  # A execucao de 05/08/2026 leu as cinco series sem erro, mas o IndexMundi esta
+  # parado em marco/2026: 157 dias de atraso. Com limite 100 tudo era descartado.
+  # 200 deixa publicar, e o painel mostra a coluna "Atraso" para o leitor ver que
+  # e dado de marco. Preferi mostrar rotulado a esconder.
+  max_idade_dias: 200
+  alvos:
+    - {slug: "urea",                  key: "ureia_wb",           label: "Ureia"}
+    - {slug: "potassium-chloride",    key: "kcl_wb",             label: "Cloreto de potássio (KCl)"}
+    - {slug: "dap-fertilizer",        key: "dap_wb",             label: "DAP"}
+    - {slug: "triple-superphosphate", key: "tsp_wb",             label: "TSP"}
+    - {slug: "rock-phosphate",        key: "rocha_fosfatica_wb", label: "Rocha fosfática"}
+
+# --- MAP: nao existe preco de mercado aberto ---
+# Entra o valor unitario de importacao do Brasil, marcado como proxy no JSON e
+# no painel. NAO e cotacao spot. Nunca comparar contra benchmark sem dizer isso.
+comexstat:
+  enabled: true
+  metrica_valor: "metricFOB"   # metricFOB confirmado funcionando em 05/08/2026
+  # Janela CURTA de proposito. Com 24 meses (de 2024-08) a API devolveu exatamente
+  # 12 meses e parou em 2025-08, o que tem cara de truncamento da janela, nao de
+  # dado atrasado. Com 6 meses, o mes mais recente disponivel deve aparecer.
+  meses_historico: 6
+  # Estatistica de comercio externo sai com atraso de 1 a 2 meses. 120 dias cobre.
+  max_idade_dias: 120
+  alvos:
+    # ncm8 e o plano B: se o filtro sh6 nao for aceito, o modulo tenta o NCM de 8
+    # digitos automaticamente e anota qual variante funcionou.
+    - {hs6: "310540", ncm8: "31054000", key: "map_import_br",   label: "MAP e misturas com DAP, valor unitário de importação"}
+    - {hs6: "310210", ncm8: "31021010", key: "ureia_import_br", label: "Ureia, valor unitário de importação"}
+    - {hs6: "310420", ncm8: "31042010", key: "kcl_import_br",   label: "KCl, valor unitário de importação"}
+
+# --- Camada 1: RSS proprio (15 veiculos, todos verificados) ---
+feeds:
+  - {name: "AgFeed", url: "https://agfeed.com.br/feed", trusted: true}
+  - {name: "The AgriBiz", url: "https://theagribiz.com/feed", trusted: true}
+  - {name: "Canal Rural", url: "https://www.canalrural.com.br/feed", trusted: true}
+  - {name: "Globo Rural", url: "https://pox.globo.com/rss/globorural", trusted: true}
+  - {name: "NeoFeed", url: "https://neofeed.com.br/feed", trusted: false}
+  - {name: "Brazil Journal", url: "https://braziljournal.com/feed", trusted: false}
+  - {name: "Money Times", url: "https://www.moneytimes.com.br/feed", trusted: false}
+  - {name: "InfoMoney", url: "https://www.infomoney.com.br/feed", trusted: false}
+  - {name: "Exame", url: "https://exame.com/feed", trusted: false}
+  - {name: "AgFunder News", url: "https://agfundernews.com/feed", trusted: true}
+  - {name: "Seed World", url: "https://www.seedworld.com/feed", trusted: true}
+  - {name: "Undercurrent News", url: "https://www.undercurrentnews.com/feed", trusted: true}
+  - {name: "Mining.com", url: "https://www.mining.com/feed", trusted: true}
+  - {name: "CropLife", url: "https://www.croplife.com/feed", trusted: true}
+  - {name: "Beef Central", url: "https://www.beefcentral.com/feed/", trusted: true}
+
+# --- Camada 2: Google News por dominio ---
+# Motivo de cada um estar aqui e nao na camada 1: RSS proprio deu 403 ou 404 no teste.
+site_watch:
+  - {domain: "noticiasagricolas.com.br", lang: pt, trusted: true}   # Noticias Agricolas: RSS proprio indisponivel
+  - {domain: "novacana.com", lang: pt, trusted: true}   # NovaCana: RSS proprio indisponivel
+  - {domain: "udop.com.br", lang: pt, trusted: true}   # UDOP: RSS proprio indisponivel
+  - {domain: "brasilmineral.com.br", lang: pt, trusted: true}   # Brasil Mineral: RSS proprio indisponivel
+  - {domain: "pipelinevalor.globo.com", lang: pt, trusted: false}   # Pipeline Valor: RSS proprio indisponivel
+  - {domain: "capitalaberto.com.br", lang: pt, trusted: false}   # Capital Aberto: RSS proprio indisponivel
+  - {domain: "agropages.com", lang: en, trusted: true}   # AgroPages: RSS proprio indisponivel
+  - {domain: "seedquest.com", lang: en, trusted: true}   # SeedQuest: RSS proprio indisponivel
+  - {domain: "world-grain.com", lang: en, trusted: true}   # World Grain: RSS proprio indisponivel
+  - {domain: "feedstrategy.com", lang: en, trusted: true}   # Feed Strategy: RSS proprio indisponivel
+  - {domain: "wattagnet.com", lang: en, trusted: true}   # WattAgNet: RSS proprio indisponivel
+  - {domain: "allaboutfeed.net", lang: en, trusted: true}   # AllAboutFeed: RSS proprio indisponivel
+  - {domain: "poultryworld.net", lang: en, trusted: true}   # Poultry World: RSS proprio indisponivel
+  - {domain: "pigprogress.net", lang: en, trusted: true}   # Pig Progress: RSS proprio indisponivel
+  - {domain: "thefishsite.com", lang: en, trusted: true}   # The Fish Site: RSS proprio indisponivel
+  - {domain: "seafoodsource.com", lang: en, trusted: true}   # SeafoodSource: RSS proprio indisponivel
+  - {domain: "petfoodindustry.com", lang: en, trusted: true}   # PetFood Industry: RSS proprio indisponivel
+  - {domain: "miningweekly.com", lang: en, trusted: true}   # Mining Weekly: RSS proprio indisponivel
+  - {domain: "bnamericas.com", lang: en, trusted: false}   # BNamericas: RSS proprio indisponivel
+  - {domain: "futurefarming.com", lang: en, trusted: false}   # Future Farming: RSS proprio indisponivel
+  - {domain: "valor.globo.com", lang: pt, trusted: false}   # sem RSS aberto
+  - {domain: "estadao.com.br", lang: pt, trusted: false}    # Broadcast/Agro Estadao
+  - {domain: "globalmeatnews.com", lang: en, trusted: true}
+  - {domain: "agriinvestor.com", lang: en, trusted: false}
+  # Acrescentados em 05/08/2026. Entram pela camada 2 de proposito: Google News por
+  # dominio nao depende de o veiculo ter RSS aberto, e ja provou funcionar. Se algum
+  # deles tiver RSS proprio bom, promove para a camada 1 depois do probe.
+  - {domain: "fusoesaquisicoes.com", lang: pt, trusted: false}   # veiculo dedicado a M&A no Brasil
+  - {domain: "noticiasdemineracao.com", lang: pt, trusted: true}
+  - {domain: "agrolink.com.br", lang: pt, trusted: true}
+  - {domain: "portaldbo.com.br", lang: pt, trusted: true}        # pecuaria
+  - {domain: "aviculturaindustrial.com.br", lang: pt, trusted: true}
+  - {domain: "fastmarkets.com", lang: en, trusted: true}          # fertilizante e metais
+  - {domain: "argusmedia.com", lang: en, trusted: true}
+
+# --- Camada 3: consultas amplas ---
+queries:
+  - {q: "aquisição agronegócio", lang: pt}
+  - {q: "aquisição OR fusão fertilizantes", lang: pt}
+  - {q: "aquisição frigorífico", lang: pt}
+  - {q: "aquisição sementes Brasil", lang: pt}
+  - {q: "aquisição usina açúcar etanol", lang: pt}
+  - {q: "aquisição revenda insumos agrícolas", lang: pt}
+  - {q: "aquisição nutrição animal", lang: pt}
+  - {q: "recuperação judicial agronegócio", lang: pt}
+  - {q: "CRA OR Fiagro emissão", lang: pt}
+  - {q: "aquisição mineração Brasil", lang: pt}
+  - {q: "aquisição hortifrúti OR FLV", lang: pt}
+  - {q: "aquisição pet food Brasil", lang: pt}
+  - {q: "agribusiness acquisition Brazil", lang: en}
+  - {q: "fertilizer company acquisition", lang: en}
+  - {q: "animal nutrition acquisition", lang: en}
+  - {q: "seed company acquisition", lang: en}
+  - {q: "crop protection acquisition", lang: en}
+  - {q: "pet food acquisition", lang: en}
+  - {q: "aquaculture acquisition", lang: en}
+  - {q: "mining acquisition Latin America", lang: en}
+  - {q: "timber forestry acquisition", lang: en}
+  # Fonte primaria de transacao. E a lacuna maior do radar hoje: ele monitora
+  # imprensa, e CADE e CVM publicam antes de virar noticia.
+  - {q: "CADE ato de concentração agronegócio", lang: pt}
+  - {q: "CADE ato de concentração mineração", lang: pt}
+  - {q: "CADE aprova aquisição alimentos", lang: pt}
+  - {q: "CVM fato relevante aquisição agro", lang: pt}
+  - {q: "fato relevante venda de ativos agronegócio", lang: pt}
+
+# --- Porta setorial ---
+# Fonte marcada trusted:true entra sempre. Fonte generalista (trusted:false) e as
+# consultas amplas so entram se o titulo ou o trecho tiver um destes termos. O termo
+# que casou fica gravado em cada item, e o que fica de fora NAO e apagado: vai para
+# "itens_fora_escopo" no JSON. Cada grupo aponta a micro sugerida.
+setores:
+  "Indústria de Saúde Animal": [saude animal, animal health, veterinario, veterinaria, veterinary, vacina animal]
+  "Nutrição Animal": [nutricao animal, animal nutrition, racao, feed mill, premix, farelo, nucleo proteico]
+  "Aditivos para Nutrição Animal": [aditivo, additive, enzima, probiotico, aminoacido, feed additive]
+  "Sementes Pastagem": [semente de pastagem, forrageira, braquiaria, pastagem]
+  "Fertilizantes (NPK)": [fertilizante, fertilizer, adubo, npk, potassio, potash, kcl, fosfato, phosphate, ureia, urea, map cfr, nitrogenado]
+  "Indústria de Fertilizantes Especiais": [fertilizante especial, especialidade agricola, foliar, organomineral, bioestimulante]
+  "Indústria de Adjuvantes": [adjuvante, adjuvant, surfactante]
+  "Indústria de Biológicos": [biologico, bioinsumo, biodefensivo, biocontrole, biological, bionematicida, trichoderma, bacillus]
+  "Sementes Grãos": [semente, sementes, seed, seeds, cultivar, germoplasma]
+  "Genética de Sementes": [genetica de sementes, melhoramento genetico, trait, biotecnologia vegetal]
+  "Fresh Produce": [hortifruti, flv, fresh produce, fruticultura, banana, laranja, citrus, uva, melao, manga]
+  "Avicultura de Postura": [postura, ovo, ovos, egg, poedeira, layer]
+  "Crushing/Óleos": [esmagamento, crushing, oleo vegetal, farelo de soja, biodiesel, oleaginosa, refino de oleo, oleo de soja, oleo de palma]
+  "Armazenagem e Logística": [armazenagem, silo, graneleiro, terminal portuario, originacao, trading de graos, elevador de graos, grao]
+  "Mineração": [mineracao, mining, minerio, ore, ouro, gold, cobre, copper, litio, lithium, niquel, nickel, bauxita, terras raras, potassa]
+  "Agrotóxicos": [defensivo, agrotoxico, crop protection, herbicida, fungicida, inseticida, pesticide, nematicida]
+  "Frigoríficos": [frigorifico, abatedouro, abate, desossa, slaughterhouse, carne bovina, carne de frango, carne suina, beef, poultry, pork, proteina animal, bovino, suino, ave de corte, frango, avicultura, aviario]
+  "Genética Animal": [genetica animal, animal genetics, matrizes, reproducao animal, semen bovino]
+  "Aquicultura": [aquicultura, aquaculture, piscicultura, tilapia, camarao, shrimp, salmao, salmon, pescado, seafood]
+  "Máquinas e implementos": [maquina agricola, maquinas agricolas, implemento, trator, tractor, colheitadeira, pulverizador, farm equipment, concessionaria john deere, new holland, case ih]
+  "Subprodutos Animais": [subproduto animal, rendering, farinha de carne, sebo, gordura animal]
+  "Jardinagem/Controle de Pragas Urbanas": [jardinagem, controle de pragas, dedetizacao, pest control, gramado]
+  "Coatings (Sementes/Fertilizantes etc)": [tratamento de sementes, seed treatment, coating, revestimento de fertilizante]
+  "Usinas de Cana": [usina de cana, sucroenergetico, sucroalcooleiro, etanol, ethanol, acucar, sugar, cana de acucar, bioeletricidade]
+  "Agricultura de Precisão": [agricultura de precisao, precision ag, agtech, agritech, sensoriamento remoto, mapa de produtividade]
+  "Ativos Florestais / Timber": [florestal, forestry, timber, madeira, celulose, pulp, eucalipto, reflorestamento]
+  "Pet (Nutrição e saúde)": [pet food, petfood, alimento para caes, racao pet, pet care, saude pet, clinica veterinaria]
+  "Revenda Agrícola": [revenda agricola, distribuicao de insumos, revendedor de insumos]
+  "Revenda Agropecuária": [revenda agropecuaria, agropecuaria, loja agropecuaria, cooperativa agropecuaria]
+  "Agro & Rural (geral)": [agro, agronegocio, agribusiness, agricola, agriculture, agropecuario, safra, pecuaria, lavoura, fazenda, produtor rural, credito rural, fiagro, cra agro, barter, gado, boi gordo, soja, milho, trigo, algodao, cafe, arroz, feijao, sorgo, leite, laticinio, dairy]
+
+# --- Expressoes que NEUTRALIZAM o termo do setor ---
+# Sao apagadas do texto ANTES da classificacao. Caso real de 05/08/2026: a materia
+# "Golden Age: Morgan ve era de ouro para energia e destaca Petrobras" entrou em
+# Mineracao porque "ouro" casou. Apagando "era de ouro", o termo deixa de existir
+# para o classificador. O texto exibido no site nao e alterado.
+negativas:
+  [era de ouro, eras de ouro, regra de ouro, regras de ouro, padrao ouro,
+   bodas de ouro, gol de ouro, medalha de ouro, medalhas de ouro, chave de ouro,
+   ouro olimpico, golden age, golden share, mina de ouro de, coracao de ouro,
+   a peso de ouro, banho de ouro, la vem ouro, bola de ouro, luva de ouro,
+   safra de talentos, safra de livros, safra de filmes, colheita de votos,
+   moeda de prata, bodas de prata, tela de prata, ponte de prata,
+   cana de acucar em pe, mar de lama]
+
+# --- Termos AMBIGUOS ---
+# Valem 1 ponto e SO pontuam se houver confirmacao (ver coocorrencia). Termo que
+# nao esta nesta lista e considerado inequivoco e vale 2 pontos.
+termos_fracos:
+  # SO o que e ambiguo DE VERDADE em portugues ou ingles. A primeira versao pos aqui
+  # soja, milho, boi, leite, frango, semente e niquel, que nao sao ambiguos, e o
+  # resultado foi perder "Grupo do agro com 25 fazendas entra em recuperacao
+  # judicial", que e sinal de originacao puro. Termo fora desta lista vale 2 pontos.
+  #   safra   -> Banco Safra, safra de talentos
+  #   fazenda -> Ministerio da Fazenda, secretaria da Fazenda
+  #   cobre   -> verbo cobrir ("o seguro cobre")
+  #   cana    -> girias e nomes proprios
+  #   seed    -> rodada seed de venture capital
+  #   postura -> postura da empresa
+  #   mercado -> qualquer mercado
+  #   madeira -> Madeira (rio, ilha), Porto Velho
+  [ouro, gold, prata, silver, cobre, copper, safra, cana, fazenda, fazendas,
+   mercado, postura, madeira, seed, seeds, ativo, ativos, portfolio, grao, graos]
+
+# --- Coocorrencia: o que CONFIRMA um termo ambiguo, por categoria ---
+coocorrencia:
+  "Mineração": [mineracao, mining, minerio, jazida, lavra, garimpo, mina, minas,
+                concentrado, teor, onca troy, anm, sigmine, beneficiamento,
+                pelotizacao, tailing, barragem de rejeito, exploracao mineral,
+                # confirmadores acrescentados depois da auditoria: "Gold sets export
+                # record in Argentina" e materia de mineracao e caia fora porque
+                # "ouro" ficava sem confirmacao.
+                producao, produzir, exportacao, export, exports, reservas, deposito,
+                projeto, refinaria, fundicao, onca, toneladas, mineradora, miner]
+  "Agro & Rural (geral)": [agro, agronegocio, agribusiness, safra, plantio, colheita,
+                lavoura, hectare, produtor rural, cooperativa, saca, arroba,
+                tonelada, exportacao, cepea, conab, usda, esalq]
+  "Frigoríficos": [abate, abatedouro, frigorifico, desossa, carcaca, proteina animal,
+                exportacao de carne, jbs, marfrig, minerva, aurora]
+  "Sementes Grãos": [cultivar, germoplasma, melhoramento, semeadura, tratamento de
+                sementes, variedade, hibrido, rr2, intacta]
+  "Crushing/Óleos": [esmagamento, crushing, farelo, oleo bruto, refino, biodiesel,
+                degomado, oleaginosa]
+  "Usinas de Cana": [usina, moagem, sucroenergetico, etanol, acucar vhp, destilaria,
+                bioeletricidade, safra de cana]
+  "Avicultura de Postura": [poedeira, granja, postura comercial, ovo comercial, duzia]
+  "Nutrição Animal": [racao, premix, feed mill, nutricao animal, formulacao, farelo]
+  "Ativos Florestais / Timber": [florestal, reflorestamento, eucalipto, pinus,
+                celulose, timber, manejo florestal, hectares plantados]
+  "Fertilizantes (NPK)": [fertilizante, adubo, npk, nutriente, mistura de fertilizantes,
+                cfr, fob, tonelada]
+
+# Fonte GENERALISTA precisa deste minimo de pontos para entrar no escopo. Fonte
+# setorial (trusted: true) entra com 1. Assim "ouro" numa materia da InfoMoney nao
+# basta, mas "garimpo" basta, e "ouro" + "jazida" tambem.
+pontos_minimos_generalista: 2
+
+# --- Transacao x noticia ---
+# Nao apaga nada: gera tres faixas. >=1 forte, ou >=2 fracas, ou 1 fraca + cifra
+# -> transacao. 1 fraca isolada -> possivel_transacao. Nada -> noticia.
+transacao:
+  # Ajustado depois do teste contra os 590 itens reais de 05/08/2026. A primeira
+  # versao marcava como transacao coisas como "Mosaic registra prejuizo" (casou
+  # "investimento" + cifra) e "Banco do Brasil linha para aquisicao de maquinas"
+  # (casou "compra"). Duas mudancas: as expressoes genericas sairam das fracas, e
+  # frase com verbo + artigo entrou nas fortes, porque "adquire a" e operacao e
+  # "compra" solto nao e.
+  fortes:
+    [ato de concentracao, cade aprova, aprovado pelo cade, submetido ao cade,
+     contrato de compra e venda, share purchase agreement, spa assinado,
+     assume o controle, assumiu o controle, aquisicao de controle,
+     compra de participacao, venda de participacao, compra a participacao,
+     adquire a, adquiriu a, adquire participacao, anuncia a compra,
+     anuncia a aquisicao, fechou a compra, conclui a aquisicao, concluiu a compra,
+     acordo para adquirir, acordo para a compra, assina acordo de compra,
+     fusao, incorporacao de acoes, cisao parcial, joint venture,
+     memorando de entendimento, oferta publica de aquisicao, opa,
+     ipo, follow on, oferta subsequente,
+     recuperacao judicial, pedido de recuperacao judicial, leilao judicial,
+     alienacao de ativos, desinvestimento, venda de ativos,
+     capta r, capta us, levanta r, levanta us, aporte de r, aporte de us,
+     rodada de investimento, series a, series b, series c,
+     acquires, acquisition of, acquired by, definitive agreement, merger with,
+     stake sale, majority stake, minority stake, divestment, to acquire]
+  fracas:
+    [adquire, adquiriu, comprou, vendeu, negocia a venda, negocia a compra,
+     aquisicao, aporte, captacao, due diligence, oferta vinculante,
+     assessor financeiro, banco de investimento, fundo de private equity,
+     buys, sells, acquiring, deal, funding round]
+
+# --- NOMES VIGIADOS ---
+# A LISTA NAO VIVE MAIS NESTE ARQUIVO, E DE PROPOSITO.
+#
+# Este repositorio e PUBLICO: o sources.yml e legivel em
+# raw.githubusercontent.com sem autenticacao. A lista anterior nomeava alvos e
+# contrapartes de processos em andamento, sob um comentario que declarava
+# exatamente o que a lista era. Numa assessoria sell-side isso e exposicao de
+# informacao confidencial, nao detalhe de organizacao.
+#
+# A lista agora vem de fora do repositorio, em ordem de precedencia:
+#   1. variavel de ambiente ENTIDADES_VIGIADAS (um nome por linha)
+#      -> no GitHub: Settings > Secrets and variables > Actions > New secret
+#      -> o workflow injeta o secret como env; nada e commitado
+#   2. arquivo apontado por ENTIDADES_VIGIADAS_ARQUIVO (uso local)
+#   3. arquivo entidades_vigiadas.local.yml, se existir (esta no .gitignore)
+# Sem nenhuma das tres, o mecanismo simplesmente nao roda, e o build avisa.
+#
+# ATENCAO: remover daqui nao apaga do historico do git. Os commits anteriores
+# continuam acessiveis a quem clonar. Resolver isso exige repositorio privado,
+# reescrita de historico ou repositorio novo sem historico.
+
+vigiados_min_letras: 4
+
+# --- NOMES VIGIADOS AMBIGUOS ---
+# Nome que tambem e palavra comum do portugues. Testado em 05/08/2026: "Vale" na
+# lista simples casou o VERBO valer, e "ja vale US$ 2,1 bi" entrou como se fosse a
+# mineradora. Cinco dos cinco itens recuperados eram falso positivo.
+# Aqui o nome so vale se vier acompanhado de um dos termos de contexto.
+entidades_ambiguas:
+  Vale:    [minerio, mineradora, mineracao, ferro, carajas, vale3, niquel,
+            pelotizacao, brumadinho, mariana, samarco, itabira]
+  Patria:  [patria investimentos, gestora, fundo, private equity, infraestrutura,
+            captou, fiagro, cotista]
+  Aurora:  [cooperativa, frigorifico, abate, suino, frango, alimentos, chapeco]
+  Seara:   [brf, frango, suino, alimentos, abate, processados, marca]
+  Largo:   [vanadio, vanadium, mineradora, maracas, mineracao]
+  Premix:  [nutricao animal, racao, aditivo, formulacao, feed]
+  Ceva:    [saude animal, animal health, veterinario, vacina, farmaceutica]
+  Advent:  [advent international, private equity, fundo, aquisicao, portfolio]
+  Lavoro:  [insumos, revenda, distribuicao, agro, nasdaq, lvro]
+  Stara:    [maquina, implemento, plantadeira, pulverizador, colheitadeira, nao me toque]
+
+# --- Exclusoes ---
+# Item de fonte setorial que NAO casou nenhum termo do setor e que casa um destes
+# assuntos vai para "itens_fora_escopo". Serve para tirar macro, bolsa, clima e
+# politica que as fontes setoriais publicam junto. O termo que excluiu fica gravado.
+excluir_termos:
+  [copom, selic, ibovespa, ibovespa futuro, bolsa de valores, acao ordinaria, dividendo,
+   fundo imobiliario, fii, criptomoeda, bitcoin, petroleo, brent, wti, gasolina, diesel s10,
+   previsao do tempo, previsao para, frente fria, ciclone, inmet, chuva prevista,
+   eleicao, eleitoral, pesquisa datafolha, quaest, genial, tse, stf, congresso nacional,
+   copa do mundo, futebol, cinema, filme, novela, greve do metro, cptm, tarifaco,
+   guerra na ucrania, oriente medio, estreito de ormuz, imposto de renda, inss]
+
+# Fonte cujo conteudo e publicidade ou branded content, nao noticia.
+fontes_excluidas:
+  [bluestudio.estadao.com.br, estadao blue studio, publieditorial]

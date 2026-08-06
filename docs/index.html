@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radar Agro &amp; Natural Resources</title>
+<style>
+  :root { --navy:#222F44; --gold:#D3A93D; --bluegray:#748CAB; --bg:#F4F5F7; --line:#E3E6EA;
+          --ok:#256B3A; --falha:#9B2C2C; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       background:var(--bg);color:#1c2430;line-height:1.5}
+  header{background:var(--navy);color:#fff;padding:26px 20px}
+  header .wrap{max-width:1120px;margin:0 auto}
+  header h1{font-size:1.5rem;letter-spacing:.2px}
+  header p{color:#C8D2E0;font-size:.88rem;margin-top:6px}
+  header a{color:var(--gold)}
+  .nav{position:sticky;top:0;z-index:20;background:#182436;border-bottom:1px solid rgba(255,255,255,.12)}
+  .nav .wrap{max-width:1120px;margin:0 auto;padding:0 20px;display:flex;gap:4px;overflow-x:auto}
+  .nav a{color:#DCE4EE;text-decoration:none;font-size:.78rem;padding:10px 11px;white-space:nowrap}
+  .nav a:hover,.nav a:focus{color:#fff;background:rgba(255,255,255,.08);outline:none}
+  main{max-width:1120px;margin:0 auto;padding:20px}
+  section{background:#fff;border:1px solid var(--line);border-radius:6px;padding:20px;margin:16px 0}
+  h2{color:var(--navy);font-size:1.15rem;border-bottom:2px solid var(--gold);
+     padding-bottom:8px;margin-bottom:14px}
+  h3{color:var(--navy);font-size:.92rem;margin:18px 0 8px;text-transform:uppercase;letter-spacing:.5px}
+  .meta{color:#5b6a7d;font-size:.82rem}
+  .note{background:#FBF7EC;border:1px solid #EFE2BE;padding:10px 12px;border-radius:4px;
+        font-size:.85rem;color:#5a4b25;margin:10px 0}
+  table{width:100%;border-collapse:collapse;font-size:.85rem}
+  th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--navy);font-weight:600;background:#FAFBFC;white-space:nowrap}
+  td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .item{--tipo-cor:#A8B2BF;border:1px solid var(--line);border-left:4px solid var(--tipo-cor);
+    padding:11px 13px;margin:8px 0;background:#fff;border-radius:5px}
+  .item.tipo-ma,.item.tipo-captacao,.item.tipo-mercado_capitais{--tipo-cor:#3D6F9F}
+  .item.tipo-situacao_especial{--tipo-cor:#A84D4D}
+  .item.tipo-possivel_operacao{--tipo-cor:#B78624}
+  .item h4{font-size:.91rem;color:var(--navy);margin:0;line-height:1.35}
+  .item h4 a{text-decoration:none}
+  .item h4 a:hover,.item h4 a:focus{text-decoration:underline}
+  .item.forte{border-top:3px solid var(--gold);border-left-color:var(--gold);
+    padding:13px 15px;box-shadow:0 2px 9px rgba(34,47,68,.05)}
+  .item p{font-size:.84rem;color:#42505f;margin-top:7px}
+  .item .meta-linha{margin-top:5px;display:flex;gap:5px 8px;align-items:center;flex-wrap:wrap}
+  .item .impacto{border-top:1px solid var(--line);padding-top:8px;margin-top:9px;color:#34465B}
+  .item .impacto b{color:var(--navy)}
+  .item .em-destaque{font-size:.66rem;color:#775B16;background:#F8EAC0;border-radius:10px;
+    padding:2px 7px;text-transform:uppercase;letter-spacing:.35px;font-weight:700}
+  .detalhes-item{margin-top:7px}
+  .detalhes-item>summary,.detalhes-tecnicos>summary{cursor:pointer;color:#536B86;font-size:.76rem;
+    list-style:none;width:max-content}
+  .detalhes-item>summary::-webkit-details-marker,.detalhes-tecnicos>summary::-webkit-details-marker{display:none}
+  .detalhes-item>summary::before,.detalhes-tecnicos>summary::before{content:"+ ";font-weight:700}
+  .detalhes-item[open]>summary::before,.detalhes-tecnicos[open]>summary::before{content:"− "}
+  .detalhes-conteudo{padding:5px 0 1px}
+  .detalhes-tecnicos{margin-top:6px;padding-top:5px;border-top:1px dashed var(--line)}
+  .detalhes-tecnicos .meta{margin-top:5px}
+  .tag{display:inline-block;background:var(--bluegray);color:#fff;font-size:.7rem;
+       padding:2px 7px;border-radius:3px;margin-right:6px;vertical-align:1px}
+  .tag.gold{background:var(--gold)}
+  .tag.cinza{background:#8a95a3}
+  .tag.proxy{background:#8a95a3}
+  a{color:var(--navy)}
+  .falha{color:var(--falha)} .ok{color:var(--ok)}
+  .vazio{color:#7c8896;text-align:center;padding:22px;font-size:.9rem}
+  footer{color:#5b6a7d;font-size:.8rem;text-align:center;padding:24px}
+
+  .barra{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+  button{font:inherit;font-size:.84rem;padding:6px 13px;border:1px solid var(--line);
+    border-radius:4px;background:#fff;color:var(--navy);cursor:pointer}
+  button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+  button:disabled{opacity:.45;cursor:default}
+  select{font:inherit;font-size:.87rem;padding:6px 9px;border:1px solid var(--line);
+    border-radius:4px;background:#fff;color:var(--navy)}
+  .sep{flex:1}
+  .chips{gap:6px;margin-bottom:14px}
+  .chips button{font-size:.8rem;padding:5px 11px;border-radius:14px}
+  .chips .cont2{opacity:.6;font-size:.72rem;margin-left:3px}
+
+  .cat{border:1px solid var(--line);border-radius:5px;margin:8px 0;overflow:hidden}
+  .cat>summary{cursor:pointer;padding:10px 13px;background:#FAFBFC;font-size:.9rem;
+    color:var(--navy);font-weight:600;list-style:none;display:flex;align-items:center;gap:9px}
+  .cat>summary::-webkit-details-marker{display:none}
+  .cat>summary:hover{background:#F2F5F8}
+  .cat>summary .cont{background:var(--navy);color:#fff;font-size:.72rem;padding:1px 8px;
+    border-radius:10px;font-weight:600;min-width:26px;text-align:center}
+  .cat>summary .seta{color:var(--gold);font-size:.8rem}
+  .cat .corpo{padding:4px 13px 12px}
+
+  .kpis{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}
+  .kpi{border:1px solid var(--line);border-radius:5px;padding:9px 13px;background:#FAFBFC;min-width:118px}
+  .kpi .rot{font-size:.68rem;color:#5b6a7d;text-transform:uppercase;letter-spacing:.5px}
+  .kpi .val{font-size:1.02rem;color:var(--navy);font-variant-numeric:tabular-nums;font-weight:600}
+  .hoje{border:1px solid #EFE2BE;background:#FBF7EC;border-radius:5px;padding:12px 14px;margin:10px 0}
+  .hoje .grande{font-size:1.6rem;color:var(--navy);font-weight:700;font-variant-numeric:tabular-nums}
+  svg.gr{width:100%;height:auto;display:block;cursor:crosshair;touch-action:none}
+  .grwrap{position:relative;border:1px solid var(--line);border-radius:6px;background:#fff;padding:4px}
+  .tip{position:absolute;pointer-events:none;background:var(--navy);color:#fff;border-radius:6px;
+    padding:10px 12px;font-size:.76rem;line-height:1.5;box-shadow:0 6px 18px rgba(0,0,0,.26);
+    min-width:214px;opacity:0;transition:opacity .08s;z-index:5}
+  .tip .l span:first-child{color:#B9C4D4;font-size:.7rem;text-transform:uppercase;letter-spacing:.4px}
+  .tip.on{opacity:1}
+  .tip b{color:var(--gold)}
+  .tip .l{display:flex;justify-content:space-between;gap:14px}
+  .tip .l span:last-child{font-variant-numeric:tabular-nums;font-weight:600}
+  .tip hr{border:0;border-top:1px solid rgba(255,255,255,.22);margin:6px 0}
+  .pos{color:#7ED9A0} .neg{color:#F0A0A0}
+  .dica{font-size:.75rem;color:#8a95a3;margin-top:6px;text-align:center}
+  .rodape{display:flex;flex-wrap:wrap;gap:0 26px;margin-top:12px;padding-top:11px;
+    border-top:1px solid var(--line)}
+  .rodape>div{display:flex;flex-direction:column;gap:1px;min-width:96px}
+  .rk{font-size:.64rem;color:#8a95a3;text-transform:uppercase;letter-spacing:.5px}
+  .rv{font-size:.8rem;color:var(--navy)}
+  .comoler{margin-top:10px}
+  .comoler>summary{cursor:pointer;font-size:.78rem;color:var(--bluegray);
+    list-style:none;padding:3px 0}
+  .comoler>summary::-webkit-details-marker{display:none}
+  .comoler>summary::before{content:"? ";font-weight:700}
+  .comoler p{font-size:.79rem;color:#5b6a7d;margin:5px 0}
+
+  /* cartoes de commodity */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(212px,1fr));gap:11px}
+  .cardc{border:1px solid var(--line);border-radius:6px;padding:12px 13px;background:#fff;
+    cursor:pointer;transition:border-color .12s, box-shadow .12s}
+  .cardc:hover{border-color:var(--gold);box-shadow:0 2px 10px rgba(0,0,0,.06)}
+  .cardc.sel{border-color:var(--navy);border-width:2px;padding:11px 12px}
+  .cardc .n{font-size:.78rem;color:#5b6a7d;text-transform:uppercase;letter-spacing:.4px;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .cardc .v{font-size:1.22rem;color:var(--navy);font-weight:700;font-variant-numeric:tabular-nums;margin-top:3px}
+  .cardc .u{font-size:.74rem;color:#5b6a7d;font-weight:400}
+  .cardc .d{font-size:.76rem;margin-top:3px;font-variant-numeric:tabular-nums}
+  .cardc .f{font-size:.68rem;color:#8a95a3;margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .up{color:var(--ok)} .down{color:var(--falha)} .flat{color:#5b6a7d}
+  .faixa{height:5px;background:#EDEFF2;border-radius:3px;margin-top:8px;position:relative}
+  .faixa i{position:absolute;top:-2px;width:3px;height:9px;background:var(--gold);border-radius:2px}
+  .rot2{display:flex;justify-content:space-between;font-size:.65rem;color:#8a95a3;margin-top:2px}
+  .blocotit{display:flex;align-items:center;gap:9px;margin:20px 0 10px}
+  .blocotit h3{margin:0}
+  .blocotit .risco{flex:1;height:1px;background:var(--line)}
+  .filtros{display:grid;grid-template-columns:minmax(220px,2fr) repeat(2,minmax(150px,1fr)) auto;
+    gap:8px;margin:12px 0}
+  input[type="search"]{font:inherit;font-size:.87rem;padding:7px 10px;border:1px solid var(--line);
+    border-radius:4px;color:var(--navy);min-width:0}
+  .linkbox{border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:5px;
+    padding:13px 14px;background:#FAFBFC;margin-top:14px;display:flex;gap:12px;
+    justify-content:space-between;align-items:center;flex-wrap:wrap}
+  .linkbox p{font-size:.84rem;color:#5b6a7d;max-width:760px}
+  .linkbox a{font-size:.84rem;font-weight:600;white-space:nowrap}
+  .seguranca{border-color:#D8E4F0;background:#F5F8FB;color:#354A62}
+  .grupo-fontes{margin:5px 0 11px 17px}
+  .grupo-fontes>summary{cursor:pointer;color:#536B86;font-size:.78rem}
+  .evento-bloco{border:1px solid var(--line);border-radius:6px;margin:9px 0;background:#fff;overflow:hidden}
+  .evento-bloco>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:9px;
+    padding:11px 13px;background:#FAFBFC;color:var(--navy);font-size:.88rem;font-weight:650}
+  .evento-bloco>summary::-webkit-details-marker{display:none}
+  .evento-bloco>summary::before{content:"▸";color:var(--gold);font-size:.74rem}
+  .evento-bloco[open]>summary::before{content:"▾"}
+  .evento-bloco .evento-corpo{padding:5px 12px 12px}
+  .evento-bloco .evento-contagem{margin-left:auto;color:#6B7787;font-size:.73rem;font-weight:500}
+  .mais-eventos{margin:8px 3px 0}
+  .mais-eventos>summary{cursor:pointer;color:#536B86;font-size:.79rem;padding:5px}
+  .resumo-executivo{display:flex;align-items:center;justify-content:space-between;gap:12px;
+    margin:-3px 0 12px;color:#627083;font-size:.79rem}
+  .resumo-executivo a{white-space:nowrap;font-weight:600}
+  .revisao-chamada{display:none}
+  .buttonlink{display:inline-block;font-size:.84rem;padding:6px 13px;border:1px solid var(--line);
+    border-radius:4px;background:#fff;color:var(--navy);text-decoration:none}
+  .buttonlink:hover,.buttonlink:focus{border-color:var(--navy)}
+  @media (max-width:760px){
+    .filtros{grid-template-columns:1fr 1fr}
+    .filtros input{grid-column:1/-1}
+    .resumo-executivo{align-items:flex-start;flex-direction:column}
+    .item.forte{padding:11px 12px}
+  }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>Radar Agro &amp; Natural Resources</h1>
+  <p id="cabecalho">Coleta automática de notícias e transações. Carregando...</p>
+  <p style="margin-top:10px"><a href="arquivo.html">Pesquisar no arquivo completo &rarr;</a></p>
+</div></header>
+<nav class="nav" aria-label="Navegação principal"><div class="wrap">
+  <a href="#destaques">Destaques</a>
+  <a href="#eventos">Eventos corporativos</a>
+  <a href="#commodities">Commodities</a>
+  <a href="#historico">Histórico</a>
+  <a href="#noticias">Notícias</a>
+  <a href="#cobertura-sec">Cobertura</a>
+  <a href="fora-escopo.html" target="_blank" rel="noopener">Fora do escopo ↗</a>
+</div></nav>
+
+<main>
+  <section id="destaques">
+    <h2>Destaques de hoje</h2>
+    <div class="resumo-executivo"><span>Leitura executiva dos cinco assuntos de maior relevância nesta edição.</span>
+      <a href="arquivo.html">Pesquisar todos os itens →</a></div>
+    <details class="comoler"><summary>Como funciona a seleção</summary>
+      <p>Os destaques priorizam eventos corporativos, fontes setoriais e notícias novas.
+        Nenhum item é eliminado: tudo permanece no monitoramento, nas páginas auxiliares e no arquivo.</p>
+    </details>
+    <div id="destaques-lista"><p class="vazio">Carregando...</p></div>
+  </section>
+
+  <section id="eventos">
+    <h2>Eventos corporativos e sinais de operação</h2>
+    <div class="resumo-executivo"><span>Visão compacta por tipo de evento; abra somente a categoria que deseja analisar.</span></div>
+    <details class="comoler"><summary>Critérios de classificação</summary>
+      <p>A triagem separa M&amp;A, captação, mercado de capitais, situações especiais e possíveis
+        operações. A evidência e os dados técnicos continuam disponíveis nos detalhes de cada item.</p>
+    </details>
+    <div id="transacoes"><p class="vazio">Carregando...</p></div>
+    <div class="linkbox revisao-chamada" id="revisao-box">
+      <p id="revisao-resumo"></p>
+      <a href="fora-escopo.html" target="_blank" rel="noopener">Revisar em outra aba ↗</a>
+    </div>
+  </section>
+
+  <section id="commodities">
+    <h2>Painel de commodities</h2>
+    <details class="comoler"><summary>Notas das cotações</summary>
+      <p>Clique em um cartão para abrir o histórico. A barra indica a posição do preço atual
+        na faixa dos últimos cinco anos somente quando unidade, referência e data são comparáveis.</p>
+      <p>Cotações proxy ou mais antigas que o último ponto do histórico não recebem comparação automática.</p>
+    </details>
+    <div id="cartoes"><p class="vazio">Carregando...</p></div>
+    <div class="blocotit"><h3>Tabela completa, com fonte e metodologia</h3><span class="risco"></span>
+      <button id="btTabela">Exibir tabela</button></div>
+    <div id="painel" style="display:none"><p class="vazio">Carregando...</p></div>
+
+    <div id="cepea" style="display:none"></div>
+    <div class="barra" id="cepea-controles" style="display:none;margin-top:12px">
+      <span class="meta" id="cepea-acum">&nbsp;</span>
+      <span class="sep"></span>
+      <button id="cepea-baixar">Exportar cotações acumuladas</button>
+      <button id="cepea-limpar" title="Apaga o acúmulo guardado neste navegador">Limpar acúmulo</button>
+    </div>
+    <iframe id="cepea-src" style="display:none;width:0;height:0;border:0"
+      title="Fonte CEPEA" srcdoc="&lt;html&gt;&lt;head&gt;&lt;meta charset='utf-8'&gt;&lt;/head&gt;&lt;body&gt;&lt;script src='https://cepea.org.br/br/widgetproduto.js.php?fonte=arial&amp;amp;tamanho=10&amp;amp;largura=400px&amp;amp;corfundo=dbd6b2&amp;amp;cortexto=333333&amp;amp;corlinha=ede7bf&amp;amp;id_indicador%5B%5D=2&amp;amp;id_indicador%5B%5D=77&amp;amp;id_indicador%5B%5D=12&amp;amp;id_indicador%5B%5D=178&amp;amp;id_indicador%5B%5D=179&amp;amp;id_indicador%5B%5D=92'&gt;&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+  </section>
+
+  <section id="historico">
+    <h2>Detalhe histórico</h2>
+    <div class="barra">
+      <select id="serie"></select>
+      <span id="btsPeriodo"></span>
+      <span class="sep"></span>
+      <button id="btEscala" title="Alterna entre escala absoluta e base 100">Base 100</button>
+    </div>
+    <div id="detalhe"><p class="vazio">Carregando...</p></div>
+  </section>
+
+  <section id="noticias">
+    <h2>Monitoramento setorial</h2>
+    <div class="filtros">
+      <input id="buscaNoticias" type="search" placeholder="Buscar empresa, tema ou palavra-chave" aria-label="Buscar notícias">
+      <select id="filtroSetor" aria-label="Filtrar por setor"><option value="">Todos os setores</option></select>
+      <select id="filtroFonte" aria-label="Filtrar por fonte"><option value="">Todas as fontes</option></select>
+      <button id="btLimparFiltros">Limpar filtros</button>
+    </div>
+    <div class="barra">
+      <button id="btFechar">Recolher todas as categorias</button>
+      <a class="buttonlink" href="arquivo.html">Abrir arquivo completo ↗</a>
+      <span class="sep"></span>
+      <span class="meta" id="contNoticias"></span>
+    </div>
+    <details class="comoler"><summary>Segurança dos filtros</summary>
+      <p>A busca e os filtros alteram somente a visualização. Nenhuma notícia é apagada ou deixa
+        de ser arquivada; “Limpar filtros” retorna à cobertura completa.</p>
+    </details>
+    <div id="categorias"><p class="vazio">Carregando...</p></div>
+    <div class="linkbox">
+      <p><b>Fora do escopo setorial.</b> Esses itens continuam armazenados integralmente,
+        mas foram movidos para uma página própria para não sobrecarregar este painel.</p>
+      <a id="link-fora" href="fora-escopo.html" target="_blank" rel="noopener">Abrir em outra aba ↗</a>
+    </div>
+  </section>
+
+  <section id="cobertura-sec">
+    <h2>Cobertura desta execução</h2>
+    <div id="resumo"><p class="vazio">Carregando...</p></div>
+    <details><summary style="cursor:pointer;color:#222F44;font-weight:600;padding:8px 0">Detalhe por fonte</summary><div id="cobertura"></div></details>
+  </section>
+</main>
+
+<footer>Nada é preenchido por estimativa: fonte que falha aparece como falha; cotação sem coleta validada não aparece.</footer>
+
+<script>
+/* ------------------------------------------------------------------ utils */
+const esc = s => String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const dataBR = iso => iso && iso.length>=10 ? iso.slice(8,10)+"/"+iso.slice(5,7)+"/"+iso.slice(0,4) : "—";
+const horaBR = iso => iso && iso.length>=16 ? iso.slice(11,16) : "";
+const mesBR  = m => m && m.length>=7 ? m.slice(5,7)+"/"+m.slice(0,4) : "—";
+const nf = (v,d=2) => (v==null||isNaN(v)) ? "—" : Number(v).toLocaleString("pt-BR",
+                       {minimumFractionDigits:d, maximumFractionDigits:d});
+const pct = v => (v==null||isNaN(v)) ? "—" : (v>0?"+":"") + nf(v,1) + "%";
+function limpaTexto(s){
+  const t = document.createElement("textarea");
+  t.innerHTML = String(s||"");
+  return t.value.replace(/\s+/g," ").trim();
+}
+function textoProfissional(s){
+  const mapa={nao:"não",serie:"série",referencia:"referência",preco:"preço",
+    transacao:"transação",aquisicao:"aquisição",minimo:"mínimo",titulo:"título",
+    pagina:"página",importacao:"importação",unitario:"unitário",cotacao:"cotação",
+    minerio:"minério",niquel:"níquel",aluminio:"alumínio",potassio:"potássio",
+    fosfatica:"fosfática",proposito:"propósito",execucao:"execução",evidencia:"evidência"};
+  return String(s||"").replace(/\b(nao|serie|referencia|preco|transacao|aquisicao|minimo|titulo|pagina|importacao|unitario|cotacao|minerio|niquel|aluminio|potassio|fosfatica|proposito|execucao|evidencia)\b/gi,
+    x=>{const y=mapa[x.toLowerCase()];return x[0]===x[0].toUpperCase()?y[0].toUpperCase()+y.slice(1):y});
+}
+
+/* Ligacao entre a cotacao de hoje e a serie historica.
+   REGRA CENTRAL: a linha do preco atual so e desenhada se a UNIDADE do indicador
+   de hoje for IGUAL a da serie historica. Cobre no Trading Economics vem em
+   US$/lb e no World Bank em US$/t; minerio vem em US$/t contra US$/dmtu. Desenhar
+   a linha nesses casos seria comparar coisas diferentes, entao o grafico sai sem
+   linha e com o motivo escrito. */
+const LIGACOES = [
+  {hoje:"te_soja_cbot",       serie:"Soja", nivel:"indicativa"},
+  {hoje:"te_milho_cbot",      serie:"Milho", nivel:"indicativa"},
+  {hoje:"te_trigo_cbot__srw", serie:"Trigo", nivel:"indicativa"},
+  {hoje:"ouro_pm",            serie:"Ouro", nivel:"direta"},
+  {hoje:"prata",              serie:"Prata", nivel:"direta"},
+  {hoje:"te_prata",           serie:"Prata", nivel:"fallback"},
+  {hoje:"te_platina",         serie:"Platina", nivel:"indicativa"},
+  {hoje:"te_aluminio",        serie:"Alumínio", nivel:"indicativa"},
+  {hoje:"te_chumbo",          serie:"Chumbo", nivel:"indicativa"},
+  {hoje:"te_estanho",         serie:"Estanho", nivel:"indicativa"},
+  {hoje:"te_niquel",          serie:"Níquel", nivel:"indicativa"},
+  {hoje:"te_zinco",           serie:"Zinco", nivel:"indicativa"},
+  {hoje:"te_cobre",           serie:"Cobre", nivel:"indicativa"},
+  {hoje:"te_minerio_de_ferro_62__fe_cfr_china", serie:"Minério de ferro 62% Fe", nivel:"incompativel"},
+  {hoje:"usdbrl_ptax",        serie:"USD/BRL", nivel:"direta"},
+  {hoje:"kcl_wb",             serie:"KCl", nivel:"direta"},
+  {hoje:"boi_gordo_cr",       serie:"Boi gordo", nivel:"indicativa"},
+];
+
+const ROTULOS_COTACAO = {
+  te_minerio_de_ferro_62__fe_cfr_china:"Minério de ferro 62% Fe CFR China",
+  te_aluminio:"Alumínio", te_niquel:"Níquel",
+  kcl_wb:"Cloreto de potássio (KCl)", rocha_fosfatica_wb:"Rocha fosfática",
+  map_import_br:"MAP e misturas com DAP — valor unitário de importação",
+  ureia_import_br:"Ureia — valor unitário de importação",
+  kcl_import_br:"KCl — valor unitário de importação",
+};
+const rotuloCotacao = c => ROTULOS_COTACAO[c.key] || c.label;
+
+/* Corrige apenas a unidade do snapshot publicado antes da correção do parser.
+   O próprio coletor novo já grava US$/oz t para prata e platina. */
+function unidadeCotacao(c){
+  if (["te_prata","te_platina"].includes(c.key) && uNorm(c.unidade)==="usd/t")
+    return "US$/oz t";
+  return c.unidade;
+}
+
+/* Unidades escritas de forma diferente para a mesma coisa. O ouro da LBMA vem
+   como "US$/oz t" e a serie do World Bank como "US$/oz troy": e a mesma unidade,
+   e comparar por igualdade de texto reprovaria indevidamente. Isto normaliza a
+   grafia, e SO a grafia: unidade de fato diferente continua reprovando. */
+function uNorm(u){
+  return String(u||"").toLowerCase().replace(/\s+/g,"")
+    .replace("us$","usd").replace("r$","brl")
+    .replace("oztroy","oz").replace("ozt","oz")
+    .replace("/tonelada","/t").replace("/ton","/t").replace("/mt","/t");
+}
+
+function avaliarLigacao(c, serie, lig){
+  if (!c || !serie || !lig) return {ok:false, motivo:"sem cotação ligada"};
+  if (lig.nivel === "incompativel") return {ok:false, motivo:"benchmarks não conversíveis"};
+  if (c.e_proxy) return {ok:false, motivo:"proxy de comércio exterior"};
+  const unidade = unidadeCotacao(c);
+  if (uNorm(unidade) !== uNorm(serie.unidade))
+    return {ok:false, motivo:`unidades diferentes (${unidade} × ${serie.unidade})`};
+  const refCot = (c.referencia_mensal || c.data_referencia || "").slice(0,7);
+  const pontos = serie.pontos || [];
+  const refHist = pontos.length ? pontos[pontos.length-1][0] : "";
+  if (refCot && refHist && refCot < refHist)
+    return {ok:false, motivo:`a cotação (${mesBR(refCot)}) é anterior ao último histórico (${mesBR(refHist)})`};
+  if (pontos.length){
+    const ultimo = Number(pontos[pontos.length-1][1]);
+    const razao = ultimo ? Number(c.preco)/ultimo : 1;
+    if (razao < .25 || razao > 4)
+      return {ok:false, motivo:"diferença atípica entre a cotação e o último ponto histórico"};
+  }
+  return {ok:true, motivo:lig.nivel==="indicativa"?"comparação indicativa entre fontes/frequências diferentes":"comparação direta"};
+}
+
+let DOC = null, HIST = null, SEGMENTO = null;
+
+/* Janela movel de 5 anos, recalculada a cada carregamento da pagina. Em 2026 cobre
+   08/2021 a 08/2026; em 2030 vai cobrir 08/2025 a 08/2030, sem ninguem editar nada.
+   Usada no min/max dos cartoes. */
+function janela5Anos(){
+  const d = new Date(); d.setFullYear(d.getFullYear() - 5);
+  return d.toISOString().slice(0,7);
+}
+let PERIODO = "2000", ESCALA = "abs";
+let CHAVES_DESTAQUE = new Set();
+const PERIODOS = [["1A","1 ano"],["5A","5 anos"],["10A","10 anos"],["2000","desde 2000"],["MAX","máximo"]];
+
+/* ------------------------------------------------- 1. painel de commodities */
+function linhaPainel(c, extra){
+  const dt = c.referencia_mensal ? mesBR(c.referencia_mensal) : dataBR(c.data_referencia);
+  return `<tr>
+    <td>${esc(rotuloCotacao(c))}
+      ${c.e_proxy?'<span class="tag proxy">proxy</span>':""}
+      ${c.e_derivado?'<span class="tag cinza">derivado</span>':""}
+      ${c.metodologia?`<div class="meta">${esc(textoProfissional(c.metodologia))}</div>`:""}</td>
+    <td class="num">${esc(c.preco_texto)}</td>
+    <td>${esc(unidadeCotacao(c))}</td>
+    <td class="num">${dt}${extra||""}</td>
+    <td>${esc(textoProfissional(c.fonte))}</td></tr>`;
+}
+
+function montaPainel(){
+  const diarias = (DOC.cotacoes||[]);
+  const mensais = (DOC.cotacoes_mensais||[]);
+  const fisico  = diarias.filter(c => c.e_derivado);
+  const merc    = diarias.filter(c => !c.e_derivado);
+  const cab = '<table><tr><th>Indicador</th><th>Preço</th><th>Unidade</th>'
+            + '<th>Data de referência</th><th>Fonte</th></tr>';
+  let html = "";
+  if (merc.length)
+    html += "<h3>Mercado internacional e câmbio</h3>" + cab + merc.map(c=>linhaPainel(c)).join("") + "</table>";
+  if (fisico.length)
+    html += "<h3>Físico Brasil</h3>"
+         + '<div class="note">Valor do indicador CEPEA/ESALQ, lido de matéria do Canal Rural. '
+         + 'A data é a de publicação da matéria e pode ser um dia útil depois do dia do indicador.</div>'
+         + cab + fisico.map(c=>linhaPainel(c)).join("") + "</table>";
+  if (mensais.length)
+    html += "<h3>Fertilizantes, série mensal</h3>"
+         + '<div class="note">Série mensal, com atraso próprio de cada fonte. Linha marcada '
+         + '<span class="tag proxy">proxy</span> é valor unitário de importação, não cotação de mercado.</div>'
+         + cab.replace("<th>Data de referência</th>","<th>Referência</th>")
+         + mensais.map(c=>linhaPainel(c, c.atraso_dias!=null?` <span class="meta">(${c.atraso_dias}d)</span>`:"")).join("")
+         + "</table>";
+  document.getElementById("painel").innerHTML = html ||
+    '<p class="vazio">Nenhuma cotação coletada nesta execução. Motivo em Cobertura.</p>';
+}
+
+/* ---------------------------------------------------- CEPEA ao vivo
+   O widget do CEPEA escreve uma tabela via document.write. Rodar isso direto na
+   pagina apagaria o documento, e o resultado tem a cara do widget, nao a do site.
+   Solucao: o widget roda num iframe invisivel de mesma origem (srcdoc herda a
+   origem do pai, entao da para ler o DOM dele), e aqui extraimos SO os valores e
+   montamos a tabela no padrao do site.
+   Nada e inventado: linha sem data e valor no formato brasileiro e ignorada, e se
+   a extracao vier vazia o bloco diz isso em vez de mostrar tabela em branco. */
+function parseCepeaDOM(doc){
+  const achados = [];
+  const RXDATA = /(\d{2}\/\d{2}\/\d{4})/;
+  const RXVAL  = /(\d{1,3}(?:\.\d{3})*,\d{2,4})/;
+  doc.querySelectorAll("tr").forEach(tr => {
+    const cels = [...tr.querySelectorAll("td,th")]
+      .map(td => (td.textContent||"").replace(/\s+/g," ").trim()).filter(Boolean);
+    if (!cels.length) return;
+    const linha = cels.join(" ");
+    const md = linha.match(RXDATA), mv = linha.match(RXVAL);
+    if (!md || !mv) return;                       // cabecalho, credito, rodape
+    let nome = cels[0].replace(RXDATA,"").replace(RXVAL,"").replace(/R\$|US\$/g,"").trim()
+                      .replace(/[-–:•]+$/,"").trim();
+    if (!nome || RXVAL.test(nome)) nome = "Indicador CEPEA";
+    // variacao, quando o widget publica
+    const mvar = linha.match(/(-?\d{1,3},\d{1,2})\s*%/);
+    achados.push({nome, data: md[1], valor: mv[1],
+                  variacao: mvar ? mvar[1].replace(",",".") : null,
+                  unidade: (linha.match(/R\$\s*\/\s*[^\s|]+|US\$\s*\/\s*[^\s|]+/)||[null])[0]});
+  });
+  return achados;
+}
+
+/* ------------------------------------------------- acumulo local do CEPEA
+   O CEPEA recusa acesso automatizado de datacenter (HTTP 403 para requests e
+   tambem para Chromium headless, verificado tres vezes), entao o robo do GitHub
+   Actions nao consegue gravar estes valores. Quem CONSEGUE ler e o navegador de
+   quem abre a pagina, porque o widget roda aqui. O que o navegador nao pode e
+   escrever no repositorio.
+   Este bloco fecha a metade que da para fechar: guarda no proprio navegador
+   cada cotacao vista e permite exportar o acumulado num arquivo, que depois e
+   carregado no historico.
+   LIMITES, e eles sao reais:
+     - so acumula nos dias em que a pagina for aberta; dia sem visita e buraco;
+     - o acumulo vive NESTE navegador: outra maquina ou limpeza de cache zera;
+     - nao substitui a planilha oficial do CEPEA, que traz a serie inteira.
+   Nada e estimado: dia nao visto simplesmente nao existe no arquivo. */
+const CEPEA_STORE = "radar_cepea_acumulado_v1";
+let CEPEA_DADOS = [];
+
+/* O widget publica a cotacao de HOJE; a serie historica veio da planilha oficial do
+   CEPEA, carregada a mao. E a mesma medicao da mesma casa, entao o cartao junta as
+   duas: valor do dia em cima, faixa de 5 anos embaixo, e o clique abre o grafico.
+   A ligacao e por palavra, porque o widget escreve "SOJA PARANAGUA" e a serie se
+   chama "Soja CEPEA Paranaguá". Quem exige mais termos ganha, para Paranagua nao
+   ser capturado pela regra generica de Parana. */
+const CEPEA_SERIE = [
+  {termos:["soja","paranagua"], serie:"Soja CEPEA Paranaguá"},
+  {termos:["soja","parana"],    serie:"Soja CEPEA Paraná"},
+  {termos:["milho"],            serie:"Milho CEPEA/ESALQ"},
+  {termos:["boi"],              serie:"Boi CEPEA/ESALQ"},
+  {termos:["trigo","parana"],   serie:"Trigo CEPEA Paraná"},
+  {termos:["trigo"],            serie:"Trigo CEPEA Rio Grande Do Sul"},
+];
+
+function cepeaSerieDe(nome){
+  // normalizacao propria: "norm" e funcao do Python, nao existe aqui.
+  const n = String(nome||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+  const c = CEPEA_SERIE.filter(x => x.termos.every(t => n.includes(t)))
+                       .sort((a,b) => b.termos.length - a.termos.length)[0];
+  return (c && HIST && HIST.series && HIST.series[c.serie]) ? c.serie : null;
+}
+
+function cepeaLer(){
+  try { return JSON.parse(localStorage.getItem(CEPEA_STORE) || "{}"); }
+  catch (e) { return {}; }
+}
+
+function cepeaAcumular(dados){
+  if (!dados || !dados.length) return cepeaLer();
+  const acum = cepeaLer();
+  let novos = 0;
+  for (const x of dados){
+    // chave = data + indicador. Reabrir a pagina no mesmo dia nao duplica.
+    const chave = `${x.data}|${x.nome}`;
+    if (!acum[chave]){
+      acum[chave] = {data: x.data, nome: x.nome, valor: x.valor,
+                     unidade: x.unidade || null, visto_em: new Date().toISOString().slice(0,10)};
+      novos++;
+    }
+  }
+  try { localStorage.setItem(CEPEA_STORE, JSON.stringify(acum)); }
+  catch (e) { /* cota cheia ou modo privado: o painel do dia continua funcionando */ }
+  return acum;
+}
+
+function cepeaResumo(){
+  const acum = cepeaLer();
+  const chaves = Object.keys(acum);
+  const alvo = document.getElementById("cepea-acum");
+  if (!alvo) return;
+  if (!chaves.length){
+    alvo.textContent = "Nenhuma cotação acumulada neste navegador ainda.";
+    return;
+  }
+  const datas = [...new Set(chaves.map(k => acum[k].data))].sort();
+  const indicadores = new Set(chaves.map(k => acum[k].nome)).size;
+  alvo.innerHTML = `<b>${chaves.length}</b> cotações acumuladas neste navegador · `
+    + `${indicadores} indicadores · ${datas.length} data(s), de ${esc(datas[0])} a ${esc(datas[datas.length-1])}`;
+}
+
+function cepeaExportar(){
+  const acum = cepeaLer();
+  const registros = Object.values(acum).sort((a,b) =>
+    String(a.data).split("/").reverse().join("").localeCompare(String(b.data).split("/").reverse().join("")));
+  if (!registros.length){ alert("Não há cotações acumuladas neste navegador."); return; }
+  const doc = {
+    schema: "radar-agro-cepea-navegador/1",
+    origem: ("Valores do widget oficial CEPEA/ESALQ-USP, lidos no navegador de quem abriu "
+             + "a página e acumulados localmente. Cada registro traz a data de referência "
+             + "publicada pelo próprio widget. Dias em que a página não foi aberta não "
+             + "constam: não há estimativa."),
+    exportado_em: new Date().toISOString().slice(0,19),
+    registros: registros,
+  };
+  const url = URL.createObjectURL(new Blob([JSON.stringify(doc, null, 1)],
+                                           {type: "application/json"}));
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `cepea-acumulado-${new Date().toISOString().slice(0,10)}.json`;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
+}
+
+function montaCepea(){
+  const alvo = document.getElementById("cepea");
+  const ifr = document.getElementById("cepea-src");
+  if (!alvo || !ifr) return;
+  let tentativas = 0;
+  const tentar = () => {
+    tentativas++;
+    let dados = [];
+    try {
+      const d = ifr.contentDocument;
+      if (d) dados = parseCepeaDOM(d);
+    } catch (e) { /* origem bloqueada: cai no aviso abaixo */ }
+    if (dados.length){
+      cepeaAcumular(dados);
+      cepeaResumo();
+      const ctrl = document.getElementById("cepea-controles");
+      if (ctrl) ctrl.style.display = "";
+      const meta = [
+        ["Boi gordo CEPEA/ESALQ SP","R$/@"],
+        ["Milho ESALQ/B3 — Campinas (SP)","R$/saca de 60 kg"],
+        ["Soja CEPEA/ESALQ — Paraná","R$/saca de 60 kg"],
+        ["Trigo CEPEA/ESALQ — Paraná","R$/t"],
+        ["Trigo CEPEA/ESALQ — Rio Grande do Sul","R$/t"],
+        ["Soja CEPEA/ESALQ — Paranaguá (PR)","R$/saca de 60 kg"],
+      ];
+      // nomes e unidades canonicos, quando o widget nao os traz na linha
+      CEPEA_DADOS = dados.map((x, idx) => ({
+        ...x,
+        nome: (x.nome === "Indicador CEPEA" && meta[idx]) ? meta[idx][0] : x.nome,
+        unidade: x.unidade || (meta[idx] ? meta[idx][1] : ""),
+      }));
+      montaCartoes();        // o CEPEA vira um chip do painel de commodities
+      return;
+    }
+    if (false){
+      alvo.innerHTML = '<div class="grid">' + dados.map((x,idx) => {
+        const v = x.variacao == null ? null : parseFloat(x.variacao);
+        const cls = v == null ? "flat" : (v > 0 ? "up" : (v < 0 ? "down" : "flat"));
+        const nome = x.nome === "Indicador CEPEA" && meta[idx] ? meta[idx][0] : x.nome;
+        const unidade = x.unidade || (meta[idx] ? meta[idx][1] : "");
+        return `<div class="cardc" style="cursor:default">
+          <div class="n">${esc(nome)}</div>
+          <div class="v">${esc(x.valor)} <span class="u">${esc(unidade)}</span></div>
+          <div class="d ${cls}">${v==null?"<span class='flat'>variação não publicada</span>":pct(v)}</div>
+          <div class="f">${esc(x.data)} · CEPEA/ESALQ-USP</div>
+        </div>`;
+      }).join("") + "</div>";
+      return;
+    }
+    if (tentativas < 12) return setTimeout(tentar, 700);   // ~8s de espera
+    alvo.innerHTML = '<p class="vazio">O widget do CEPEA não devolveu linha com data e '
+      + 'valor. Isso costuma ser bloqueio ou mudança de layout no CEPEA. Nada foi '
+      + 'estimado: o bloco fica vazio de propósito.</p>';
+  };
+  ifr.addEventListener("load", () => setTimeout(tentar, 400));
+  setTimeout(tentar, 1500);
+}
+
+/* Cartoes: uma commodity por cartao, com valor, variacao 12M vinda da serie
+   historica, posicao na faixa min-max e fonte. Cobre TODA serie do historico que
+   tenha cotacao atual, e tambem as cotacoes que nao tem serie historica. */
+function montaCartoes(){
+  const JANELA5 = janela5Anos();
+  const alvo = document.getElementById("cartoes");
+  let todas = (DOC.cotacoes||[]).concat(DOC.cotacoes_mensais||[]);
+  if (todas.some(c=>c.key==="prata")) todas = todas.filter(c=>c.key!=="te_prata");
+  if (!todas.length){ alvo.innerHTML = '<p class="vazio">Nenhuma cotação nesta execução.</p>'; return; }
+
+  const usadas = new Set();
+  const grupos = {"Grãos e proteína":[], "Físico Brasil (CEPEA)":[], "Fertilizantes":[],
+                  "Metais e mineração":[], "Câmbio":[], "Outros":[]};
+  const CLASSIF = [
+    [/soja|milho|trigo|boi/i, "Grãos e proteína"],
+    [/ureia|kcl|potassio|map|dap|tsp|fosfat/i, "Fertilizantes"],
+    [/ouro|prata|platina|cobre|aluminio|alumínio|chumbo|estanho|niquel|níquel|zinco|minerio|minério/i, "Metais e mineração"],
+    [/usd|ptax|brl/i, "Câmbio"],
+  ];
+
+  for (const c of todas){
+    const lig = LIGACOES.find(l => l.hoje === c.key);
+    const serie = (lig && HIST && HIST.series) ? HIST.series[lig.serie] : null;
+    let pos = null, min = null, max = null, v12 = null, baseMes = null;
+    const avaliacao = avaliarLigacao(c, serie, lig);
+    if (avaliacao.ok){
+      const pts = serie.pontos.filter(p => p[0] >= JANELA5);
+      if (pts.length > 1){
+        const vals = pts.map(p=>p[1]);
+        min = Math.min(...vals); max = Math.max(...vals);
+        pos = Math.max(0, Math.min(100, (c.preco-min)/((max-min)||1)*100));
+        // Base da variacao: 12 meses antes do mes de REFERENCIA DA COTACAO, nao 12
+        // pontos antes do fim da serie. A ureia do IndexMundi e de marco e a serie
+        // vai ate junho: pegar 13 pontos do fim daria uma janela de 9 meses rotulada
+        // como 12M. O mes-base fica escrito no cartao.
+        const refMes = c.referencia_mensal || String(c.data_referencia||"").slice(0,7);
+        if (refMes){
+          const [ay, am] = refMes.split("-").map(Number);
+          const t = ay*12 + (am-1) - 12;
+          const alvoMes = `${Math.floor(t/12)}-${String(t%12+1).padStart(2,"0")}`;
+          const anteriores = pts.filter(x => x[0] <= alvoMes);
+          const base = anteriores.length ? anteriores[anteriores.length-1] : null;
+          if (base && base[1]){ v12 = (c.preco/base[1]-1)*100; baseMes = base[0]; }
+        }
+      }
+      usadas.add(lig.serie);
+    }
+    let g = "Outros";
+    for (const [re, nome] of CLASSIF) if (re.test(c.label)) { g = nome; break; }
+    const cls = v12==null ? "flat" : (v12>0 ? "up" : (v12<0 ? "down" : "flat"));
+    grupos[g].push(`<div class="cardc" data-serie="${esc(lig?lig.serie:"")}">
+      <div class="n">${esc(rotuloCotacao(c))}</div>
+      <div class="v">${esc(c.preco_texto)} <span class="u">${esc(unidadeCotacao(c))}</span></div>
+      <div class="d ${cls}">${v12!=null?(pct(v12)+" vs "+mesBR(baseMes)+(lig&&lig.nivel==="indicativa"?" · indic.":"")):`<span class='flat'>${esc(avaliacao.motivo||"sem base comparável")}</span>`}
+        ${c.e_proxy?' <span class="tag proxy">proxy</span>':""}${c.e_derivado?' <span class="tag cinza">derivado</span>':""}</div>
+      ${pos!=null?`<div class="faixa"><i style="left:calc(${pos.toFixed(1)}% - 1px)"></i></div>
+        <div class="rot2"><span>mín ${nf(min,min>=100?0:2)}</span><span>máx ${nf(max,max>=100?0:2)}</span></div>`:""}
+      <div class="f">${c.referencia_mensal?mesBR(c.referencia_mensal):dataBR(c.data_referencia)} · ${esc(textoProfissional(c.fonte))}</div>
+    </div>`);
+  }
+
+  // Um segmento por vez. Treze cartoes de uma vez era informacao visual demais.
+  // Fisico Brasil: cotacao do widget + faixa de 5 anos da planilha oficial
+  for (const x of (CEPEA_DADOS || [])){
+    const nomeSerie = cepeaSerieDe(x.nome);
+    const serie = (nomeSerie && HIST && HIST.series) ? HIST.series[nomeSerie] : null;
+    let pos = null, min = null, max = null, v12 = null, baseMes = null;
+    const val = parseFloat(String(x.valor).replace(/\./g, "").replace(",", "."));
+    if (serie && serie.pontos && serie.pontos.length > 1 && !isNaN(val)){
+      const pts = serie.pontos.filter(p => p[0] >= JANELA5);
+      if (pts.length > 1){
+        const vals = pts.map(p => p[1]);
+        min = Math.min(...vals); max = Math.max(...vals);
+        pos = Math.max(0, Math.min(100, (val - min) / ((max - min) || 1) * 100));
+        const doze = pts[pts.length - 13];
+        if (doze){ v12 = (val / doze[1] - 1) * 100; baseMes = doze[0]; }
+      }
+      usadas.add(nomeSerie);
+    }
+    const cls = v12 == null ? "flat" : (v12 > 0 ? "up" : "down");
+    grupos["Físico Brasil (CEPEA)"].push(`<div class="cardc" data-serie="${esc(nomeSerie || "")}">
+      <div class="n">${esc(x.nome)}</div>
+      <div class="v">${esc(x.valor)} <span class="u">${esc(x.unidade || (serie ? serie.unidade : ""))}</span></div>
+      <div class="d ${cls}">${v12 != null ? (pct(v12) + " vs " + mesBR(baseMes))
+        : "<span class='flat'>sem série histórica ligada</span>"}</div>
+      ${pos != null ? `<div class="faixa"><i style="left:calc(${pos.toFixed(1)}% - 1px)"></i></div>
+        <div class="rot2"><span>mín ${nf(min, min>=100?0:2)}</span><span>máx ${nf(max, max>=100?0:2)}</span></div>` : ""}
+      <div class="f">${esc(x.data)} · CEPEA/ESALQ-USP${serie ? " · histórico: planilha oficial" : ""}</div>
+    </div>`);
+  }
+
+  const comItens = Object.entries(grupos).filter(([,l]) => l.length);
+  if (!SEGMENTO || (SEGMENTO !== "__todos" && (!grupos[SEGMENTO] || !grupos[SEGMENTO].length)))
+    SEGMENTO = comItens[0][0];
+  let html = `<div class="barra chips">`
+    + comItens.map(([n,l]) => `<button data-seg="${esc(n)}" class="${n===SEGMENTO?"on":""}">
+        ${esc(n)} <span class="cont2">${l.length}</span></button>`).join("")
+    + `<button data-seg="__todos" class="${SEGMENTO==="__todos"?"on":""}">Todos</button></div>`;
+  if (SEGMENTO === "__todos")
+    for (const [n,l] of comItens)
+      html += `<div class="blocotit"><h3>${esc(n)}</h3><span class="risco"></span>
+        <span class="meta">${l.length}</span></div><div class="grid">${l.join("")}</div>`;
+  else
+    html += `<div class="grid">${grupos[SEGMENTO].join("")}</div>`;
+
+  // series historicas SEM cotacao atual: dizer quais, em vez de omitir
+  if (HIST && HIST.series){
+    const faltando = Object.keys(HIST.series).filter(n => !usadas.has(n));
+    if (faltando.length)
+      html += `<div class="note" style="margin-top:14px"><b>Sem cotação atual comparável
+        nesta execução:</b> ${faltando.map(esc).join(", ")}. O histórico dessas séries está no
+        site, mas ou a fonte de hoje falhou, ou a unidade da cotação difere da unidade da série
+        e a comparação não foi feita de propósito.</div>`;
+  }
+  alvo.innerHTML = html;
+
+  document.querySelectorAll("#cartoes .chips button").forEach(b => b.onclick = () => {
+    SEGMENTO = b.dataset.seg; montaCartoes();
+  });
+
+  document.querySelectorAll("#cartoes .cardc").forEach(el => el.onclick = () => {
+    const nome = el.dataset.serie;
+    if (!nome || !HIST || !HIST.series[nome]) return;
+    document.querySelectorAll("#cartoes .cardc").forEach(x=>x.classList.remove("sel"));
+    el.classList.add("sel");
+    document.getElementById("serie").value = nome;
+    montaDetalhe();
+    document.getElementById("detalhe").scrollIntoView({behavior:"smooth", block:"center"});
+  });
+}
+
+/* --------------------------------------------------- 2. detalhe historico */
+function corte(){
+  if (PERIODO === "MAX") return "0000-00";
+  if (PERIODO === "2000") return "2000-01";
+  const anos = parseInt(PERIODO, 10);
+  const d = new Date(); d.setFullYear(d.getFullYear() - anos);
+  return d.toISOString().slice(0,7);
+}
+
+function svgGrafico(pts, atual, unidade, id){
+  const W = 1000, H = 340, ml = 62, mr = 78, mt = 16, mb = 30;
+  const xs = W - ml - mr, ys = H - mt - mb;
+  const vals = pts.map(p=>p[1]);
+  let lo = Math.min(...vals), hi = Math.max(...vals);
+  if (atual != null){ lo = Math.min(lo, atual); hi = Math.max(hi, atual); }
+  const pad = (hi-lo)*0.08 || Math.abs(hi)*0.1 || 1;
+  lo -= pad; hi += pad;
+  const px = i => ml + (pts.length<2 ? xs/2 : xs*i/(pts.length-1));
+  const py = v => mt + ys - ys*(v-lo)/(hi-lo);
+
+  const linha = pts.map((p,i)=>`${i?"L":"M"}${px(i).toFixed(1)} ${py(p[1]).toFixed(1)}`).join(" ");
+  const area = `${linha} L${px(pts.length-1).toFixed(1)} ${(mt+ys).toFixed(1)} L${px(0).toFixed(1)} ${(mt+ys).toFixed(1)} Z`;
+
+  let gy = "";
+  for (let k=0;k<=4;k++){
+    const v = lo + (hi-lo)*k/4, y = py(v);
+    gy += `<line x1="${ml}" y1="${y.toFixed(1)}" x2="${ml+xs}" y2="${y.toFixed(1)}" stroke="#E3E6EA" stroke-width="1"/>`
+        + `<text x="${ml-8}" y="${(y+4).toFixed(1)}" text-anchor="end" font-size="11" fill="#5b6a7d">${nf(v, Math.abs(v)>=100?0:2)}</text>`;
+  }
+  let gx = "", ultimo = "";
+  const passo = Math.max(1, Math.round(pts.length/9));
+  pts.forEach((p,i)=>{
+    const ano = p[0].slice(0,4);
+    if (i % passo === 0 && ano !== ultimo){
+      ultimo = ano;
+      gx += `<text x="${px(i).toFixed(1)}" y="${H-9}" text-anchor="middle" font-size="11" fill="#5b6a7d">${ano}</text>`;
+    }
+  });
+
+  let hoje = "";
+  if (atual != null){
+    const y = py(atual);
+    hoje = `<line x1="${ml}" y1="${y.toFixed(1)}" x2="${ml+xs}" y2="${y.toFixed(1)}"
+              stroke="#D3A93D" stroke-width="2" stroke-dasharray="7 4"/>
+            <circle cx="${(ml+xs).toFixed(1)}" cy="${y.toFixed(1)}" r="3.5" fill="#D3A93D"/>
+            <text x="${(ml+xs+7).toFixed(1)}" y="${(y+4).toFixed(1)}" font-size="11.5"
+              font-weight="700" fill="#D3A93D">${nf(atual, Math.abs(atual)>=100?0:2)}</text>`;
+  }
+  const ult = pts[pts.length-1];
+  const svg = `<svg class="gr" id="${id}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
+    <text x="${ml}" y="12" font-size="11" fill="#5b6a7d">${esc(unidade)}</text>
+    ${gy}${gx}
+    <path d="${area}" fill="#222F44" fill-opacity="0.07"/>
+    <path d="${linha}" fill="none" stroke="#222F44" stroke-width="1.9"/>
+    <circle cx="${px(pts.length-1).toFixed(1)}" cy="${py(ult[1]).toFixed(1)}" r="3" fill="#222F44"/>
+    ${hoje}
+    <g id="${id}-cursor" style="display:none">
+      <line y1="${mt}" y2="${mt+ys}" stroke="#748CAB" stroke-width="1" stroke-dasharray="3 3"/>
+      <circle r="4.5" fill="#fff" stroke="#222F44" stroke-width="2"/>
+    </g>
+    <rect id="${id}-hit" x="${ml}" y="${mt}" width="${xs}" height="${ys}" fill="transparent"/>
+  </svg>`;
+  // geometria devolvida para o handler de mouse nao recalcular nada
+  return {svg, geo:{W,H,ml,mr,mt,mb,xs,ys,lo,hi}};
+}
+
+/* Distancia em tempo entre dois meses AAAA-MM, em palavras. E a parte "em quanto
+   tempo" do pedido: variacao sem prazo nao diz nada. */
+function distancia(m1, m2){
+  // aceita "AAAA-MM" e "AAAA-MM-DD". A versao anterior concatenava "-01" cegamente
+  // e virava data invalida quando vinha data completa, resultando em "NaN meses".
+  const mm = x => String(x||"").slice(0,7) + "-01";
+  const a = new Date(mm(m1)), b = new Date(mm(m2));
+  if (isNaN(a) || isNaN(b)) return "intervalo não calculável";
+  let meses = (b.getFullYear()-a.getFullYear())*12 + (b.getMonth()-a.getMonth());
+  const sentido = meses < 0 ? " no sentido posterior" : "";
+  meses = Math.abs(meses);
+  if (meses === 0) return "mesmo mês de referência";
+  const anos = Math.floor(meses/12), m = meses%12;
+  const partes = [];
+  if (anos) partes.push(anos + (anos===1?" ano":" anos"));
+  if (m) partes.push(m + (m===1?" mês":" meses"));
+  return partes.join(" e ") + sentido;
+}
+
+/* Liga o mouse ao grafico. Ao passar por um ponto, mostra: a data daquele ponto, o
+   valor, a variacao ate a cotacao atual (ou ate o ultimo ponto da serie, se nao
+   houver cotacao atual comparavel) e QUANTO TEMPO separa as duas datas. */
+function ligarGrafico(id, pts, geo, atual, unidade, refAtual){
+  const svg = document.getElementById(id);
+  if (!svg) return;
+  const cursor = document.getElementById(id+"-cursor");
+  const tip = document.getElementById(id+"-tip");
+  const px = i => geo.ml + (pts.length<2 ? geo.xs/2 : geo.xs*i/(pts.length-1));
+  const py = v => geo.mt + geo.ys - geo.ys*(v-geo.lo)/(geo.hi-geo.lo);
+
+  const alvoComp = atual != null ? atual : pts[pts.length-1][1];
+  // mesComp = mes usado no CALCULO do intervalo; rotuloComp = o que aparece na tela
+  const mesComp = atual != null
+      ? String(refAtual || new Date().toISOString()).slice(0,7)
+      : pts[pts.length-1][0];
+  const rotuloComp = atual != null
+      ? ("Cotação atual" + (refAtual ? ", de " + (refAtual.length > 7 ? dataBR(refAtual) : mesBR(refAtual)) : ""))
+      : ("Último mês da série, " + mesBR(pts[pts.length-1][0]));
+
+  function mover(ev){
+    const r = svg.getBoundingClientRect();
+    const cx = ev.touches ? ev.touches[0].clientX : ev.clientX;
+    const xv = (cx - r.left) / r.width * geo.W;
+    let i = Math.round((xv - geo.ml) / (geo.xs || 1) * (pts.length-1));
+    i = Math.max(0, Math.min(pts.length-1, i));
+    const [mes, val] = pts[i];
+
+    cursor.style.display = "";
+    cursor.querySelector("line").setAttribute("x1", px(i));
+    cursor.querySelector("line").setAttribute("x2", px(i));
+    cursor.querySelector("circle").setAttribute("cx", px(i));
+    cursor.querySelector("circle").setAttribute("cy", py(val));
+
+    const varia = val ? (alvoComp/val - 1)*100 : null;
+    const cls = varia == null ? "" : (varia > 0 ? "pos" : (varia < 0 ? "neg" : ""));
+    const prazo = distancia(mes, mesComp);
+    tip.innerHTML =
+        `<div class="l"><span>Mês de referência</span><span><b>${mesBR(mes)}</b></span></div>`
+      + `<div class="l"><span>Cotação no mês</span><span>${nf(val, Math.abs(val)>=100?2:4)} ${esc(unidade)}</span></div>`
+      + `<hr>`
+      + `<div class="l"><span>Base de comparação</span><span>${esc(rotuloComp)}</span></div>`
+      + `<div class="l"><span>Cotação na base</span><span>${nf(alvoComp, Math.abs(alvoComp)>=100?2:4)}</span></div>`
+      + `<div class="l"><span>Variação acumulada</span><span class="${cls}">${pct(varia)}</span></div>`
+      + `<div class="l"><span>Intervalo entre as datas</span><span>${prazo}</span></div>`;
+    tip.classList.add("on");
+    // posiciona o balao dentro da caixa, trocando de lado perto da borda
+    const largura = tip.offsetWidth || 210;
+    const dir = px(i)/geo.W > 0.62;
+    tip.style.left = (dir ? (px(i)/geo.W*r.width - largura - 14) : (px(i)/geo.W*r.width + 14)) + "px";
+    tip.style.top  = Math.max(4, py(val)/geo.H*r.height - 30) + "px";
+  }
+  function sair(){ cursor.style.display = "none"; tip.classList.remove("on"); }
+  svg.addEventListener("mousemove", mover);
+  svg.addEventListener("mouseleave", sair);
+  svg.addEventListener("touchmove", mover, {passive:true});
+  svg.addEventListener("touchend", sair);
+}
+
+function varPct(pts, meses){
+  if (pts.length <= meses) return null;
+  const a = pts[pts.length-1-meses][1], b = pts[pts.length-1][1];
+  return a ? (b/a - 1)*100 : null;
+}
+
+function montaDetalhe(){
+  const nome = document.getElementById("serie").value;
+  const s = HIST.series[nome];
+  const alvo = document.getElementById("detalhe");
+  if (!s){ alvo.innerHTML = '<p class="vazio">Série não encontrada no histórico.</p>'; return; }
+
+  const lim = corte();
+  let pts = s.pontos.filter(p => p[0] >= lim);
+  if (pts.length < 2) pts = s.pontos.slice(-2);
+
+  const todas = (DOC ? (DOC.cotacoes||[]).concat(DOC.cotacoes_mensais||[]) : []);
+  const ligacoes = LIGACOES.filter(l => l.serie === nome);
+  const lig = ligacoes.find(l => todas.some(c=>c.key===l.hoje)) || ligacoes[0];
+  const cot = lig ? todas.find(c => c.key === lig.hoje) : null;
+  const avaliacao = avaliarLigacao(cot, s, lig);
+  const unidadeAtual = cot ? unidadeCotacao(cot) : null;
+  const atual = avaliacao.ok ? cot.preco : null;
+
+  let base = pts;
+  if (ESCALA === "b100"){
+    const p0 = pts[0][1] || 1;
+    base = pts.map(p => [p[0], p[1]/p0*100]);
+  }
+  const atualPlot = (ESCALA === "b100" && atual != null) ? atual/(pts[0][1]||1)*100 : atual;
+
+  const vals = pts.map(p=>p[1]);
+  const media12 = pts.slice(-12).reduce((a,p)=>a+p[1],0) / Math.min(12, pts.length);
+  const min = Math.min(...vals), max = Math.max(...vals);
+  let classif = "—", corClass = "";
+  if (atual != null){
+    if (atual > max){ classif = "acima do máximo do período"; corClass = "falha"; }
+    else if (atual < min){ classif = "abaixo do mínimo do período"; corClass = "falha"; }
+    else { classif = "dentro da faixa histórica"; corClass = "ok"; }
+  }
+
+  let cabHoje;
+  if (cot && avaliacao.ok){
+    cabHoje = `<div class="hoje">
+      <div class="meta">COTAÇÃO ATUAL, REPRESENTADA PELA LINHA TRACEJADA</div>
+      <div class="grande">${esc(cot.preco_texto)} <span style="font-size:.9rem;font-weight:400">${esc(unidadeAtual)}</span></div>
+      <div class="meta">${cot.referencia_mensal?mesBR(cot.referencia_mensal):dataBR(cot.data_referencia)}
+        · ${esc(textoProfissional(cot.fonte))}${cot.e_proxy?" · <b>proxy: valor unitário de importação, metodologia diferente da série</b>":""}${cot.e_derivado?" · <b>derivado de matéria</b>":""}</div>
+      <div class="meta" style="margin-top:4px">Comparabilidade: ${esc(avaliacao.motivo)}.</div>
+      <div class="meta" style="margin-top:6px">Posição no período: <b class="${corClass}">${classif}</b></div>
+
+    </div>`;
+  } else if (cot){
+    cabHoje = `<div class="note"><b>Gráfico sem linha de preço atual, de propósito.</b>
+      Motivo: ${esc(avaliacao.motivo)}. Cotação coletada: <b>${esc(cot.preco_texto)}
+      ${esc(unidadeAtual)}</b>, ${cot.referencia_mensal?mesBR(cot.referencia_mensal):dataBR(cot.data_referencia)},
+      ${esc(textoProfissional(cot.fonte))}. Série histórica: ${esc(s.unidade)}.</div>`;
+  } else {
+    cabHoje = `<div class="note"><b>Nenhuma cotação atual ligada a esta série nesta execução.</b>
+      O gráfico mostra só o histórico.</div>`;
+  }
+
+  const unidadeGr = ESCALA==="b100" ? ("índice, base 100 = "+mesBR(pts[0][0])) : s.unidade;
+  const G = svgGrafico(base, atualPlot, unidadeGr, "grafico");
+
+  alvo.innerHTML = cabHoje
+    + `<div class="kpis">
+        <div class="kpi"><div class="rot">Var. 1M</div><div class="val">${pct(varPct(pts,1))}</div></div>
+        <div class="kpi"><div class="rot">Var. 6M</div><div class="val">${pct(varPct(pts,6))}</div></div>
+        <div class="kpi"><div class="rot">Var. 12M</div><div class="val">${pct(varPct(pts,12))}</div></div>
+        <div class="kpi"><div class="rot">Média 12M</div><div class="val">${nf(media12, media12>=100?0:2)}</div></div>
+        <div class="kpi"><div class="rot">Mín / Máx do período</div><div class="val">${nf(min,min>=100?0:2)} / ${nf(max,max>=100?0:2)}</div></div>
+        <div class="kpi"><div class="rot">Pontos</div><div class="val">${pts.length}</div></div>
+      </div>`
+    + `<div class="grwrap">${G.svg}<div class="tip" id="grafico-tip"></div></div>`
+    + `<p class="dica">Posicione o cursor sobre a linha para consultar qualquer mês da série.</p>`
+    + `<div class="rodape">
+        <div><span class="rk">Série</span><span class="rv">${esc(s.benchmark)}</span></div>
+        <div><span class="rk">Unidade</span><span class="rv">${esc(s.unidade)}</span></div>
+        <div><span class="rk">Período</span><span class="rv">${mesBR(pts[0][0])} a ${mesBR(pts[pts.length-1][0])}</span></div>
+        <div><span class="rk">Frequência</span><span class="rv">mensal</span></div>
+        <div><span class="rk">Fonte</span><span class="rv">${esc(s.fonte)}</span></div>
+      </div>
+      <details class="comoler"><summary>Como interpretar este gráfico</summary>
+        <p>A linha escura é a série mensal. ${atual!=null
+          ? "A linha tracejada dourada é a cotação atual."
+          : "Não há linha de cotação atual nesta série."}</p>
+        ${atual!=null?`<p>As duas vêm de fontes e frequências diferentes: a série é média
+          mensal, a linha é a última cotação coletada. São referências sobrepostas para
+          comparação visual, nunca somadas.</p>
+          <p><b>Benchmarks:</b> série = ${esc(s.benchmark)}; cotação = ${esc((cot&&(cot.benchmark||cot.fonte))||"—")}.</p>`:""}
+      </details>`;
+
+  ligarGrafico("grafico", base, G.geo, atualPlot, unidadeGr,
+               cot ? (cot.referencia_mensal || cot.data_referencia) : null);
+}
+
+/* ------------------------------------------- 3. noticias por categoria */
+const ROTULO_EVENTO = {
+  ma:"M&A", captacao:"captação", mercado_capitais:"mercado de capitais",
+  situacao_especial:"situação especial", possivel_operacao:"possível operação",
+  noticia:"notícia"
+};
+
+function textoNorm(s){
+  return String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+    .toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+}
+
+function tipoEvento(i){
+  if (i.tipo_evento) return i.tipo_evento;
+  if (!i.classe || i.classe === "noticia") return "noticia";
+  const t = textoNorm(`${i.titulo||""} ${i.trecho||""}`);
+  if (/recuperacao judicial|falencia|reestruturacao de divida|leilao judicial|bankruptcy|debt restructuring/.test(t))
+    return "situacao_especial";
+  if (/\bipo\b|follow on|oferta subsequente|oferta publica de acoes|\bcra\b|\bfiagro\b|debenture|bond offering/.test(t))
+    return "mercado_capitais";
+  if (/rodada de investimento|series [abc]|aporte|captacao|funding round|venture capital/.test(t))
+    return "captacao";
+  return i.classe === "possivel_transacao" ? "possivel_operacao" : "ma";
+}
+
+function porData(a,b){ return String(b.quando||"").localeCompare(String(a.quando||"")); }
+
+function chaveItem(i){ return i.link || textoNorm(i.titulo); }
+
+function cortar(s, limite){
+  const t = limpaTexto(s);
+  if (t.length <= limite) return t;
+  return t.slice(0, limite).replace(/\s+\S*$/, "") + "…";
+}
+
+function leituraRadar(i){
+  const setor = i.micro_sugerida ? ` em ${i.micro_sugerida}` : "";
+  const tipo = tipoEvento(i);
+  if (tipo === "ma") return `Movimento de consolidação${setor} que pode alterar o mapa de players e compradores potenciais.`;
+  if (tipo === "captacao") return `Sinal de acesso a capital${setor} e possível aceleração de investimentos ou expansão.`;
+  if (tipo === "mercado_capitais") return `Evento de mercado de capitais${setor} com possível impacto em financiamento e valuation.`;
+  if (tipo === "situacao_especial") return `Sinal de pressão financeira${setor}; relevante para crédito, fornecedores e oportunidades de reestruturação.`;
+  if (tipo === "possivel_operacao") return "Sinal preliminar de operação que precisa ser confirmado antes de entrar no pipeline de transações.";
+  return cortar(i.trecho, 190) || "Notícia mantida no monitoramento setorial desta edição.";
+}
+
+function cartao(i, opcoes={}){
+  const destaque = Boolean(opcoes.destaque);
+  const tipo = tipoEvento(i);
+  const et = tipo !== "noticia"
+    ? `<span class="tag ${["ma","captacao","mercado_capitais"].includes(tipo)?"":"cinza"}">${ROTULO_EVENTO[tipo]||"evento"}</span>` : "";
+  const setor = i.micro_sugerida || (i.termo_setorial ? "Sem categoria atribuída" : "Setorial");
+  const titulo = i.link
+    ? `<a href="${esc(i.link)}" target="_blank" rel="noopener">${esc(i.titulo)}</a>`
+    : esc(i.titulo);
+  const marcado = !destaque && CHAVES_DESTAQUE.has(chaveItem(i))
+    ? '<span class="em-destaque">em destaque</span>' : "";
+  return `<article class="item tipo-${esc(tipo)}${destaque?" forte":""}">
+    <h4>${et}${titulo}</h4>
+    <div class="meta meta-linha"><span>${esc(i.fonte)} · ${dataBR((i.quando||"").slice(0,10))}${horaBR(i.quando)?" · "+horaBR(i.quando):""}</span>
+      <span>· ${esc(setor)}</span>${marcado}</div>
+    ${destaque?`<p class="impacto"><b>Por que importa:</b> ${esc(leituraRadar(i))}</p>`:""}
+    <details class="detalhes-item"><summary>Ver resumo e detalhes</summary>
+      <div class="detalhes-conteudo">
+        ${i.trecho?`<p>${esc(cortar(i.trecho,520))}</p>`:""}
+        ${i.link?`<p><a href="${esc(i.link)}" target="_blank" rel="noopener">Abrir matéria original ↗</a></p>`:""}
+        <details class="detalhes-tecnicos"><summary>Detalhes da classificação</summary>
+          <div class="meta">
+            ${i.camada?`Método de coleta: ${esc(i.camada)}.<br>`:""}
+            ${i.motivo?`Motivo da seleção: ${esc(textoProfissional(i.motivo))}.<br>`:""}
+            ${i.evidencia_transacao?`Evidência de operação: ${esc(textoProfissional(i.evidencia_transacao))}.<br>`:""}
+            ${i.evidencia_setor?`Classificação setorial: ${esc(setor)} · ${esc(textoProfissional(i.evidencia_setor))} · ${Number(i.pontos_setor||0)} ${Number(i.pontos_setor)===1?"ponto":"pontos"}.<br>`:""}
+            ${i.novo===false?`Visto anteriormente em ${dataBR(i.visto_em)}.`:"Item novo nesta edição."}
+          </div>
+        </details>
+      </div>
+    </details>
+  </article>`;
+}
+
+const PALAVRAS_GRUPO_IGNORADAS = new Set([
+  "para","como","com","sem","uma","mais","sobre","entre","após","apos","pelo","pela",
+  "dos","das","que","seu","sua","nos","nas","ano","anos","pais","brasil","agro"
+]);
+
+function chaveGrupo(i){
+  const base = textoNorm(i.parecido_com || i.titulo);
+  if (tipoEvento(i)==="situacao_especial" && /recuperacao judicial/.test(base)
+      && /cresce|cresceu|crescimento|aument|66/.test(base)) return "tema:rj-agro-crescimento";
+  return base;
+}
+
+function tokensGrupo(i){
+  return chaveGrupo(i).split(" ").filter(x => x.length>3 && !PALAVRAS_GRUPO_IGNORADAS.has(x));
+}
+
+function relacionados(a,b){
+  if (chaveGrupo(a) === chaveGrupo(b)) return true;
+  if (tipoEvento(a) !== tipoEvento(b)) return false;
+  const A = new Set(tokensGrupo(a)), B = new Set(tokensGrupo(b));
+  if (!A.size || !B.size) return false;
+  let comum = 0; A.forEach(x => { if (B.has(x)) comum++; });
+  const menor = Math.min(A.size,B.size), uniao = new Set([...A,...B]).size;
+  return comum >= 3 && (comum/menor >= .6 || comum/uniao >= .48);
+}
+
+function agruparRelacionados(lista){
+  const grupos = [];
+  const ordenada = lista.slice().sort((a,b) =>
+    Number(b.fonte_confiavel)-Number(a.fonte_confiavel) || porData(a,b));
+  for (const item of ordenada){
+    const grupo = grupos.find(g => relacionados(item,g[0]));
+    if (grupo) grupo.push(item); else grupos.push([item]);
+  }
+  return grupos;
+}
+
+function cartaoGrupo(lista, opcoes={}){
+  const ordenada = lista.slice().sort((a,b) =>
+    Number(b.fonte_confiavel)-Number(a.fonte_confiavel) || porData(a,b));
+  const principal = ordenada[0], extras = ordenada.slice(1);
+  return cartao(principal, opcoes)
+    + (extras.length ? `<details class="grupo-fontes"><summary>${extras.length} ${extras.length===1?"matéria relacionada":"matérias relacionadas"} · abrir todas as fontes</summary>
+        ${extras.map(i=>cartao(i)).join("")}</details>` : "");
+}
+
+function pontuacaoDestaque(i){
+  return (tipoEvento(i)!=="noticia"?100:0) + (i.novo!==false?20:0)
+    + (i.fonte_confiavel?10:0) + Number(i.pontos_setor||0) - (i._fora?120:0);
+}
+
+function montaDestaques(){
+  const candidatos = (DOC.itens||[]).map(i=>({...i,_fora:false}))
+    .concat((DOC.itens_revisao||[]).map(i=>({...i,_fora:true})));
+  const grupos = agruparRelacionados(candidatos);
+  grupos.sort((a,b) => pontuacaoDestaque(b[0])-pontuacaoDestaque(a[0]) || porData(a[0],b[0]));
+  const selecionados = grupos.slice(0,5);
+  CHAVES_DESTAQUE = new Set(selecionados.flat().map(chaveItem));
+  document.getElementById("destaques-lista").innerHTML = selecionados.length
+    ? selecionados.map(g=>cartaoGrupo(g,{destaque:true})).join("")
+    : '<p class="vazio">Nenhum destaque nesta execução.</p>';
+}
+
+function montaRevisao(){
+  const itens = (DOC.itens_revisao||[]).slice().sort(porData);
+  const box = document.getElementById("revisao-box");
+  if (!itens.length){ box.style.display="none"; return; }
+  box.style.display="flex";
+  document.getElementById("revisao-resumo").innerHTML =
+    `<b>Fila de revisão:</b> ${itens.length} ${itens.length===1?"item potencialmente relevante foi preservado":"itens potencialmente relevantes foram preservados"} fora do recorte principal.`;
+}
+
+function montaTransacoes(){
+  const eventos = (DOC.itens||[]).filter(i => tipoEvento(i) !== "noticia").sort(porData);
+  const alvo = document.getElementById("transacoes");
+  if (!eventos.length){
+    alvo.innerHTML = '<p class="vazio">Nenhum evento corporativo classificado nesta execução.</p>';
+    return;
+  }
+  const categorias = [
+    ["ma","M&A e transações"], ["captacao","Captações e aportes"],
+    ["mercado_capitais","Mercado de capitais"],
+    ["situacao_especial","Situações especiais e reestruturações"],
+    ["possivel_operacao","Possíveis operações — conferir"],
+  ];
+  alvo.innerHTML = categorias.map(([tipo,titulo]) => {
+    const lista = eventos.filter(i=>tipoEvento(i)===tipo);
+    if (!lista.length) return "";
+    const assuntos = agruparRelacionados(lista);
+    const visiveis = assuntos.slice(0,3), demais = assuntos.slice(3);
+    const aberto = tipo !== "possivel_operacao" ? " open" : "";
+    return `<details class="evento-bloco"${aberto}>
+      <summary>${esc(titulo)}<span class="evento-contagem">${lista.length} ${lista.length===1?"matéria":"matérias"} · ${assuntos.length} ${assuntos.length===1?"assunto":"assuntos"}</span></summary>
+      <div class="evento-corpo">${visiveis.map(g=>cartaoGrupo(g)).join("")}
+        ${demais.length?`<details class="mais-eventos"><summary>Ver outros ${demais.length} ${demais.length===1?"assunto":"assuntos"}</summary>
+          ${demais.map(g=>cartaoGrupo(g)).join("")}</details>`:""}
+      </div></details>`;
+  }).join("");
+}
+
+function montaNoticias(){
+  const busca = textoNorm(document.getElementById("buscaNoticias")?.value);
+  const setor = document.getElementById("filtroSetor")?.value || "";
+  const fonte = document.getElementById("filtroFonte")?.value || "";
+  const base = (DOC.itens||[]).filter(i => tipoEvento(i) === "noticia");
+  const itens = base.filter(i => {
+    if (setor && (i.micro_sugerida||"") !== setor) return false;
+    if (fonte && (i.fonte||"") !== fonte) return false;
+    if (busca && !textoNorm(`${i.titulo||""} ${i.trecho||""} ${i.fonte||""}`).includes(busca)) return false;
+    return true;
+  });
+  const alvo = document.getElementById("categorias");
+  const grupos = new Map();
+  for (const i of itens){
+    const k = i.micro_sugerida
+              || (i.termo_setorial ? "Sem categoria atribuída"
+                                   : "Fonte setorial, sem termo do setor no título");
+    if (!grupos.has(k)) grupos.set(k, []);
+    grupos.get(k).push(i);
+  }
+  const ordenados = [...grupos.entries()]
+    .sort((a,b) => b[1].length - a[1].length || a[0].localeCompare(b[0],"pt-BR"));
+  document.getElementById("contNoticias").textContent =
+    `${itens.length} de ${base.length} notícias · ${ordenados.length} categorias`;
+  alvo.innerHTML = ordenados.length ? ordenados.map(([cat,lista],idx) => {
+    const nAssuntos = agruparRelacionados(lista).length;
+    return `<details class="cat" data-idx="${idx}">
+      <summary><span class="seta">&#9656;</span> ${esc(cat)}
+        <span class="cont">${lista.length}</span><span class="meta">${nAssuntos} ${nAssuntos===1?"assunto":"assuntos"}</span></summary>
+      <div class="corpo"></div>
+    </details>`;
+  }).join("") : '<p class="vazio">Zero itens no escopo. Veja Cobertura para saber o motivo.</p>';
+  document.querySelectorAll("#categorias details.cat").forEach(d => {
+    const carregar = () => {
+      const corpo = d.querySelector(".corpo");
+      if (!d.open || corpo.dataset.carregado) return;
+      const relacionados = agruparRelacionados(ordenados[Number(d.dataset.idx)][1]);
+      const visiveis = relacionados.slice(0,6), demais = relacionados.slice(6);
+      corpo.innerHTML = visiveis.map(g=>cartaoGrupo(g)).join("")
+        + (demais.length?`<details class="mais-eventos"><summary>Mostrar os outros ${demais.length} assuntos desta categoria</summary>
+            ${demais.map(g=>cartaoGrupo(g)).join("")}</details>`:"");
+      corpo.dataset.carregado = "1";
+    };
+    d.addEventListener("toggle", carregar); carregar();
+  });
+}
+
+function prepararFiltros(){
+  const noticias = (DOC.itens||[]).filter(i=>tipoEvento(i)==="noticia");
+  const setores = [...new Set(noticias.map(i=>i.micro_sugerida).filter(Boolean))]
+    .sort((a,b)=>a.localeCompare(b,"pt-BR"));
+  const fontes = [...new Set(noticias.map(i=>i.fonte).filter(Boolean))]
+    .sort((a,b)=>a.localeCompare(b,"pt-BR"));
+  document.getElementById("filtroSetor").innerHTML = '<option value="">Todos os setores</option>'
+    + setores.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
+  document.getElementById("filtroFonte").innerHTML = '<option value="">Todas as fontes</option>'
+    + fontes.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
+}
+
+/* ---------------------------------------------------------- 4. cobertura */
+function montaCobertura(){
+  const r = DOC.resumo || {};
+  const nExec = DOC.execucoes_no_dia||1;
+  document.getElementById("resumo").innerHTML =
+    `<table>
+      <tr><th>Janela pesquisada</th><td>${esc((DOC.janela||{}).de||"").slice(0,16).replace("T"," ")} → ${esc((DOC.janela||{}).ate||"").slice(0,16).replace("T"," ")}</td></tr>
+      <tr><th>Fontes ok</th><td>${r.fontes_ok||0} de ${r.fontes_testadas||0}</td></tr>
+      <tr><th>Itens brutos coletados</th><td>${r.itens_brutos||0}</td></tr>
+      <tr><th>Dentro da janela</th><td>${r.itens_na_janela||0}</td></tr>
+      <tr><th>Acumulado do dia</th><td>${r.no_escopo_no_dia||0} no escopo | ${r.fora_escopo_no_dia||0} fora · ${nExec} ${nExec===1?"execução":"execuções"}</td></tr>
+      <tr><th>Repetidos de edições anteriores</th><td>${r.repetidos_de_edicoes_anteriores||0} (mantidos)</td></tr>
+      <tr><th>Descartados por repetição</th><td>${r.descartados||0} — política: nunca descartar</td></tr>
+    </table>`
+    + ((DOC.notas_cotacoes||[]).length ? `<details class="comoler"><summary>Notas das cotações e do arquivo (${DOC.notas_cotacoes.length})</summary>
+        <ul class="meta" style="padding-left:18px">${DOC.notas_cotacoes.map(n=>`<li>${esc(textoProfissional(n))}</li>`).join("")}</ul></details>` : "");
+
+  const cob = DOC.cobertura || [];
+  document.getElementById("cobertura").innerHTML = cob.length
+    ? '<table><tr><th>Camada</th><th>Fonte</th><th>Status</th><th>Brutos</th><th>Na janela</th></tr>'
+      + cob.map(c => `<tr><td>${esc(c.camada)}</td><td>${esc(c.fonte)}</td>
+          <td class="${c.status==="ok"?"ok":"falha"}">${c.status==="ok"?("ok"+(c.nota?" · "+esc(textoProfissional(c.nota)):"")):esc(textoProfissional(c.erro||"falha"))}</td>
+          <td class="num">${c.itens_brutos||0}</td><td class="num">${c.na_janela||0}</td></tr>`).join("")
+      + '</table>'
+    : '<p class="vazio">Sem dados de cobertura.</p>';
+
+  const fora = Number(r.fora_escopo_no_dia||0);
+  document.getElementById("link-fora").textContent =
+    `Abrir ${fora} ${fora===1?"item":"itens"} em outra aba ↗`;
+}
+
+/* -------------------------------------------------------------- controles */
+function botoesPeriodo(){
+  document.getElementById("btsPeriodo").innerHTML = PERIODOS.map(([k,t]) =>
+    `<button data-p="${k}" class="${k===PERIODO?"on":""}">${t}</button>`).join(" ");
+  document.querySelectorAll("#btsPeriodo button").forEach(b => b.onclick = () => {
+    PERIODO = b.dataset.p; botoesPeriodo(); montaDetalhe();
+  });
+}
+
+function ligarControles(){
+  const btt = document.getElementById("btTabela");
+  if (btt) btt.onclick = () => {
+    const t = document.getElementById("painel");
+    const aberto = t.style.display !== "none";
+    t.style.display = aberto ? "none" : "block";
+    btt.textContent = aberto ? "Mostrar" : "Ocultar";
+    btt.classList.toggle("on", !aberto);
+  };
+  document.getElementById("btFechar").onclick = () => document.querySelectorAll("details.cat").forEach(d=>d.open=false);
+  const be = document.getElementById("btEscala");
+  be.onclick = () => {
+    ESCALA = ESCALA === "abs" ? "b100" : "abs";
+    be.textContent = ESCALA === "abs" ? "Base 100" : "Absoluto";
+    be.classList.toggle("on", ESCALA === "b100");
+    montaDetalhe();
+  };
+  ["filtroSetor","filtroFonte"].forEach(id => {
+    const el = document.getElementById(id); if (el) el.onchange = montaNoticias;
+  });
+  const busca = document.getElementById("buscaNoticias");
+  if (busca) busca.oninput = montaNoticias;
+  const limpar = document.getElementById("btLimparFiltros");
+  if (limpar) limpar.onclick = () => {
+    document.getElementById("buscaNoticias").value = "";
+    document.getElementById("filtroSetor").value = "";
+    document.getElementById("filtroFonte").value = "";
+    montaNoticias();
+  };
+}
+
+/* ------------------------------------------------------------ carregamento */
+Promise.allSettled([
+  fetch("painel.json", {cache:"no-store"})
+    .then(r => r.ok ? r.json() : fetch("ultima.json", {cache:"no-store"})
+      .then(x=>{ if(!x.ok) throw new Error("painel.json/ultima.json indisponíveis"); return x.json(); })),
+  fetch("historico.json", {cache:"no-store"}).then(r=>{ if(!r.ok) throw new Error("historico.json HTTP "+r.status); return r.json(); }),
+]).then(([u, h]) => {
+  if (u.status === "fulfilled") DOC = u.value;
+  if (h.status === "fulfilled") HIST = h.value;
+
+  if (DOC){
+    const r = DOC.resumo || {};
+    document.getElementById("cabecalho").textContent =
+      "Execução de " + dataBR(DOC.data) + " · " + (r.no_escopo_no_dia||0) + " no escopo principal · " +
+      (r.fora_escopo_no_dia||0) + " fora · " + (r.fontes_ok||0) + "/" + (r.fontes_testadas||0) +
+      " fontes ok · " + ((DOC.cotacoes||[]).length + (DOC.cotacoes_mensais||[]).length) + " cotações";
+    prepararFiltros(); montaDestaques(); montaTransacoes(); montaRevisao();
+    montaPainel(); montaNoticias(); montaCobertura();
+  } else {
+    document.getElementById("cabecalho").textContent = "Nenhuma execução publicada ainda.";
+    document.getElementById("painel").innerHTML =
+      '<p class="vazio">ultima.json não encontrado. Rode o workflow radar-diario.</p>';
+    document.getElementById("categorias").innerHTML = '<p class="vazio">—</p>';
+    document.getElementById("resumo").innerHTML = '<p class="vazio">—</p>';
+  }
+
+  if (DOC) montaCartoes();
+
+  if (HIST && HIST.series && Object.keys(HIST.series).length){
+    const nomes = Object.keys(HIST.series).sort((a,b)=>a.localeCompare(b,"pt-BR"));
+    const sel = document.getElementById("serie");
+    sel.innerHTML = nomes.map(n=>`<option${n==="Soja"?" selected":""}>${esc(n)}</option>`).join("");
+    sel.onchange = montaDetalhe;
+    botoesPeriodo(); montaDetalhe();
+  } else {
+    document.getElementById("detalhe").innerHTML =
+      '<p class="vazio">historico.json não encontrado em docs/. Sem ele não há gráfico histórico.</p>';
+  }
+  ligarControles();
+  montaCepea();
+  cepeaResumo();
+  const btb = document.getElementById("cepea-baixar");
+  if (btb) btb.onclick = cepeaExportar;
+  const btl = document.getElementById("cepea-limpar");
+  if (btl) btl.onclick = () => {
+    if (!confirm("Apagar o acúmulo guardado neste navegador? A ação não pode ser desfeita.")) return;
+    try { localStorage.removeItem(CEPEA_STORE); } catch (e) {}
+    cepeaResumo();
+  };
+});
+</script>
+</body>
+</html>

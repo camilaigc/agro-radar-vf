@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arquivo &middot; Radar Agro</title>
+<style>
+  :root { --navy:#222F44; --gold:#D3A93D; --bluegray:#748CAB; --bg:#F4F5F7; --line:#E3E6EA; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       background:var(--bg);color:#1c2430;line-height:1.5}
+  header{background:var(--navy);color:#fff;padding:24px 20px}
+  header .wrap{max-width:1060px;margin:0 auto}
+  header h1{font-size:1.45rem}
+  header p{color:#C8D2E0;font-size:.88rem;margin-top:6px}
+  header a{color:var(--gold)}
+  main{max-width:1060px;margin:0 auto;padding:20px}
+  section{background:#fff;border:1px solid var(--line);border-radius:6px;padding:18px;margin:16px 0}
+  h2{color:var(--navy);font-size:1.1rem;border-bottom:2px solid var(--gold);padding-bottom:8px;margin-bottom:14px}
+  .filtros{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end}
+  .campo{display:flex;flex-direction:column;gap:4px}
+  .campo label{font-size:.75rem;color:#5b6a7d;text-transform:uppercase;letter-spacing:.4px}
+  input,select{font:inherit;font-size:.9rem;padding:7px 9px;border:1px solid var(--line);
+    border-radius:4px;background:#fff;color:#1c2430}
+  input#q{min-width:280px}
+  button{font:inherit;font-size:.88rem;padding:8px 16px;border:0;border-radius:4px;
+    background:var(--navy);color:#fff;cursor:pointer}
+  button.sec{background:#fff;color:var(--navy);border:1px solid var(--line)}
+  .meta{color:#5b6a7d;font-size:.82rem}
+  .note{background:#FBF7EC;border:1px solid #EFE2BE;padding:10px 12px;border-radius:4px;
+        font-size:.85rem;color:#5a4b25;margin:10px 0}
+  .item{border-left:3px solid var(--gold);padding:9px 13px;margin:11px 0;background:#FAFBFC;border-radius:0 4px 4px 0}
+  .item h4{font-size:.93rem;color:var(--navy);margin-bottom:4px}
+  .item p{font-size:.85rem;color:#42505f}
+  .item.fora{border-left-color:var(--bluegray);opacity:.85}
+  .tag{display:inline-block;background:var(--bluegray);color:#fff;font-size:.68rem;
+       padding:2px 7px;border-radius:3px;margin-right:5px;vertical-align:1px}
+  .tag.gold{background:var(--gold)}
+  .tag.cinza{background:#8a95a3}
+  mark{background:#FDF0C8;padding:0 1px}
+  .vazio{color:#7c8896;text-align:center;padding:22px;font-size:.9rem}
+  .contagem{font-size:.85rem;color:var(--navy);font-weight:600;margin:6px 0 12px}
+  table{width:100%;border-collapse:collapse;font-size:.84rem}
+  th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}
+  th{color:var(--navy);background:#FAFBFC}
+  td.num{text-align:right;font-variant-numeric:tabular-nums}
+  footer{color:#5b6a7d;font-size:.8rem;text-align:center;padding:22px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>Arquivo do Radar</h1>
+  <p id="sub">Carregando o índice...</p>
+  <p><a href="./">&larr; voltar para a coleta de hoje</a></p>
+</div></header>
+
+<main>
+  <section>
+    <h2>Buscar</h2>
+    <div class="filtros">
+      <div class="campo"><label for="q">Termo, empresa, palavra</label>
+        <input id="q" type="search" placeholder="ex.: Boa Safra, fertilizante, aquisição" autocomplete="off"></div>
+      <div class="campo"><label for="de">De</label><input id="de" type="date"></div>
+      <div class="campo"><label for="ate">Até</label><input id="ate" type="date"></div>
+      <div class="campo"><label for="fonte">Fonte</label><select id="fonte"><option value="">todas</option></select></div>
+      <div class="campo"><label for="micro">Setor</label><select id="micro"><option value="">todos</option></select></div>
+      <div class="campo"><label for="escopo">Escopo</label><select id="escopo">
+        <option value="dentro">dentro do escopo</option>
+        <option value="">tudo, inclusive fora</option>
+        <option value="fora">só fora do escopo</option></select></div>
+      <div class="campo"><label>&nbsp;</label><button id="buscar">Buscar</button></div>
+      <div class="campo"><label>&nbsp;</label><button id="limpar" class="sec">Limpar</button></div>
+    </div>
+    <div class="note">A busca desconsidera acentuação e diferenças entre maiúsculas e minúsculas. Quando vários termos são informados, apenas os itens que contenham <b>todos</b> eles são retornados; para localizar uma expressão exata, utilize aspas, como em <code>"boa safra"</code>. A data considerada é a de publicação da matéria e, quando esta não está disponível, a data em que o item foi coletado.</div>
+  </section>
+
+  <section>
+    <h2>Resultados</h2>
+    <div id="contagem" class="contagem"></div>
+    <div id="resultados"><p class="vazio">Digite algo e clique em Buscar.</p></div>
+    <div id="mais"></div>
+  </section>
+
+  <section>
+    <h2>Dias no arquivo</h2>
+    <div id="meses"><p class="vazio">Carregando...</p></div>
+  </section>
+</main>
+
+<footer>Nenhum registro é excluído do arquivo. Itens que reaparecem preservam a data da primeira ocorrência.</footer>
+
+<script>
+const esc = s => String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const dataBR = iso => iso && iso.length>=10 ? iso.slice(8,10)+"/"+iso.slice(5,7)+"/"+iso.slice(0,4) : "—";
+const norm = s => String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+
+let INDICE = null;
+const CACHE = new Map();   // dia -> array de itens
+let PAGINA = 0, ULTIMO = [];
+const POR_PAGINA = 50;
+
+function termos(q){
+  const out = [];
+  const re = /"([^"]+)"|(\S+)/g; let m;
+  while ((m = re.exec(q)) !== null) out.push(norm(m[1] || m[2]));
+  return out.filter(t => t.length > 1);
+}
+
+function diasNoIntervalo(de, ate){
+  if (!INDICE) return [];
+  return INDICE.dias.map(d => d.dia).filter(d => {
+    if (de  && d < de)  return false;
+    if (ate && d > ate) return false;
+    return true;
+  });
+}
+
+async function carregarDia(dia){
+  if (CACHE.has(dia)) return CACHE.get(dia);
+  const r = await fetch(`arquivo/${dia}.json`, {cache:"no-store"});
+  if (!r.ok) throw new Error(`${dia}.json HTTP ${r.status}`);
+  const d = await r.json();
+  const lista = Object.entries(d.itens || {}).map(([k,v]) => ({...v, _k:k}));
+  CACHE.set(dia, lista);
+  return lista;
+}
+
+function dataDoItem(it){
+  return (it.quando && it.quando.length>=10) ? it.quando.slice(0,10) : (it.visto_em||"");
+}
+
+function realca(txt, ts){
+  let out = esc(txt);
+  for (const t of ts){
+    const alvo = norm(out);
+    let i = alvo.indexOf(t);
+    if (i < 0) continue;
+    out = out.slice(0,i) + "<mark>" + out.slice(i, i+t.length) + "</mark>" + out.slice(i+t.length);
+  }
+  return out;
+}
+
+function cartao(it, ts){
+  return `<div class="item${it.escopo==="fora"?" fora":""}">
+    <h4>${realca(it.titulo, ts)}</h4>
+    <div class="meta">
+      <span class="tag${it.confiavel?" gold":""}">${esc(it.fonte)}</span>
+      ${it.micro?`<span class="tag">${esc(it.micro)}</span>`:""}
+      ${it.escopo==="fora"?'<span class="tag cinza">fora do escopo</span>':""}
+      ${dataBR(dataDoItem(it))}
+      ${it.vezes>1?` · reapareceu ${it.vezes}x`:""}
+      ${it.visto_em && it.visto_em!==dataDoItem(it)?` · visto em ${dataBR(it.visto_em)}`:""}
+    </div>
+    <p>${realca(it.trecho, ts)}</p>
+    ${it.link?`<p class="meta"><a href="${esc(it.link)}" target="_blank" rel="noopener">abrir matéria</a></p>`:""}
+  </div>`;
+}
+
+function mostrar(lista, ts, anexar){
+  const ini = PAGINA * POR_PAGINA;
+  const fatia = lista.slice(ini, ini + POR_PAGINA);
+  const html = fatia.map(it => cartao(it, ts)).join("");
+  const alvo = document.getElementById("resultados");
+  if (anexar) alvo.insertAdjacentHTML("beforeend", html); else alvo.innerHTML = html || '<p class="vazio">Nada encontrado com esses filtros.</p>';
+  const restam = lista.length - (ini + fatia.length);
+  document.getElementById("mais").innerHTML = restam > 0
+    ? `<button id="btmais" class="sec">Mostrar mais ${Math.min(restam,POR_PAGINA)} (faltam ${restam})</button>` : "";
+  const bt = document.getElementById("btmais");
+  if (bt) bt.onclick = () => { PAGINA++; mostrar(lista, ts, true); };
+}
+
+async function buscar(){
+  const q = document.getElementById("q").value.trim();
+  const de = document.getElementById("de").value;
+  const ate = document.getElementById("ate").value;
+  const fonte = document.getElementById("fonte").value;
+  const micro = document.getElementById("micro").value;
+  const escopo = document.getElementById("escopo").value;
+  const ts = termos(q);
+  const dias = diasNoIntervalo(de, ate);
+  const cont = document.getElementById("contagem");
+
+  if (!dias.length){ cont.textContent = "Nenhum dia do arquivo cai nesse intervalo.";
+    document.getElementById("resultados").innerHTML=""; document.getElementById("mais").innerHTML=""; return; }
+
+  cont.textContent = `Lendo ${dias.length} dia(s) do arquivo...`;
+  // busca os dias em paralelo, em lotes de 8, para nao abrir 200 conexoes de uma vez
+  let base = [], erros = [];
+  for (let i = 0; i < dias.length; i += 8){
+    const lote = await Promise.allSettled(dias.slice(i, i+8).map(carregarDia));
+    for (const r of lote){
+      if (r.status === "fulfilled") base = base.concat(r.value);
+      else erros.push(String(r.reason && r.reason.message || r.reason));
+    }
+  }
+
+  const achados = base.filter(it => {
+    if (escopo && it.escopo !== escopo) return false;
+    if (fonte && it.fonte !== fonte) return false;
+    if (micro && it.micro !== micro) return false;
+    const d = dataDoItem(it);
+    if (de && d && d < de) return false;
+    if (ate && d && d > ate) return false;
+    if (ts.length){
+      const alvo = norm(it.titulo + " " + it.trecho + " " + it.fonte + " " + it.micro);
+      if (!ts.every(t => alvo.includes(t))) return false;
+    }
+    return true;
+  }).sort((a,b) => (dataDoItem(b)||"").localeCompare(dataDoItem(a)||""));
+
+  PAGINA = 0; ULTIMO = achados;
+  cont.innerHTML = `${achados.length} item(ns) de ${base.length} arquivados no período`
+    + (erros.length ? ` · <span style="color:#9B2C2C">falha lendo: ${esc(erros.join(", "))}</span>` : "");
+  mostrar(achados, ts, false);
+}
+
+fetch("arquivo/dias.json", {cache:"no-store"})
+  .then(r => { if(!r.ok) throw new Error("dias.json HTTP "+r.status); return r.json(); })
+  .then(async idx => {
+    INDICE = idx;
+    document.getElementById("sub").textContent =
+      `${idx.total_geral} itens arquivados em ${idx.dias.length} dia(s) · índice atualizado em `
+      + String(idx.atualizado_em||"").slice(0,16).replace("T"," ");
+
+    document.getElementById("meses").innerHTML =
+      '<table><tr><th>Dia</th><th class="num">Itens</th></tr>'
+      + idx.dias.slice().reverse().map(m => `<tr><td>${dataBR(m.dia)}</td><td class="num">${m.total==null?"ilegível":m.total}</td></tr>`).join("")
+      + `<tr><th>Total</th><th class="num">${idx.total_geral}</th></tr></table>`;
+
+    // preenche fonte e setor a partir do mes mais recente, para nao baixar tudo
+    const ultimo = idx.dias[idx.dias.length-1];
+    if (ultimo){
+      try {
+        const lista = await carregarDia(ultimo.dia);
+        const fontes = [...new Set(lista.map(i=>i.fonte).filter(Boolean))].sort();
+        const micros = [...new Set(lista.map(i=>i.micro).filter(Boolean))].sort();
+        for (const f of fontes) document.getElementById("fonte").insertAdjacentHTML("beforeend", `<option>${esc(f)}</option>`);
+        for (const m of micros) document.getElementById("micro").insertAdjacentHTML("beforeend", `<option>${esc(m)}</option>`);
+      } catch(e){ /* filtros ficam so com "todas" */ }
+    }
+  })
+  .catch(e => {
+    document.getElementById("sub").textContent = "Arquivo ainda não existe.";
+    document.getElementById("resultados").innerHTML =
+      '<p class="vazio">arquivo/dias.json não encontrado. Rode o radar-diario uma vez com o arquivo.py instalado.</p>';
+    document.getElementById("meses").innerHTML = '<p class="vazio">—</p>';
+  });
+
+// intervalo padrao: ultimos 7 dias. Evita baixar meses de arquivo sem pedido.
+(() => {
+  const hoje = new Date(), antes = new Date(Date.now() - 6*864e5);
+  const f = d => d.toISOString().slice(0,10);
+  document.getElementById("ate").value = f(hoje);
+  document.getElementById("de").value  = f(antes);
+})();
+
+document.getElementById("buscar").onclick = buscar;
+document.getElementById("q").addEventListener("keydown", e => { if (e.key === "Enter") buscar(); });
+document.getElementById("limpar").onclick = () => {
+  for (const id of ["q","de","ate"]) document.getElementById(id).value = "";
+  document.getElementById("fonte").value = ""; document.getElementById("micro").value = "";
+  document.getElementById("escopo").value = "dentro";
+  document.getElementById("resultados").innerHTML = '<p class="vazio">Digite algo e clique em Buscar.</p>';
+  document.getElementById("contagem").textContent = ""; document.getElementById("mais").innerHTML = "";
+};
+</script>
+</body>
+</html>

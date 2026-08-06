@@ -1,0 +1,146 @@
+{
+ "schema": "radar-agro-status/2",
+ "data": "2026-08-05",
+ "gerado_em": "2026-08-05T21:38:54.196030-03:00",
+ "execucoes_no_dia": 9,
+ "resumo": {
+  "fontes_testadas": 77,
+  "fontes_ok": 66,
+  "itens_brutos": 3489,
+  "itens_na_janela": 763,
+  "novos_nesta_execucao": 16,
+  "no_escopo_nesta_execucao": 391,
+  "novos_fora_escopo_nesta_execucao": 372,
+  "no_escopo_no_dia": 415,
+  "fora_escopo_no_dia": 513,
+  "novos": 55,
+  "repetidos_de_edicoes_anteriores": 708,
+  "agrupados_por_titulo_parecido": 36,
+  "descartados": 0,
+  "cotacoes_coletadas": 18
+ },
+ "n_falhas": 6,
+ "n_fontes": 72,
+ "n_entradas_cobertura": 77,
+ "cotacoes": 15,
+ "cotacoes_mensais": 3,
+ "itens": 415,
+ "itens_revisao": 57,
+ "itens_fora_escopo": 513,
+ "saude_fontes": {
+  "sem_acesso": [
+   {
+    "fonte": "globalmeatnews.com",
+    "camada": "Site via Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "aviculturaindustrial.com.br",
+    "camada": "Site via Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "aquisição usina açúcar etanol",
+    "camada": "Consulta Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
+    "fonte": "aquisição revenda insumos agrícolas",
+    "camada": "Consulta Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
+    "fonte": "CVM fato relevante aquisição agro",
+    "camada": "Consulta Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
+    "fonte": "fato relevante venda de ativos agronegócio",
+    "camada": "Consulta Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   }
+  ],
+  "silenciosas_hoje": [
+   {
+    "fonte": "brasilmineral.com.br",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
+   },
+   {
+    "fonte": "capitalaberto.com.br",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
+   },
+   {
+    "fonte": "feedstrategy.com",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
+   },
+   {
+    "fonte": "wattagnet.com",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
+   },
+   {
+    "fonte": "allaboutfeed.net",
+    "camada": "Site via Google News",
+    "itens_brutos": 10
+   },
+   {
+    "fonte": "poultryworld.net",
+    "camada": "Site via Google News",
+    "itens_brutos": 17
+   },
+   {
+    "fonte": "pigprogress.net",
+    "camada": "Site via Google News",
+    "itens_brutos": 10
+   },
+   {
+    "fonte": "futurefarming.com",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
+   },
+   {
+    "fonte": "agriinvestor.com",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
+   },
+   {
+    "fonte": "fusoesaquisicoes.com",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
+   },
+   {
+    "fonte": "portaldbo.com.br",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
+   }
+  ],
+  "silenciosas_5_execucoes": [],
+  "execucoes_no_ledger": 2,
+  "nota": "Fonte silenciosa NAO e fonte morta: veiculo especializado publica algumas vezes por semana. Nenhuma URL e removida automaticamente. Só 'sem_acesso' pede conferencia de URL."
+ }
+}

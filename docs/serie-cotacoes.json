@@ -1,0 +1,160 @@
+{
+ "schema": "radar-agro-serie/1",
+ "pontos": {
+  "usdbrl_ptax": {
+   "2026-08-04": {
+    "preco": 5.1053,
+    "unidade": "R$/US$",
+    "fonte": "Banco Central do Brasil, SGS serie 1"
+   },
+   "2026-07-06": {
+    "preco": 5.167,
+    "unidade": "R$/US$",
+    "fonte": "Banco Central do Brasil, SGS serie 1"
+   },
+   "2026-07-07": {
+    "preco": 5.1458,
+    "unidade": "R$/US$",
+    "fonte": "Banco Central do Brasil, SGS serie 1"
+   },
+   "2026-07-08": {
+    "preco": 5.1552,
+    "unidade": "R$/US$",
+    "fonte": "Banco Central do Brasil, SGS serie 1"
+   },
+   "2026-07-09": {
+    "preco": 5.1329,
+    "unidade": "R$/US$",
+    "fonte": "Banco Central do Brasil, SGS serie 1"
+   },
+   "2026-07-10": {
+    "preco": 5.1088,
+    "unidade": "R$/US$",
+    "fonte": "Banco Central do Brasil, SGS serie 1"
+   },
+   "2026-07-13": {
+    "preco": 5.1183,
+    "unidade": "R$/US$",
+    "fonte": "Banco Central do Brasil, SGS serie 1"
+   },
+   "2026-07-14": {
+    "preco": 5.0742,
+    "unidade": "R$/US$",
+    "fonte": "Banco Central do Brasil, SGS serie 1"
+   },
+   "2026-07-15": {
+    "preco": 5.0727,
+    "unidade": "R$/US$",
+    "fonte": "Banco Central do Brasil, SGS serie 1"
+   },
+   "2026-07-16": {
+    "preco": 5.0975,
+    "unidade": "R$/US$",
+    "fonte": "Banco Central do Brasil, SGS serie 1"
+   },
+   "2026-07-17": {
+    "preco": 5.1176,
+    "unidade": "R$/US$",
+    "fonte": "Banco Central do Brasil, SGS serie 1"
+   },
+   "2026-07-20": {
+    "preco": 5.0894,
+    "unidade": "R$/US$",
+    "fonte": "Banco Central do Brasil, SGS serie 1"
+   },
+   "2026-07-21": {
+    "preco": 5.078,
+    "unidade": "R$/US$",
+    "fonte": "Banco Central do Brasil, SGS serie 1"
+   },
+   "2026-07-22": {
+    "preco": 5.0638,
+    "unidade": "R$/US$",
+    "fonte": "Banco Central do Brasil, SGS serie 1"
+   },
+   "2026-07-23": {
+    "preco": 5.0807,
+    "unidade": "R$/US$",
+    "fonte": "Banco Central do Brasil, SGS serie 1"
+   },
+   "2026-07-24": {
+    "preco": 5.0666,
+    "unidade": "R$/US$",
+    "fonte": "Banco Central do Brasil, SGS serie 1"
+   },
+   "2026-07-27": {
+    "preco": 5.1005,
+    "unidade": "R$/US$",
+    "fonte": "Banco Central do Brasil, SGS serie 1"
+   },
+   "2026-07-28": {
+    "preco": 5.1177,
+    "unidade": "R$/US$",
+    "fonte": "Banco Central do Brasil, SGS serie 1"
+   },
+   "2026-07-29": {
+    "preco": 5.1217,
+    "unidade": "R$/US$",
+    "fonte": "Banco Central do Brasil, SGS serie 1"
+   },
+   "2026-07-30": {
+    "preco": 5.0739,
+    "unidade": "R$/US$",
+    "fonte": "Banco Central do Brasil, SGS serie 1"
+   },
+   "2026-07-31": {
+    "preco": 5.0773,
+    "unidade": "R$/US$",
+    "fonte": "Banco Central do Brasil, SGS serie 1"
+   },
+   "2026-08-03": {
+    "preco": 5.0723,
+    "unidade": "R$/US$",
+    "fonte": "Banco Central do Brasil, SGS serie 1"
+   },
+   "2026-08-05": {
+    "preco": 5.1154,
+    "unidade": "R$/US$",
+    "fonte": "Banco Central do Brasil, SGS serie 1"
+   }
+  },
+  "ouro_pm": {
+   "2026-08-04": {
+    "preco": 4084.2,
+    "unidade": "US$/oz t",
+    "fonte": "LBMA (prices.lbma.org.uk), serie diaria oficial"
+   },
+   "2026-08-05": {
+    "preco": 4206.6,
+    "unidade": "US$/oz t",
+    "fonte": "LBMA (prices.lbma.org.uk), serie diaria oficial"
+   }
+  },
+  "ouro_am": {
+   "2026-08-04": {
+    "preco": 4049.2,
+    "unidade": "US$/oz t",
+    "fonte": "LBMA (prices.lbma.org.uk), serie diaria oficial"
+   },
+   "2026-08-05": {
+    "preco": 4156.45,
+    "unidade": "US$/oz t",
+    "fonte": "LBMA (prices.lbma.org.uk), serie diaria oficial"
+   }
+  },
+  "prata": {
+   "2026-08-04": {
+    "preco": 58.78,
+    "unidade": "US$/oz t",
+    "fonte": "LBMA (prices.lbma.org.uk), serie diaria oficial"
+   },
+   "2026-08-05": {
+    "preco": 61.27,
+    "unidade": "US$/oz t",
+    "fonte": "LBMA (prices.lbma.org.uk), serie diaria oficial"
+   }
+  }
+ },
+ "atualizado_em": "2026-08-06T00:42:16",
+ "total_pontos": 29
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fora do escopo | Radar Agro &amp; Natural Resources</title>
+<style>
+  :root{--navy:#222F44;--gold:#D3A93D;--bluegray:#748CAB;--bg:#F4F5F7;--line:#E3E6EA;--text:#1c2430}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+  header{background:var(--navy);color:#fff;padding:24px 20px}
+  .wrap{max-width:1120px;margin:0 auto}
+  header h1{font-size:1.35rem}
+  header p{color:#C8D2E0;font-size:.86rem;margin-top:5px}
+  header a{color:var(--gold)}
+  main{max-width:1120px;margin:0 auto;padding:20px}
+  section{background:#fff;border:1px solid var(--line);border-radius:6px;padding:20px;margin:16px 0}
+  h2{color:var(--navy);font-size:1.12rem;border-bottom:2px solid var(--gold);padding-bottom:8px;margin-bottom:14px}
+  .note{background:#F5F8FB;border:1px solid #D8E4F0;padding:11px 13px;border-radius:5px;font-size:.85rem;color:#354A62;margin:10px 0}
+  .filtros{display:grid;grid-template-columns:minmax(230px,2fr) repeat(3,minmax(145px,1fr)) auto;gap:8px;margin:14px 0}
+  input,select,button{font:inherit;font-size:.84rem;padding:7px 10px;border:1px solid var(--line);border-radius:4px;background:#fff;color:var(--navy)}
+  button{cursor:pointer} button:hover{border-color:var(--gold)}
+  .meta{color:#5b6a7d;font-size:.8rem}
+  .item{border-left:3px solid var(--bluegray);padding:11px 14px;margin:10px 0;background:#FAFBFC;border-radius:0 4px 4px 0}
+  .item.revisao{border-left:5px solid var(--gold);background:#FBF7EC}
+  .item h3{font-size:.93rem;color:var(--navy);margin-bottom:5px}
+  .item p{font-size:.85rem;color:#42505f;margin-top:5px}
+  .tag{display:inline-block;background:var(--bluegray);color:#fff;font-size:.68rem;padding:2px 7px;border-radius:3px;margin-right:6px;vertical-align:1px}
+  .tag.gold{background:var(--gold)}
+  a{color:var(--navy)}
+  .barra{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:12px 0}
+  .vazio{text-align:center;color:#7c8896;padding:24px}
+  footer{text-align:center;color:#5b6a7d;font-size:.78rem;padding:22px}
+  @media(max-width:800px){.filtros{grid-template-columns:1fr 1fr}.filtros input{grid-column:1/-1}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>Fora do escopo setorial</h1>
+  <p id="cabecalho">Carregando itens preservados...</p>
+  <p style="margin-top:9px"><a href="index.html">← Voltar ao painel principal</a> · <a href="arquivo.html">Pesquisar no arquivo completo</a></p>
+</div></header>
+<main>
+  <section>
+    <h2>Revisão sem perda de cobertura</h2>
+    <div class="note"><b>Nada foi descartado.</b> Esta página reúne os itens que não passaram
+      no recorte setorial principal. Notícias com sinal de operação, fonte setorial ou evidência
+      parcial recebem destaque para revisão. Os filtros abaixo só alteram a visualização.</div>
+    <div class="filtros">
+      <input id="busca" type="search" placeholder="Buscar empresa, tema ou palavra-chave" aria-label="Buscar itens">
+      <select id="setor"><option value="">Todos os setores sugeridos</option></select>
+      <select id="fonte"><option value="">Todas as fontes</option></select>
+      <select id="evento"><option value="">Todos os tipos</option></select>
+      <button id="limpar">Limpar filtros</button>
+    </div>
+    <div class="barra"><span class="meta" id="contagem"></span><span class="meta">Itens prioritários aparecem primeiro.</span></div>
+    <div id="lista"><p class="vazio">Carregando...</p></div>
+    <div class="barra" style="justify-content:center"><button id="mais" style="display:none">Carregar mais</button></div>
+  </section>
+</main>
+<footer>Arquivo de conferência do Radar Agro &amp; Natural Resources.</footer>
+<script>
+const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const dataBR=iso=>iso&&iso.length>=10?iso.slice(8,10)+"/"+iso.slice(5,7)+"/"+iso.slice(0,4):"—";
+const norm=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+function limpa(s){const t=document.createElement("textarea");t.innerHTML=String(s||"");return t.value.replace(/\s+/g," ").trim()}
+function prof(s){const m={nao:"não",transacao:"transação",aquisicao:"aquisição",titulo:"título",evidencia:"evidência",minimo:"mínimo"};return String(s||"").replace(/\b(nao|transacao|aquisicao|titulo|evidencia|minimo)\b/gi,x=>{const y=m[x.toLowerCase()];return x[0]===x[0].toUpperCase()?y[0].toUpperCase()+y.slice(1):y})}
+const ROT={ma:"M&A",captacao:"captação",mercado_capitais:"mercado de capitais",situacao_especial:"situação especial",possivel_operacao:"possível operação",noticia:"notícia"};
+let DOC=null, FILTRADOS=[], LIMITE=60;
+
+function tipo(i){
+  if(i.tipo_evento)return i.tipo_evento;
+  if(!i.classe||i.classe==="noticia")return "noticia";
+  const t=norm(`${i.titulo||""} ${i.trecho||""}`);
+  if(/recuperacao judicial|falencia|reestruturacao de divida|leilao judicial|bankruptcy/.test(t))return "situacao_especial";
+  if(/\bipo\b|follow on|oferta subsequente|\bcra\b|\bfiagro\b|debenture/.test(t))return "mercado_capitais";
+  if(/rodada de investimento|series [abc]|aporte|captacao|funding round/.test(t))return "captacao";
+  return i.classe==="possivel_transacao"?"possivel_operacao":"ma";
+}
+
+function prioritario(i){return Boolean(i.prioridade_revisao||tipo(i)!=="noticia"||Number(i.pontos_setor)>0)}
+
+function cartao(i){
+  const t=tipo(i), pri=prioritario(i);
+  return `<article class="item${pri?" revisao":""}"><h3>
+    ${pri?'<span class="tag gold">revisar</span>':""}<span class="tag">${esc(ROT[t]||"notícia")}</span>${esc(i.titulo)}</h3>
+    <div class="meta">${esc(i.fonte)} · ${dataBR((i.quando||"").slice(0,10))} · ${esc(i.camada||"")}</div>
+    <p>${esc(limpa(i.trecho))}</p>
+    <p class="meta"><b>Motivo da separação:</b> ${esc(prof(i.motivo||"não informado"))}</p>
+    ${i.evidencia_setor?`<p class="meta"><b>Evidência setorial:</b> ${esc(prof(i.evidencia_setor))}</p>`:""}
+    ${i.evidencia_transacao?`<p class="meta"><b>Evidência de operação:</b> ${esc(prof(i.evidencia_transacao))}</p>`:""}
+    ${i.link?`<p><a href="${esc(i.link)}" target="_blank" rel="noopener">Abrir matéria ↗</a></p>`:""}
+  </article>`;
+}
+
+function filtrar(){
+  const q=norm(document.getElementById("busca").value), s=document.getElementById("setor").value;
+  const f=document.getElementById("fonte").value, e=document.getElementById("evento").value;
+  FILTRADOS=(DOC.itens||[]).filter(i=>(!s||(i.micro_sugerida||"")===s)&&(!f||(i.fonte||"")===f)&&(!e||tipo(i)===e)&&
+    (!q||norm(`${i.titulo||""} ${i.trecho||""} ${i.fonte||""} ${i.motivo||""}`).includes(q)));
+  FILTRADOS.sort((a,b)=>Number(prioritario(b))-Number(prioritario(a))||String(b.quando||"").localeCompare(String(a.quando||"")));
+  LIMITE=60; render();
+}
+
+function render(){
+  const vis=FILTRADOS.slice(0,LIMITE);
+  document.getElementById("contagem").textContent=`${FILTRADOS.length} de ${DOC.total||0} itens`;
+  document.getElementById("lista").innerHTML=vis.length?vis.map(cartao).join(""):'<p class="vazio">Nenhum item corresponde aos filtros.</p>';
+  const bt=document.getElementById("mais"); bt.style.display=LIMITE<FILTRADOS.length?"inline-block":"none";
+  bt.textContent=`Carregar mais (${FILTRADOS.length-LIMITE})`;
+}
+
+function opcoes(){
+  const itens=DOC.itens||[];
+  const setores=[...new Set(itens.map(i=>i.micro_sugerida).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"pt-BR"));
+  const fontes=[...new Set(itens.map(i=>i.fonte).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"pt-BR"));
+  const eventos=[...new Set(itens.map(tipo))].sort();
+  document.getElementById("setor").innerHTML='<option value="">Todos os setores sugeridos</option>'+setores.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
+  document.getElementById("fonte").innerHTML='<option value="">Todas as fontes</option>'+fontes.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
+  document.getElementById("evento").innerHTML='<option value="">Todos os tipos</option>'+eventos.map(x=>`<option value="${esc(x)}">${esc(ROT[x]||x)}</option>`).join("");
+}
+
+fetch("fora-escopo.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error(`HTTP ${r.status}`);return r.json()}).then(d=>{
+  DOC=d; document.getElementById("cabecalho").textContent=`Execução de ${dataBR(d.data)} · ${d.total||0} ${(d.total||0)===1?"item preservado":"itens preservados"} fora do recorte principal`;
+  opcoes(); filtrar();
+  ["setor","fonte","evento"].forEach(id=>document.getElementById(id).onchange=filtrar);
+  document.getElementById("busca").oninput=filtrar;
+  document.getElementById("limpar").onclick=()=>{["busca","setor","fonte","evento"].forEach(id=>document.getElementById(id).value="");filtrar()};
+  document.getElementById("mais").onclick=()=>{LIMITE+=60;render()};
+}).catch(e=>{document.getElementById("cabecalho").textContent="Não foi possível carregar a coleta.";document.getElementById("lista").innerHTML=`<p class="vazio">${esc(e.message)}</p>`});
+</script>
+</body>
+</html>
