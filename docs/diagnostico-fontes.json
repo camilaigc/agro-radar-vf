@@ -1,31 +1,31 @@
 {
- "gerado_em_utc": "2026-08-05T22:34:56.986325+00:00",
+ "gerado_em_utc": "2026-08-06T01:19:17.709203+00:00",
  "veiculos": {
   "AgFeed": {
    "vencedora": {
     "url": "https://agfeed.com.br/feed",
     "http": 200,
-    "bytes": 62809,
+    "bytes": 57215,
     "content_type": "application/rss+xml; charset=UTF-8",
     "redirecionou_para": "https://agfeed.com.br/feed/",
     "itens": 10,
     "xml_malformado": false,
-    "item_mais_recente": "2026-08-05T21:05:54+00:00",
+    "item_mais_recente": "2026-08-06T00:03:39+00:00",
     "ok": true,
-    "ms": 2959
+    "ms": 1442
    },
    "tentativas": [
     {
      "url": "https://agfeed.com.br/feed",
      "http": 200,
-     "bytes": 62809,
+     "bytes": 57215,
      "content_type": "application/rss+xml; charset=UTF-8",
      "redirecionou_para": "https://agfeed.com.br/feed/",
      "itens": 10,
      "xml_malformado": false,
-     "item_mais_recente": "2026-08-05T21:05:54+00:00",
+     "item_mais_recente": "2026-08-06T00:03:39+00:00",
      "ok": true,
-     "ms": 2959
+     "ms": 1442
     }
    ]
   },
@@ -40,7 +40,7 @@
     "xml_malformado": false,
     "item_mais_recente": "2026-08-05T22:19:58+00:00",
     "ok": true,
-    "ms": 1262
+    "ms": 1003
    },
    "tentativas": [
     {
@@ -53,7 +53,7 @@
      "xml_malformado": false,
      "item_mais_recente": "2026-08-05T22:19:58+00:00",
      "ok": true,
-     "ms": 1262
+     "ms": 1003
     }
    ]
   },
@@ -66,7 +66,7 @@
      "bytes": 57383,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 338
+     "ms": 257
     },
     {
      "url": "https://www.noticiasagricolas.com.br/feed",
@@ -74,7 +74,7 @@
      "bytes": 57386,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 173
+     "ms": 125
     },
     {
      "url": "https://www.noticiasagricolas.com.br/rss/noticias",
@@ -82,7 +82,7 @@
      "bytes": 57410,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 417
+     "ms": 135
     },
     {
      "url": "https://noticiasagricolas.com.br/feed/",
@@ -91,7 +91,7 @@
      "content_type": "text/html; charset=UTF-8",
      "redirecionou_para": "https://www.noticiasagricolas.com.br/feed/",
      "ok": false,
-     "ms": 693
+     "ms": 333
     }
    ]
   },
@@ -99,27 +99,27 @@
    "vencedora": {
     "url": "https://www.canalrural.com.br/feed",
     "http": 200,
-    "bytes": 44774,
+    "bytes": 40950,
     "content_type": "application/rss+xml; charset=UTF-8",
     "redirecionou_para": "https://www.canalrural.com.br/feed/",
     "itens": 10,
     "xml_malformado": false,
-    "item_mais_recente": "2026-08-05T22:23:39+00:00",
+    "item_mais_recente": "2026-08-06T00:15:19+00:00",
     "ok": true,
-    "ms": 282
+    "ms": 271
    },
    "tentativas": [
     {
      "url": "https://www.canalrural.com.br/feed",
      "http": 200,
-     "bytes": 44774,
+     "bytes": 40950,
      "content_type": "application/rss+xml; charset=UTF-8",
      "redirecionou_para": "https://www.canalrural.com.br/feed/",
      "itens": 10,
      "xml_malformado": false,
-     "item_mais_recente": "2026-08-05T22:23:39+00:00",
+     "item_mais_recente": "2026-08-06T00:15:19+00:00",
      "ok": true,
-     "ms": 282
+     "ms": 271
     }
    ]
   },
@@ -127,13 +127,13 @@
    "vencedora": {
     "url": "https://pox.globo.com/rss/globorural",
     "http": 200,
-    "bytes": 394462,
+    "bytes": 392110,
     "content_type": "application/xml; charset=UTF-8",
     "itens": 100,
     "xml_malformado": false,
-    "item_mais_recente": "2026-08-05T21:21:36+00:00",
+    "item_mais_recente": "2026-08-05T23:13:53+00:00",
     "ok": true,
-    "ms": 1297
+    "ms": 949
    },
    "tentativas": [
     {
@@ -142,18 +142,18 @@
      "bytes": 69,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 1026
+     "ms": 891
     },
     {
      "url": "https://pox.globo.com/rss/globorural",
      "http": 200,
-     "bytes": 394462,
+     "bytes": 392110,
      "content_type": "application/xml; charset=UTF-8",
      "itens": 100,
      "xml_malformado": false,
-     "item_mais_recente": "2026-08-05T21:21:36+00:00",
+     "item_mais_recente": "2026-08-05T23:13:53+00:00",
      "ok": true,
-     "ms": 1297
+     "ms": 949
     }
    ]
   },
@@ -166,7 +166,7 @@
      "bytes": 13408,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 329
+     "ms": 172
     },
     {
      "url": "https://www.novacana.com/feed",
@@ -174,7 +174,7 @@
      "bytes": 13408,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 345
+     "ms": 79
     },
     {
      "url": "https://www.novacana.com/rss/noticias",
@@ -182,7 +182,7 @@
      "bytes": 13408,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 343
+     "ms": 97
     },
     {
      "url": "https://www.novacana.com/feed/",
@@ -191,7 +191,7 @@
      "content_type": "text/html; charset=UTF-8",
      "redirecionou_para": "https://www.novacana.com/feed",
      "ok": false,
-     "ms": 411
+     "ms": 100
     }
    ]
   },
@@ -209,7 +209,7 @@
      "bozo_motivo": "<unknown>:11:8: undefined entity",
      "item_mais_recente": null,
      "ok": false,
-     "ms": 4874
+     "ms": 4112
     },
     {
      "url": "https://www.udop.com.br/feed",
@@ -222,7 +222,7 @@
      "bozo_motivo": "<unknown>:11:8: undefined entity",
      "item_mais_recente": null,
      "ok": false,
-     "ms": 3912
+     "ms": 2828
     },
     {
      "url": "https://udop.com.br/rss.xml",
@@ -235,7 +235,7 @@
      "bozo_motivo": "<unknown>:11:8: undefined entity",
      "item_mais_recente": null,
      "ok": false,
-     "ms": 3100
+     "ms": 2935
     }
    ]
   },
@@ -248,7 +248,7 @@
      "bytes": 107580,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 453
+     "ms": 1031
     },
     {
      "url": "https://www.brasilmineral.com.br/feed/",
@@ -256,19 +256,19 @@
      "bytes": 107582,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 278
+     "ms": 196
     },
     {
      "url": "https://brasilmineral.com.br/?feed=rss2",
      "http": 200,
-     "bytes": 120103,
+     "bytes": 123544,
      "content_type": "text/html; charset=UTF-8",
      "itens": 0,
      "xml_malformado": true,
-     "bozo_motivo": "<unknown>:39:14: not well-formed (invalid token)",
+     "bozo_motivo": "<unknown>:39:84: not well-formed (invalid token)",
      "item_mais_recente": null,
      "ok": false,
-     "ms": 532
+     "ms": 434
     }
    ]
   },
@@ -276,27 +276,27 @@
    "vencedora": {
     "url": "https://neofeed.com.br/feed",
     "http": 200,
-    "bytes": 20414,
+    "bytes": 20154,
     "content_type": "application/rss+xml; charset=UTF-8",
     "redirecionou_para": "https://neofeed.com.br/feed/",
     "itens": 10,
     "xml_malformado": false,
-    "item_mais_recente": "2026-08-05T21:55:28+00:00",
+    "item_mais_recente": "2026-08-05T23:11:10+00:00",
     "ok": true,
-    "ms": 2392
+    "ms": 1214
    },
    "tentativas": [
     {
      "url": "https://neofeed.com.br/feed",
      "http": 200,
-     "bytes": 20414,
+     "bytes": 20154,
      "content_type": "application/rss+xml; charset=UTF-8",
      "redirecionou_para": "https://neofeed.com.br/feed/",
      "itens": 10,
      "xml_malformado": false,
-     "item_mais_recente": "2026-08-05T21:55:28+00:00",
+     "item_mais_recente": "2026-08-05T23:11:10+00:00",
      "ok": true,
-     "ms": 2392
+     "ms": 1214
     }
    ]
   },
@@ -304,27 +304,27 @@
    "vencedora": {
     "url": "https://braziljournal.com/feed",
     "http": 200,
-    "bytes": 83168,
+    "bytes": 82610,
     "content_type": "application/rss+xml; charset=UTF-8",
     "redirecionou_para": "https://braziljournal.com/feed/",
     "itens": 10,
     "xml_malformado": false,
-    "item_mais_recente": "2026-08-05T21:58:49+00:00",
+    "item_mais_recente": "2026-08-05T23:58:17+00:00",
     "ok": true,
-    "ms": 680
+    "ms": 685
    },
    "tentativas": [
     {
      "url": "https://braziljournal.com/feed",
      "http": 200,
-     "bytes": 83168,
+     "bytes": 82610,
      "content_type": "application/rss+xml; charset=UTF-8",
      "redirecionou_para": "https://braziljournal.com/feed/",
      "itens": 10,
      "xml_malformado": false,
-     "item_mais_recente": "2026-08-05T21:58:49+00:00",
+     "item_mais_recente": "2026-08-05T23:58:17+00:00",
      "ok": true,
-     "ms": 680
+     "ms": 685
     }
    ]
   },
@@ -337,7 +337,7 @@
      "bytes": 69,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 827
+     "ms": 617
     },
     {
      "url": "https://pipelinevalor.globo.com/feed/",
@@ -345,7 +345,7 @@
      "bytes": 4167,
      "content_type": "text/html",
      "ok": false,
-     "ms": 677
+     "ms": 642
     }
    ]
   },
@@ -358,7 +358,7 @@
      "bytes": 5679,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 210
+     "ms": 145
     },
     {
      "url": "https://capitalaberto.com.br/feed/",
@@ -367,7 +367,7 @@
      "content_type": "text/html; charset=UTF-8",
      "redirecionou_para": "https://capitalaberto.com.br/feed",
      "ok": false,
-     "ms": 187
+     "ms": 50
     }
    ]
   },
@@ -375,27 +375,27 @@
    "vencedora": {
     "url": "https://www.moneytimes.com.br/feed",
     "http": 200,
-    "bytes": 48143,
+    "bytes": 53180,
     "content_type": "application/rss+xml; charset=UTF-8",
     "redirecionou_para": "https://www.moneytimes.com.br/feed/",
     "itens": 10,
     "xml_malformado": false,
-    "item_mais_recente": "2026-08-05T22:22:10+00:00",
+    "item_mais_recente": "2026-08-05T23:18:43+00:00",
     "ok": true,
-    "ms": 469
+    "ms": 412
    },
    "tentativas": [
     {
      "url": "https://www.moneytimes.com.br/feed",
      "http": 200,
-     "bytes": 48143,
+     "bytes": 53180,
      "content_type": "application/rss+xml; charset=UTF-8",
      "redirecionou_para": "https://www.moneytimes.com.br/feed/",
      "itens": 10,
      "xml_malformado": false,
-     "item_mais_recente": "2026-08-05T22:22:10+00:00",
+     "item_mais_recente": "2026-08-05T23:18:43+00:00",
      "ok": true,
-     "ms": 469
+     "ms": 412
     }
    ]
   },
@@ -403,27 +403,27 @@
    "vencedora": {
     "url": "https://www.infomoney.com.br/feed",
     "http": 200,
-    "bytes": 107950,
+    "bytes": 107402,
     "content_type": "application/rss+xml; charset=UTF-8",
     "redirecionou_para": "https://www.infomoney.com.br/feed/",
     "itens": 10,
     "xml_malformado": false,
-    "item_mais_recente": "2026-08-05T22:31:41+00:00",
+    "item_mais_recente": "2026-08-06T00:09:53+00:00",
     "ok": true,
-    "ms": 277
+    "ms": 210
    },
    "tentativas": [
     {
      "url": "https://www.infomoney.com.br/feed",
      "http": 200,
-     "bytes": 107950,
+     "bytes": 107402,
      "content_type": "application/rss+xml; charset=UTF-8",
      "redirecionou_para": "https://www.infomoney.com.br/feed/",
      "itens": 10,
      "xml_malformado": false,
-     "item_mais_recente": "2026-08-05T22:31:41+00:00",
+     "item_mais_recente": "2026-08-06T00:09:53+00:00",
      "ok": true,
-     "ms": 277
+     "ms": 210
     }
    ]
   },
@@ -431,27 +431,27 @@
    "vencedora": {
     "url": "https://exame.com/feed",
     "http": 200,
-    "bytes": 45119,
+    "bytes": 46899,
     "content_type": "text/xml",
     "redirecionou_para": "https://exame.com/feed/",
     "itens": 25,
     "xml_malformado": false,
-    "item_mais_recente": "2026-08-05T19:09:29+00:00",
+    "item_mais_recente": "2026-08-05T21:06:22+00:00",
     "ok": true,
-    "ms": 332
+    "ms": 151
    },
    "tentativas": [
     {
      "url": "https://exame.com/feed",
      "http": 200,
-     "bytes": 45119,
+     "bytes": 46899,
      "content_type": "text/xml",
      "redirecionou_para": "https://exame.com/feed/",
      "itens": 25,
      "xml_malformado": false,
-     "item_mais_recente": "2026-08-05T19:09:29+00:00",
+     "item_mais_recente": "2026-08-05T21:06:22+00:00",
      "ok": true,
-     "ms": 332
+     "ms": 151
     }
    ]
   },
@@ -465,7 +465,7 @@
     "xml_malformado": false,
     "item_mais_recente": "2026-08-05T10:00:11+00:00",
     "ok": true,
-    "ms": 383
+    "ms": 417
    },
    "tentativas": [
     {
@@ -477,7 +477,7 @@
      "xml_malformado": false,
      "item_mais_recente": "2026-08-05T10:00:11+00:00",
      "ok": true,
-     "ms": 383
+     "ms": 417
     }
    ]
   },
@@ -486,27 +486,39 @@
    "tentativas": [
     {
      "url": "https://news.agropages.com/rss/rsslist.xml",
-     "http": 404,
-     "bytes": 5104,
+     "http": 200,
+     "bytes": 15999,
      "content_type": "text/html; charset=utf-8",
+     "itens": 0,
+     "xml_malformado": true,
+     "bozo_motivo": "<unknown>:2:0: syntax error",
+     "item_mais_recente": null,
      "ok": false,
-     "ms": 962
+     "ms": 1083
     },
     {
      "url": "https://www.agropages.com/rss/rsslist.xml",
-     "http": 404,
-     "bytes": 5084,
+     "http": 200,
+     "bytes": 11201,
      "content_type": "text/html; charset=utf-8",
+     "itens": 0,
+     "xml_malformado": true,
+     "bozo_motivo": "<unknown>:2:13: not well-formed (invalid token)",
+     "item_mais_recente": null,
      "ok": false,
-     "ms": 644
+     "ms": 550
     },
     {
      "url": "https://www.agropages.com/feed/",
-     "http": 404,
-     "bytes": 5064,
+     "http": 200,
+     "bytes": 15999,
      "content_type": "text/html; charset=utf-8",
+     "itens": 0,
+     "xml_malformado": true,
+     "bozo_motivo": "<unknown>:2:0: syntax error",
+     "item_mais_recente": null,
      "ok": false,
-     "ms": 372
+     "ms": 854
     }
    ]
   },
@@ -521,7 +533,7 @@
     "xml_malformado": false,
     "item_mais_recente": "2026-08-05T18:33:11+00:00",
     "ok": true,
-    "ms": 15819
+    "ms": 13735
    },
    "tentativas": [
     {
@@ -534,7 +546,7 @@
      "xml_malformado": false,
      "item_mais_recente": "2026-08-05T18:33:11+00:00",
      "ok": true,
-     "ms": 15819
+     "ms": 13735
     }
    ]
   },
@@ -547,7 +559,7 @@
      "bytes": 355,
      "content_type": "text/html; charset=iso-8859-1",
      "ok": false,
-     "ms": 102
+     "ms": 392
     },
     {
      "url": "https://www.seedquest.com/feed",
@@ -555,7 +567,7 @@
      "bytes": 355,
      "content_type": "text/html; charset=iso-8859-1",
      "ok": false,
-     "ms": 55
+     "ms": 317
     }
    ]
   },
@@ -571,7 +583,7 @@
      "xml_malformado": false,
      "item_mais_recente": null,
      "ok": false,
-     "ms": 278
+     "ms": 257
     },
     {
      "url": "https://www.world-grain.com/feed",
@@ -579,7 +591,7 @@
      "bytes": 85039,
      "content_type": "text/html; charset=utf-8",
      "ok": false,
-     "ms": 348
+     "ms": 204
     },
     {
      "url": "https://www.world-grain.com/rss",
@@ -591,7 +603,7 @@
      "bozo_motivo": "<unknown>:41:0: undefined entity",
      "item_mais_recente": null,
      "ok": false,
-     "ms": 448
+     "ms": 193
     }
    ]
   },
@@ -604,15 +616,15 @@
      "bytes": 5843,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 96
+     "ms": 152
     },
     {
      "url": "https://www.feedstrategy.com/feed",
      "http": 403,
-     "bytes": 5807,
+     "bytes": 5785,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 40
+     "ms": 39
     },
     {
      "url": "https://www.feedstrategy.com/rss",
@@ -620,7 +632,7 @@
      "bytes": 5782,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 39
+     "ms": 41
     }
    ]
   },
@@ -633,7 +645,7 @@
      "bytes": 5819,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 87
+     "ms": 210
     },
     {
      "url": "https://www.wattagnet.com/feed",
@@ -649,7 +661,7 @@
      "bytes": 5758,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 35
+     "ms": 42
     }
    ]
   },
@@ -662,7 +674,7 @@
      "bytes": 5676,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 64
+     "ms": 124
     },
     {
      "url": "https://www.allaboutfeed.net/feed",
@@ -670,7 +682,7 @@
      "bytes": 5679,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 44
+     "ms": 39
     },
     {
      "url": "https://www.allaboutfeed.net/rss.xml",
@@ -678,7 +690,7 @@
      "bytes": 5688,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 35
+     "ms": 36
     }
    ]
   },
@@ -691,7 +703,7 @@
      "bytes": 5676,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 58
+     "ms": 74
     },
     {
      "url": "https://www.poultryworld.net/feed",
@@ -699,7 +711,7 @@
      "bytes": 5679,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 36
+     "ms": 37
     },
     {
      "url": "https://www.poultryworld.net/rss.xml",
@@ -707,7 +719,7 @@
      "bytes": 5688,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 34
+     "ms": 37
     }
    ]
   },
@@ -717,10 +729,10 @@
     {
      "url": "https://www.pigprogress.net/rss",
      "http": 403,
-     "bytes": 5675,
+     "bytes": 5654,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 105
+     "ms": 79
     },
     {
      "url": "https://www.pigprogress.net/feed",
@@ -728,7 +740,7 @@
      "bytes": 5657,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 38
+     "ms": 42
     },
     {
      "url": "https://www.pigprogress.net/rss.xml",
@@ -736,7 +748,7 @@
      "bytes": 5666,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 34
+     "ms": 44
     }
    ]
   },
@@ -749,7 +761,7 @@
      "bytes": 45069,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 874
+     "ms": 562
     },
     {
      "url": "https://thefishsite.com/feed",
@@ -757,7 +769,7 @@
      "bytes": 45069,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 754
+     "ms": 513
     },
     {
      "url": "https://www.thefishsite.com/rss",
@@ -766,7 +778,7 @@
      "content_type": "text/html; charset=UTF-8",
      "redirecionou_para": "https://thefishsite.com/rss",
      "ok": false,
-     "ms": 1110
+     "ms": 605
     }
    ]
   },
@@ -779,7 +791,7 @@
      "bytes": 53420,
      "content_type": "text/html; charset=utf-8",
      "ok": false,
-     "ms": 904
+     "ms": 627
     },
     {
      "url": "https://www.seafoodsource.com/feed",
@@ -787,7 +799,7 @@
      "bytes": 53422,
      "content_type": "text/html; charset=utf-8",
      "ok": false,
-     "ms": 620
+     "ms": 572
     }
    ]
   },
@@ -802,7 +814,7 @@
     "xml_malformado": false,
     "item_mais_recente": "2026-08-05T21:01:21+00:00",
     "ok": true,
-    "ms": 972
+    "ms": 667
    },
    "tentativas": [
     {
@@ -815,7 +827,7 @@
      "xml_malformado": false,
      "item_mais_recente": "2026-08-05T21:01:21+00:00",
      "ok": true,
-     "ms": 972
+     "ms": 667
     }
    ]
   },
@@ -828,23 +840,23 @@
      "bytes": 5846,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 138
+     "ms": 161
     },
     {
      "url": "https://www.petfoodindustry.com/feed",
      "http": 403,
-     "bytes": 5810,
+     "bytes": 5788,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 36
+     "ms": 39
     },
     {
      "url": "https://www.petfoodindustry.com/rss",
      "http": 403,
-     "bytes": 5807,
+     "bytes": 5785,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 33
+     "ms": 49
     }
    ]
   },
@@ -852,25 +864,25 @@
    "vencedora": {
     "url": "https://www.mining.com/feed",
     "http": 200,
-    "bytes": 254950,
+    "bytes": 258293,
     "content_type": "application/rss+xml; charset=UTF-8",
     "itens": 36,
     "xml_malformado": false,
-    "item_mais_recente": "2026-08-05T19:15:45+00:00",
+    "item_mais_recente": "2026-08-05T23:39:44+00:00",
     "ok": true,
-    "ms": 1014
+    "ms": 907
    },
    "tentativas": [
     {
      "url": "https://www.mining.com/feed",
      "http": 200,
-     "bytes": 254950,
+     "bytes": 258293,
      "content_type": "application/rss+xml; charset=UTF-8",
      "itens": 36,
      "xml_malformado": false,
-     "item_mais_recente": "2026-08-05T19:15:45+00:00",
+     "item_mais_recente": "2026-08-05T23:39:44+00:00",
      "ok": true,
-     "ms": 1014
+     "ms": 907
     }
    ]
   },
@@ -883,7 +895,7 @@
      "bytes": 65,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 1325
+     "ms": 310
     },
     {
      "url": "https://www.miningweekly.com/rss",
@@ -891,7 +903,7 @@
      "bytes": 17,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 357
+     "ms": 282
     }
    ]
   },
@@ -904,7 +916,7 @@
      "bytes": 2259,
      "content_type": "text/html;charset=UTF-8",
      "ok": false,
-     "ms": 495
+     "ms": 209
     },
     {
      "url": "https://www.bnamericas.com/rss",
@@ -912,7 +924,7 @@
      "bytes": 682,
      "content_type": "text/html;charset=utf-8",
      "ok": false,
-     "ms": 446
+     "ms": 75
     }
    ]
   },
@@ -927,7 +939,7 @@
     "xml_malformado": false,
     "item_mais_recente": "2026-08-04T16:17:06+00:00",
     "ok": true,
-    "ms": 279
+    "ms": 135
    },
    "tentativas": [
     {
@@ -940,7 +952,7 @@
      "xml_malformado": false,
      "item_mais_recente": "2026-08-04T16:17:06+00:00",
      "ok": true,
-     "ms": 279
+     "ms": 135
     }
    ]
   },
@@ -953,7 +965,7 @@
      "bytes": 5677,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 73
+     "ms": 74
     },
     {
      "url": "https://www.futurefarming.com/feed",
@@ -961,7 +973,7 @@
      "bytes": 5680,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 34
+     "ms": 36
     }
    ]
   },
@@ -969,13 +981,13 @@
    "vencedora": {
     "url": "https://www.beefcentral.com/feed/",
     "http": 200,
-    "bytes": 12409,
+    "bytes": 12402,
     "content_type": "application/rss+xml; charset=UTF-8",
     "itens": 10,
     "xml_malformado": false,
     "item_mais_recente": "2026-08-05T08:19:42+00:00",
     "ok": true,
-    "ms": 1228
+    "ms": 1096
    },
    "tentativas": [
     {
@@ -984,18 +996,18 @@
      "bytes": 5678,
      "content_type": "text/html; charset=UTF-8",
      "ok": false,
-     "ms": 56
+     "ms": 127
     },
     {
      "url": "https://www.beefcentral.com/feed/",
      "http": 200,
-     "bytes": 12409,
+     "bytes": 12402,
      "content_type": "application/rss+xml; charset=UTF-8",
      "itens": 10,
      "xml_malformado": false,
      "item_mais_recente": "2026-08-05T08:19:42+00:00",
      "ok": true,
-     "ms": 1228
+     "ms": 1096
     }
    ]
   }
@@ -1004,24 +1016,24 @@
   "GoogleNews PT (teste)": {
    "url": "https://news.google.com/rss/search?q=aquisi%C3%A7%C3%A3o+agroneg%C3%B3cio&hl=pt-BR&gl=BR&ceid=BR:pt-419",
    "http": 200,
-   "bytes": 124370,
+   "bytes": 119078,
    "content_type": "application/xml; charset=utf-8",
-   "itens": 82,
+   "itens": 79,
    "xml_malformado": false,
    "item_mais_recente": "2026-08-05T13:00:00+00:00",
    "ok": true,
-   "ms": 405
+   "ms": 469
   },
   "GoogleNews EN (teste)": {
    "url": "https://news.google.com/rss/search?q=agribusiness+acquisition&hl=en-US&gl=US&ceid=US:en",
    "http": 200,
-   "bytes": 162941,
+   "bytes": 163478,
    "content_type": "application/xml; charset=utf-8",
    "itens": 100,
    "xml_malformado": false,
    "item_mais_recente": "2026-07-22T09:25:44+00:00",
    "ok": true,
-   "ms": 472
+   "ms": 467
   }
  },
  "cotacoes": {
@@ -1031,15 +1043,15 @@
    "bytes": 6636,
    "content_type": "text/html; charset=UTF-8",
    "ok": false,
-   "ms": 202
+   "ms": 150
   },
   "CEPEA widget (sem www)": {
    "url": "https://cepea.org.br/br/widgetproduto.js.php?fonte=arial&tamanho=10&largura=400px&corfundo=dbd6b2&cortexto=333333&corlinha=ede7bf&id_indicador%5B%5D=2&id_indicador%5B%5D=77&id_indicador%5B%5D=12&id_indicador%5B%5D=178",
    "http": 403,
-   "bytes": 6632,
+   "bytes": 6610,
    "content_type": "text/html; charset=UTF-8",
    "ok": false,
-   "ms": 225
+   "ms": 144
   },
   "USDA AMS (CBOT)": {
    "url": "https://www.ams.usda.gov/mnreports/ams_2850.pdf",
@@ -1047,15 +1059,15 @@
    "bytes": 291418,
    "content_type": "application/pdf",
    "ok": true,
-   "ms": 341
+   "ms": 476
   },
   "BCB PTAX": {
    "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados/ultimos/5?formato=json",
-   "http": 502,
-   "bytes": 5015,
-   "content_type": "text/html",
-   "ok": false,
-   "ms": 6780
+   "http": 200,
+   "bytes": 196,
+   "content_type": "application/json; charset=utf-8",
+   "ok": true,
+   "ms": 629
   },
   "LBMA precos": {
    "url": "https://www.lbma.org.uk/prices-and-data/lbma-precious-metal-prices",
@@ -1063,7 +1075,7 @@
    "bytes": 277947,
    "content_type": "text/html; charset=UTF-8",
    "ok": true,
-   "ms": 850
+   "ms": 671
   },
   "LME referencia": {
    "url": "https://www.lme.com/en/market-data/lme-reference-prices",
@@ -1071,23 +1083,23 @@
    "bytes": 5870,
    "content_type": "text/html; charset=UTF-8",
    "ok": false,
-   "ms": 59
+   "ms": 122
   },
   "TradingEconomics cobre": {
    "url": "https://tradingeconomics.com/commodity/copper",
    "http": 200,
-   "bytes": 416949,
+   "bytes": 416338,
    "content_type": "text/html; charset=utf-8",
    "ok": true,
-   "ms": 194
+   "ms": 122
   },
   "TradingEconomics minerio": {
    "url": "https://tradingeconomics.com/commodity/iron-ore",
    "http": 200,
-   "bytes": 411697,
+   "bytes": 410997,
    "content_type": "text/html; charset=utf-8",
    "ok": true,
-   "ms": 100
+   "ms": 44
   },
   "CME ureia UFB": {
    "url": "https://www.cmegroup.com/markets/agriculture/fertilizer/urea-granular-cfr-brazil.html",
@@ -1095,7 +1107,7 @@
    "bytes": 602,
    "content_type": "application/json",
    "ok": false,
-   "ms": 98
+   "ms": 66
   },
   "CME MAP MFC": {
    "url": "https://www.cmegroup.com/markets/agriculture/fertilizer/map-cfr-brazil.html",
@@ -1103,7 +1115,7 @@
    "bytes": 602,
    "content_type": "application/json",
    "ok": false,
-   "ms": 44
+   "ms": 58
   },
   "World Bank Pink Sheet (indice)": {
    "url": "https://www.worldbank.org/en/research/commodity-markets",
@@ -1111,7 +1123,7 @@
    "bytes": 56294,
    "content_type": "text/html;charset=utf-8",
    "ok": true,
-   "ms": 130
+   "ms": 135
   },
   "World Bank docs (Pink Sheet)": {
    "url": "https://thedocs.worldbank.org/en/doc/18675f1d1639c7a34d463f59263ba0a2-0050012025/related/CMO-Historical-Data-Monthly.xlsx",
@@ -1119,7 +1131,7 @@
    "bytes": 778415,
    "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.",
    "ok": true,
-   "ms": 92
+   "ms": 261
   },
   "USDA ERS fertilizante": {
    "url": "https://www.ers.usda.gov/data-products/fertilizer-use-and-price",
@@ -1127,7 +1139,7 @@
    "bytes": 38812,
    "content_type": "text/html; charset=UTF-8",
    "ok": true,
-   "ms": 341
+   "ms": 102
   },
   "IndexMundi ureia": {
    "url": "https://www.indexmundi.com/commodities/?commodity=urea&months=60",
@@ -1135,7 +1147,7 @@
    "bytes": 77502,
    "content_type": "text/html; charset=utf-8",
    "ok": true,
-   "ms": 574
+   "ms": 216
   },
   "IndexMundi KCl": {
    "url": "https://www.indexmundi.com/commodities/?commodity=potassium-chloride&months=60",
@@ -1143,7 +1155,7 @@
    "bytes": 77784,
    "content_type": "text/html; charset=utf-8",
    "ok": true,
-   "ms": 471
+   "ms": 87
   },
   "IndexMundi DAP": {
    "url": "https://www.indexmundi.com/commodities/?commodity=dap-fertilizer&months=60",
@@ -1151,7 +1163,7 @@
    "bytes": 77575,
    "content_type": "text/html; charset=utf-8",
    "ok": true,
-   "ms": 476
+   "ms": 74
   },
   "IndexMundi TSP": {
    "url": "https://www.indexmundi.com/commodities/?commodity=triple-superphosphate&months=60",
@@ -1159,31 +1171,31 @@
    "bytes": 77832,
    "content_type": "text/html; charset=utf-8",
    "ok": true,
-   "ms": 460
+   "ms": 50
   },
   "LBMA ouro PM (json)": {
    "url": "https://prices.lbma.org.uk/json/gold_pm.json",
    "http": 200,
-   "bytes": 912604,
+   "bytes": 912670,
    "content_type": "application/json",
    "ok": true,
-   "ms": 931
+   "ms": 788
   },
   "LBMA ouro AM (json)": {
    "url": "https://prices.lbma.org.uk/json/gold_am.json",
    "http": 200,
-   "bytes": 922448,
+   "bytes": 922515,
    "content_type": "application/json",
    "ok": true,
-   "ms": 914
+   "ms": 402
   },
   "LBMA prata (json)": {
    "url": "https://prices.lbma.org.uk/json/silver.json",
    "http": 200,
-   "bytes": 896052,
+   "bytes": 896114,
    "content_type": "application/json",
    "ok": true,
-   "ms": 902
+   "ms": 553
   },
   "BCB PTAX intervalo": {
    "url": "https://api.bcb.gov.br/dados/serie/bcdata.sgs.1/dados?formato=json&dataInicial=01/07/2026&dataFinal=05/08/2026",
@@ -1191,7 +1203,7 @@
    "bytes": 1015,
    "content_type": "application/json; charset=utf-8",
    "ok": true,
-   "ms": 1553
+   "ms": 203
   },
   "Comex Stat docs": {
    "url": "https://api-comexstat.mdic.gov.br/docs",
@@ -1199,7 +1211,7 @@
    "bytes": 5790,
    "content_type": "text/html; charset=UTF-8",
    "ok": false,
-   "ms": 202
+   "ms": 151
   },
   "Stooq ouro (csv)": {
    "url": "https://stooq.com/q/l/?s=xauusd&f=sd2t2ohlc&h&e=csv",
@@ -1207,7 +1219,7 @@
    "bytes": 271,
    "content_type": "text/html",
    "ok": false,
-   "ms": 671
+   "ms": 416
   },
   "Stooq cobre (csv)": {
    "url": "https://stooq.com/q/l/?s=hg.f&f=sd2t2ohlc&h&e=csv",
@@ -1215,7 +1227,7 @@
    "bytes": 271,
    "content_type": "text/html",
    "ok": false,
-   "ms": 635
+   "ms": 453
   },
   "Stooq soja CBOT (csv)": {
    "url": "https://stooq.com/q/l/?s=zs.f&f=sd2t2ohlc&h&e=csv",
@@ -1223,7 +1235,7 @@
    "bytes": 271,
    "content_type": "text/html",
    "ok": false,
-   "ms": 620
+   "ms": 313
   },
   "Stooq milho CBOT (csv)": {
    "url": "https://stooq.com/q/l/?s=zc.f&f=sd2t2ohlc&h&e=csv",
@@ -1231,7 +1243,7 @@
    "bytes": 271,
    "content_type": "text/html",
    "ok": false,
-   "ms": 616
+   "ms": 521
   },
   "Stooq trigo CBOT (csv)": {
    "url": "https://stooq.com/q/l/?s=zw.f&f=sd2t2ohlc&h&e=csv",
@@ -1239,26 +1251,26 @@
    "bytes": 271,
    "content_type": "text/html",
    "ok": false,
-   "ms": 473
+   "ms": 439
   }
  },
  "amostras": {
   "TE ouro": {
    "url": "https://tradingeconomics.com/commodity/gold",
    "http": 200,
-   "bytes": 421657,
+   "bytes": 421024,
    "trechos": [
     " Gold - Price - Chart - Historical Data - News Calendar News Markets Commodities Indexes Shares Currencies Crypto Bonds Earnings Indicators Countries Forecasts Commodities",
     "Countries Indicators Interest Rate Inflation Rate Unemployment Rate GDP Growth GDP per Capita Current Account Gold Reserves Government Debt Crude Oil Production Gasoline Prices Credit Rating More Indicators Forecasts Markets & Indicators Countries Countries Indicators Commodities",
-    " Investors Careers About us Contact Gold Price - Chart - Historical Data - News Summary Stats Forecast Alerts Actual 4,249.45 Daily Change 171.59 4.21% Monthly 2.03% Yearly 26.13% Q3 Forecast 4,103.88 Gold - Summary Gold extended its gains to around $4,200 an ounce on Wednesday, ",
-    "nsure its reliability, Trading Economics does not verify the data and makes no representations or warranties. Actual Previous Highest Lowest Dates Unit Frequency 4247.61 4077.86 5608.35 34.83 1968 - 2026 USD/t oz. Daily News Stream Gold Climbs to Seven-Week High on Hopes of US-Ir",
-    "ing may be needed to bring inflation back to the central bank's 2% target. Gold - Stats Gold rose to 4,247.61 USD/t.oz on August 5, 2026, up 4.16% from the previous day. Over the past month, Gold's price has risen 1.99%, and is up 26.08% compared to the same time last year, accor",
-    "ta, forecasts, historical chart - was last updated on August 5 of 2026. Gold - Forecast Gold rose to 4,247.61 USD/t.oz on August 5, 2026, up 4.16% from the previous day. Over the past month, Gold's price has risen 1.99%, and is up 26.08% compared to the same time last year, accor",
-    ", Gold reached an all time high of 5608.35 in January of 2026. Gold - data, forecasts, historical chart - was last updated on August 5 of 2026. Gold - Forecast Gold rose to 4,247.61 USD/t.oz on August 5, 2026, up 4.16% from the previous day. Over the past month, Gold's price has "
+    " Investors Careers About us Contact Gold Price - Chart - Historical Data - News Summary Stats Forecast Alerts Actual 4,284.13 Daily Change 36.73 0.86% Monthly 4.35% Yearly 26.18% Q3 Forecast 4,103.88 Gold - Summary Gold climbed toward $4,300 an ounce on Thursday, rising for the f",
+    "nsure its reliability, Trading Economics does not verify the data and makes no representations or warranties. Actual Previous Highest Lowest Dates Unit Frequency 4284.13 4247.40 5608.35 34.83 1968 - 2026 USD/t oz. Daily News Stream Gold Extends Gain on Hormuz Deal Gold climbed to",
+    "ave the luxury of waiting before bringing inflation back to its 2% target. Gold - Stats Gold rose to 4,284.13 USD/t.oz on August 6, 2026, up 0.86% from the previous day. Over the past month, Gold's price has risen 4.35%, and is up 26.18% compared to the same time last year, accor",
+    "ta, forecasts, historical chart - was last updated on August 6 of 2026. Gold - Forecast Gold rose to 4,284.13 USD/t.oz on August 6, 2026, up 0.86% from the previous day. Over the past month, Gold's price has risen 4.35%, and is up 26.18% compared to the same time last year, accor",
+    ", Gold reached an all time high of 5608.35 in January of 2026. Gold - data, forecasts, historical chart - was last updated on August 6 of 2026. Gold - Forecast Gold rose to 4,284.13 USD/t.oz on August 6, 2026, up 0.86% from the previous day. Over the past month, Gold's price has "
    ],
    "numeros_em_json": [
-    "4249.910000000000",
-    "4249.910000000000"
+    "4286.120000000000",
+    "4286.120000000000"
    ]
   },
   "LBMA ouro": {
@@ -1279,29 +1291,29 @@
   "TE cobre": {
    "url": "https://tradingeconomics.com/commodity/copper",
    "http": 200,
-   "bytes": 416949,
+   "bytes": 416338,
    "trechos": [
     " Copper - Price - Chart - Historical Data - News Calendar News Markets Commodities Indexes Shares Currencies Crypto Bonds Earnings Indicators Countries Forecasts Commoditi",
-    "ions API Access Pricing Apps App Store Google Play Twitter About Customers Investors Careers About us Contact Copper Price - Chart - Historical Data - News Summary Stats Forecast Alerts Actual 6.7275 Daily Change 0.11 1.65% Monthly 8.89% Yearly 53.17% Q3 Forecast 6.5596 Copper - ",
-    "previous day. Over the past month, Copper's price has risen 8.88%, and is up 53.14% compared to the same time last year, according to trading on a contract for difference (CFD) that tracks the benchmark market for this commodity. Historically, Copper reached an all time high of 6",
-    ", Copper reached an all time high of 6.74 in August of 2026. Copper - data, forecasts, historical chart - was last updated on August 5 of 2026. Copper - Forecast Copper rose to 6.73 USD/Lbs on August 5, 2026, up 1.63% from the previous day. Over the past month, Copper's price has",
-    "an energy and the rapid expansion of artificial intelligence data centers. Copper - Stats Copper rose to 6.73 USD/Lbs on August 5, 2026, up 1.63% from the previous day. Over the past month, Copper's price has risen 8.88%, and is up 53.14% compared to the same time last year, acco",
-    "ta, forecasts, historical chart - was last updated on August 5 of 2026. Copper - Forecast Copper rose to 6.73 USD/Lbs on August 5, 2026, up 1.63% from the previous day. Over the past month, Copper's price has risen 8.88%, and is up 53.14% compared to the same time last year, acco"
+    "ions API Access Pricing Apps App Store Google Play Twitter About Customers Investors Careers About us Contact Copper Price - Chart - Historical Data - News Summary Stats Forecast Alerts Actual 6.6993 Daily Change -0.004 -0.06% Monthly 8.55% Yearly 52.14% Q3 Forecast 6.5596 Copper",
+    "previous day. Over the past month, Copper's price has risen 8.59%, and is up 52.19% compared to the same time last year, according to trading on a contract for difference (CFD) that tracks the benchmark market for this commodity. Historically, Copper reached an all time high of 6",
+    ", Copper reached an all time high of 6.74 in August of 2026. Copper - data, forecasts, historical chart - was last updated on August 6 of 2026. Copper - Forecast Copper fell to 6.70 USD/Lbs on August 6, 2026, down 0.02% from the previous day. Over the past month, Copper's price h",
+    "an energy and the rapid expansion of artificial intelligence data centers. Copper - Stats Copper fell to 6.70 USD/Lbs on August 6, 2026, down 0.02% from the previous day. Over the past month, Copper's price has risen 8.59%, and is up 52.19% compared to the same time last year, ac",
+    "ta, forecasts, historical chart - was last updated on August 6 of 2026. Copper - Forecast Copper fell to 6.70 USD/Lbs on August 6, 2026, down 0.02% from the previous day. Over the past month, Copper's price has risen 8.59%, and is up 52.19% compared to the same time last year, ac"
    ],
    "numeros_em_json": [
-    "6.728000000000",
-    "6.728000000000"
+    "6.699300000000",
+    "6.699300000000"
    ]
   },
   "TE minerio": {
    "url": "https://tradingeconomics.com/commodity/iron-ore",
    "http": 200,
-   "bytes": 411697,
+   "bytes": 410997,
    "trechos": [
     " Iron Ore - Price - Chart - Historical Data - News Calendar News Markets Commodities Indexes Shares Currencies Crypto Bonds Earnings Indicators Countries Forecasts Commodi",
     "ions API Access Pricing Apps App Store Google Play Twitter About Customers Investors Careers About us Contact Iron Ore Price - Chart - Historical Data - News Summary Stats Forecast Alerts Actual 93.91 Daily Change 0.21 0.22% Monthly -4.47% Yearly -6.95% Q3 Forecast 97.51 Iron Ore",
     "ious day. Over the past month, Iron Ore's price has fallen 4.47%, and is down 6.95% compared to the same time last year, according to trading on a contract for difference (CFD) that tracks the benchmark market for this commodity. Iron Ore - Stats Historically, Iron Ore reached an",
-    "on Ore reached an all time high of 219.77 in July of 2021. Iron Ore - data, forecasts, historical chart - was last updated on August 5 of 2026. Iron Ore - Forecast Iron Ore is expected to trade at 97.51 USD/MT by the end of this quarter, according to Trading Economics global macr",
+    "on Ore reached an all time high of 219.77 in July of 2021. Iron Ore - data, forecasts, historical chart - was last updated on August 6 of 2026. Iron Ore - Forecast Iron Ore is expected to trade at 97.51 USD/MT by the end of this quarter, according to Trading Economics global macr",
     "ly Change 0.21 0.22% Monthly -4.47% Yearly -6.95% Q3 Forecast 97.51 Iron Ore - Summary Iron Ore rose to 93.91 USD/T on August 5, 2026, up 0.22% from the previous day. Over the past month, Iron Ore's price has fallen 4.47%, and is down 6.95% compared to the same time last year, ac",
     "3.70 219.77 38.54 2010 - 2026 USD/MT Daily News Stream Iron Ore Hits 6-week High Iron Ore increased to 105.14 USD/T, the highest since January 2026. Over the past 4 weeks, Iron Ore gained 5.08%, and in the last 12 months, it increased 2.51%. 2026-03-13 Iron Ore Hits 28-week Low I"
    ],
