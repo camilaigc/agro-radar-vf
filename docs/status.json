@@ -1,32 +1,32 @@
 {
  "schema": "radar-agro-status/2",
  "data": "2026-08-05",
- "gerado_em": "2026-08-05T22:23:21.778923-03:00",
- "execucoes_no_dia": 10,
+ "gerado_em": "2026-08-05T22:39:39.530440-03:00",
+ "execucoes_no_dia": 11,
  "resumo": {
   "fontes_testadas": 77,
   "fontes_ok": 66,
-  "itens_brutos": 3485,
-  "itens_na_janela": 762,
-  "novos_nesta_execucao": 2,
-  "no_escopo_nesta_execucao": 388,
-  "novos_fora_escopo_nesta_execucao": 374,
-  "no_escopo_no_dia": 417,
-  "fora_escopo_no_dia": 532,
-  "novos": 21,
-  "repetidos_de_edicoes_anteriores": 741,
+  "itens_brutos": 3487,
+  "itens_na_janela": 763,
+  "novos_nesta_execucao": 3,
+  "no_escopo_nesta_execucao": 390,
+  "novos_fora_escopo_nesta_execucao": 373,
+  "no_escopo_no_dia": 420,
+  "fora_escopo_no_dia": 535,
+  "novos": 6,
+  "repetidos_de_edicoes_anteriores": 757,
   "agrupados_por_titulo_parecido": 37,
   "descartados": 0,
-  "cotacoes_coletadas": 16
+  "cotacoes_coletadas": 18
  },
  "n_falhas": 6,
  "n_fontes": 72,
  "n_entradas_cobertura": 77,
- "cotacoes": 13,
+ "cotacoes": 15,
  "cotacoes_mensais": 3,
- "itens": 417,
+ "itens": 420,
  "itens_revisao": 58,
- "itens_fora_escopo": 532,
+ "itens_fora_escopo": 535,
  "saude_fontes": {
   "sem_acesso": [
    {
@@ -111,12 +111,12 @@
    {
     "fonte": "poultryworld.net",
     "camada": "Site via Google News",
-    "itens_brutos": 17
+    "itens_brutos": 18
    },
    {
     "fonte": "pigprogress.net",
     "camada": "Site via Google News",
-    "itens_brutos": 10
+    "itens_brutos": 11
    },
    {
     "fonte": "thefishsite.com",
@@ -145,7 +145,7 @@
    }
   ],
   "silenciosas_5_execucoes": [],
-  "execucoes_no_ledger": 3,
+  "execucoes_no_ledger": 4,
   "nota": "Fonte silenciosa NAO e fonte morta: veiculo especializado publica algumas vezes por semana. Nenhuma URL e removida automaticamente. Só 'sem_acesso' pede conferencia de URL."
  }
 }
