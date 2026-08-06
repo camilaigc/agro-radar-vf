@@ -1,0 +1,25 @@
+name: alerta-radar-parado
+on:
+  schedule:
+    # 11:00 UTC = 08:00 em Sao Paulo, todos os dias. Roda depois do radar (09:15 BRT
+    # nos dias uteis) so no dia seguinte, o que e proposital: alerta cedo demais
+    # dispara por atraso normal de execucao.
+    - cron: '0 11 * * *'
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verificar frescor da coleta
+        # Falha de proposito quando o dado esta velho: o GitHub manda e-mail de
+        # workflow com falha para o dono do repositorio, sem configurar nada.
+        run: python alerta_frescor.py
+        env:
+          LIMITE_DIAS: '4'
