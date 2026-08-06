@@ -1,0 +1,54 @@
+name: backfill-arquivo
+# Uso UNICO. Reconstroi docs/arquivo/ a partir dos docs/coletas-*.json depois da
+# correcao de identidade de 05/08/2026: as chaves antigas eram blake2s do link e
+# nao casavam com o campo id publicado no painel (intersecao medida: 0 de 1.193).
+# Depois de rodar uma vez, este workflow pode ser apagado.
+on:
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+      - name: Apagar o arquivo antigo e reconstruir
+        run: |
+          rm -f docs/arquivo/*.json
+          python - <<'PY'
+          from arquivo import backfill
+          notas = []
+          backfill('docs', notas)
+          print(*notas, sep='\n')
+          PY
+      - name: Conferir a correcao
+        run: |
+          python - <<'PY'
+          import glob, json
+          ids = set()
+          for f in ("docs/painel.json", "docs/ultima.json"):
+              try:
+                  ids |= {i["id"] for i in json.load(open(f))["itens"] if i.get("id")}
+              except Exception:
+                  pass
+          for f in sorted(glob.glob("docs/arquivo/20*.json")):
+              d = json.load(open(f))["itens"]
+              sem = sum(1 for v in d.values() if not v.get("classe"))
+              com_id = sum(1 for v in d.values() if v.get("id"))
+              print(f"{f}: {len(d)} itens | sem classe {sem} | com id {com_id} | "
+                    f"chaves no painel {len(set(d) & ids)}")
+          PY
+      - name: Publicar
+        run: |
+          git config user.name  "radar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs
+          git commit -m "backfill do arquivo com a identidade corrigida" || echo "nada novo"
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
+          git push
