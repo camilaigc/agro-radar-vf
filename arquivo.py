@@ -24,6 +24,7 @@ mantem a data em que foi visto pela PRIMEIRA vez e ganha +1 em "vezes". Assim
 """
 import hashlib
 import json
+import unicodedata
 import re
 from datetime import datetime
 from pathlib import Path
@@ -37,23 +38,42 @@ def _mes(iso):
     return (iso or "")[:7]
 
 
-def _chave(item):
-    """Identidade do item: hash curto do link, ou do titulo normalizado.
+def _norm(t):
+    """Mesma normalizacao do build.py. Copiada de proposito para o modulo nao
+    depender de importar build (que faz coleta ao ser importado em alguns fluxos)."""
+    t = unicodedata.normalize("NFKD", t or "")
+    t = "".join(c for c in t if not unicodedata.combining(c))
+    return re.sub(r"[^a-z0-9 ]+", " ", t.lower()).strip()
 
-    Por que hash e nao a URL: os links do Google News tem centenas de caracteres
-    de base64. Usando a URL como chave, ela era gravada duas vezes (chave e
-    valor), e o arquivo dobrava de tamanho sem ganhar nada.
+
+def _chave(item):
+    """Identidade do item: sha1 do titulo normalizado, 16 hex.
+
+    CORRECAO de 05/08/2026. Antes era blake2s do LINK, e o build.py publica
+    id = sha1(titulo normalizado). Duas identidades para a mesma coisa, ambas com
+    16 caracteres, o que escondia o problema: medido no repositorio, a intersecao
+    entre as chaves do arquivo e os ids do painel era ZERO em 1.193 itens.
+    Nada quebrava na tela; o erro so aparecia ao tentar cruzar arquivo com painel.
+    Agora a identidade e uma so, e o campo id e gravado no registro.
     """
-    base = (item.get("link") or "").strip().lower()
-    if not base:
-        base = re.sub(r"\W+", " ", (item.get("titulo") or "").lower()).strip()
-    if not base:
-        return ""
-    return hashlib.blake2s(base.encode("utf-8"), digest_size=8).hexdigest()
+    base = item.get("id")
+    if base:
+        return str(base)
+    titulo = item.get("titulo") or item.get("title") or ""
+    return hashlib.sha1(_norm(titulo).encode()).hexdigest()[:16] if titulo.strip() else ""
+
+
+# Campos que MUDAM quando o item reaparece: a classificacao pode ter melhorado
+# desde a primeira vez (foi assim que 747 de 1.193 itens ficaram sem classe: eram
+# anteriores a existencia do campo e o reaparecimento so somava "vezes").
+MUTAVEIS = ("classe", "tipo_evento", "micro", "termo", "escopo", "motivo",
+            "prioridade_revisao", "evidencia_setor", "evidencia_transacao",
+            "pontos_setor", "vigiados")
 
 
 def _compacto(item, visto_em, escopo):
     return {
+        "id": _chave(item),
         "titulo": (item.get("titulo") or "")[:300],
         "trecho": (item.get("trecho") or "")[:LIMITE_TRECHO],
         "link": item.get("link") or "",
@@ -62,6 +82,14 @@ def _compacto(item, visto_em, escopo):
         "camada": item.get("camada") or "",
         "micro": item.get("micro_sugerida") or "",
         "termo": item.get("termo_setorial") or "",
+        "classe": item.get("classe") or "",
+        "tipo_evento": item.get("tipo_evento") or "",
+        "motivo": (item.get("motivo") or "")[:180],
+        "prioridade_revisao": bool(item.get("prioridade_revisao")),
+        "evidencia_setor": (item.get("evidencia_setor") or "")[:120],
+        "evidencia_transacao": (item.get("evidencia_transacao") or "")[:120],
+        "pontos_setor": item.get("pontos_setor"),
+        "vigiados": item.get("vigiados") or None,
         "classe": item.get("classe") or "noticia",
         "tipo_evento": item.get("tipo_evento") or "noticia",
         "motivo": item.get("motivo") or "",
@@ -103,7 +131,19 @@ def atualizar_arquivo(docs_dir, itens, itens_fora, hoje_iso, notas):
             if not k:
                 continue
             if k in registro:
-                registro[k]["vezes"] = int(registro[k].get("vezes", 1)) + 1
+                # NAO usar o nome "alvo" aqui: ele ja e o Path do arquivo do dia,
+                # logo acima. A primeira versao deste patch sombreou a variavel e
+                # quebrou a gravacao com AttributeError.
+                reg_existente = registro[k]
+                reg_existente["vezes"] = int(reg_existente.get("vezes", 1)) + 1
+                # reescreve o que pode ter mudado desde a primeira vez; visto_em e
+                # vezes ficam intactos, porque "desde quando aparece" e o que da
+                # valor ao arquivo
+                novo = _compacto(it, reg_existente.get("visto_em") or dia, escopo)
+                for campo in MUTAVEIS:
+                    if novo.get(campo) not in (None, "", False) or not reg_existente.get(campo):
+                        reg_existente[campo] = novo.get(campo)
+                reg_existente.setdefault("id", k)
                 revistos += 1
             else:
                 registro[k] = _compacto(it, dia, escopo)
