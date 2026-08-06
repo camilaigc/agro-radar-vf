@@ -1,0 +1,68 @@
+name: radar-diario
+on:
+  schedule:
+    # ATENCAO: o cron do GitHub Actions e SEMPRE em UTC. Sao Paulo e UTC-3 fixo
+    # (o Brasil acabou com o horario de verao em 2019).
+    #   '15 9  * * 1-5' = 06:15 em Sao Paulo
+    #   '15 12 * * 1-5' = 09:15 em Sao Paulo   <- em uso
+    - cron: '15 12 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      dias_backfill:
+        description: 'Dias de historico para puxar de PTAX (use 1825 na primeira vez)'
+        required: false
+        default: ''
+permissions:
+  contents: write
+concurrency:
+  group: radar
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+      - name: Instalar navegador (CEPEA)
+        run: python -m playwright install --with-deps chromium
+      - name: Coleta
+        run: python build.py
+        env:
+          # A lista de nomes vigiados vive num secret, NAO no repositorio, que e
+          # publico. Settings > Secrets and variables > Actions > New secret,
+          # nome ENTIDADES_VIGIADAS, um nome por linha. Sem o secret, o mecanismo
+          # nao roda e o build avisa no log.
+          ENTIDADES_VIGIADAS: ${{ secrets.ENTIDADES_VIGIADAS }}
+      - name: Validar coerência dos dados publicados
+        run: python validate_data.py
+      - name: Backfill do historico (so quando pedido na mao)
+        if: ${{ github.event.inputs.dias_backfill != '' }}
+        run: |
+          python - <<'PY'
+          import datetime, os, yaml
+          from zoneinfo import ZoneInfo
+          from cotacoes_ouro_serie import rodar
+          cfg = yaml.safe_load(open('sources.yml', encoding='utf-8'))
+          now = datetime.datetime.now(ZoneInfo('America/Sao_Paulo'))
+          dias = int(os.environ['DIAS'])
+          painel, notas = rodar(cfg, now, caminho_serie='docs/serie-cotacoes.json',
+                                dias_backfill=dias)
+          print(*notas, sep='\n')
+          PY
+        env:
+          DIAS: ${{ github.event.inputs.dias_backfill }}
+      - name: Publicar
+        run: |
+          git config user.name  "radar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs data
+          git commit -m "coleta $(date -u +%F)" || echo "nada novo"
+          # rebase antes do push: se voce editou algum arquivo pela interface do
+          # GitHub entre duas execucoes, sem isso o push falha por non-fast-forward
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
+          git push
