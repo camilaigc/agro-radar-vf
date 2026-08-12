@@ -1,32 +1,32 @@
 {
  "schema": "radar-agro-status/2",
- "data": "2026-08-11",
- "gerado_em": "2026-08-11T12:34:41.179343-03:00",
+ "data": "2026-08-12",
+ "gerado_em": "2026-08-12T12:34:04.116517-03:00",
  "execucoes_no_dia": 1,
  "resumo": {
-  "fontes_testadas": 80,
-  "fontes_ok": 63,
-  "itens_brutos": 3344,
-  "itens_na_janela": 698,
-  "novos_nesta_execucao": 265,
-  "no_escopo_nesta_execucao": 367,
-  "novos_fora_escopo_nesta_execucao": 331,
-  "no_escopo_no_dia": 358,
-  "fora_escopo_no_dia": 327,
-  "novos": 531,
-  "repetidos_de_edicoes_anteriores": 167,
-  "agrupados_por_titulo_parecido": 19,
+  "fontes_testadas": 79,
+  "fontes_ok": 64,
+  "itens_brutos": 3463,
+  "itens_na_janela": 705,
+  "novos_nesta_execucao": 270,
+  "no_escopo_nesta_execucao": 387,
+  "novos_fora_escopo_nesta_execucao": 318,
+  "no_escopo_no_dia": 374,
+  "fora_escopo_no_dia": 310,
+  "novos": 527,
+  "repetidos_de_edicoes_anteriores": 178,
+  "agrupados_por_titulo_parecido": 34,
   "descartados": 0,
-  "cotacoes_coletadas": 12
+  "cotacoes_coletadas": 16
  },
- "n_falhas": 9,
+ "n_falhas": 8,
  "n_fontes": 72,
- "n_entradas_cobertura": 80,
- "cotacoes": 12,
- "cotacoes_mensais": 0,
- "itens": 358,
- "itens_revisao": 30,
- "itens_fora_escopo": 327,
+ "n_entradas_cobertura": 79,
+ "cotacoes": 13,
+ "cotacoes_mensais": 3,
+ "itens": 374,
+ "itens_revisao": 26,
+ "itens_fora_escopo": 310,
  "saude_fontes": {
   "sem_acesso": [
    {
@@ -43,15 +43,6 @@
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
     "tentativas": [
      "direta"
-    ]
-   },
-   {
-    "fonte": "aquisição usina açúcar etanol",
-    "camada": "Consulta Google News",
-    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
-    "tentativas": [
-     "direta",
-     "sem acento"
     ]
    },
    {
@@ -111,6 +102,11 @@
   ],
   "silenciosas_hoje": [
    {
+    "fonte": "novacana.com",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
+   },
+   {
     "fonte": "capitalaberto.com.br",
     "camada": "Site via Google News",
     "itens_brutos": 100
@@ -118,7 +114,7 @@
    {
     "fonte": "agropages.com",
     "camada": "Site via Google News",
-    "itens_brutos": 68
+    "itens_brutos": 71
    },
    {
     "fonte": "seedquest.com",
@@ -138,12 +134,12 @@
    {
     "fonte": "allaboutfeed.net",
     "camada": "Site via Google News",
-    "itens_brutos": 7
+    "itens_brutos": 9
    },
    {
     "fonte": "poultryworld.net",
     "camada": "Site via Google News",
-    "itens_brutos": 9
+    "itens_brutos": 11
    },
    {
     "fonte": "pigprogress.net",
@@ -156,11 +152,6 @@
     "itens_brutos": 100
    },
    {
-    "fonte": "miningweekly.com",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
-   },
-   {
     "fonte": "futurefarming.com",
     "camada": "Site via Google News",
     "itens_brutos": 100
@@ -174,95 +165,98 @@
     "fonte": "fusoesaquisicoes.com",
     "camada": "Site via Google News",
     "itens_brutos": 100
+   },
+   {
+    "fonte": "argusmedia.com",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
+   },
+   {
+    "fonte": "aquisição hortifrúti OR FLV",
+    "camada": "Consulta Google News",
+    "itens_brutos": 1
    }
   ],
   "silenciosas_5_execucoes": [
    {
     "fonte": "capitalaberto.com.br",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 9,
+    "execucoes_sem_item": 10,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "feedstrategy.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 9,
+    "execucoes_sem_item": 10,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "wattagnet.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 9,
+    "execucoes_sem_item": 10,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "allaboutfeed.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 9,
+    "execucoes_sem_item": 10,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "poultryworld.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 9,
+    "execucoes_sem_item": 10,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "pigprogress.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 9,
+    "execucoes_sem_item": 10,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "futurefarming.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 9,
+    "execucoes_sem_item": 10,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "globalmeatnews.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 9,
+    "execucoes_sem_item": 10,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "agriinvestor.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 9,
+    "execucoes_sem_item": 10,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "fusoesaquisicoes.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 9,
+    "execucoes_sem_item": 10,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "aviculturaindustrial.com.br",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 9,
-    "ultima_com_item": null,
-    "acesso_ok_na_ultima": false
-   },
-   {
-    "fonte": "aquisição usina açúcar etanol",
-    "camada": "Consulta Google News",
-    "execucoes_sem_item": 9,
+    "execucoes_sem_item": 10,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": false
    }
   ],
-  "execucoes_no_ledger": 9,
+  "execucoes_no_ledger": 10,
   "nota": "Fonte silenciosa NAO e fonte morta: veiculo especializado publica algumas vezes por semana. Nenhuma URL e removida automaticamente. Só 'sem_acesso' pede conferencia de URL."
  }
 }
