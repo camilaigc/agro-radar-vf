@@ -1,42 +1,34 @@
 {
  "schema": "radar-agro-status/2",
- "data": "2026-08-18",
- "gerado_em": "2026-08-18T11:09:57.100268-03:00",
+ "data": "2026-08-19",
+ "gerado_em": "2026-08-19T11:13:11.539571-03:00",
  "execucoes_no_dia": 1,
  "resumo": {
-  "fontes_testadas": 78,
-  "fontes_ok": 67,
-  "itens_brutos": 3383,
-  "itens_na_janela": 732,
-  "novos_nesta_execucao": 272,
-  "no_escopo_nesta_execucao": 351,
-  "novos_fora_escopo_nesta_execucao": 381,
-  "no_escopo_no_dia": 337,
-  "fora_escopo_no_dia": 377,
-  "novos": 586,
-  "repetidos_de_edicoes_anteriores": 146,
-  "agrupados_por_titulo_parecido": 28,
+  "fontes_testadas": 75,
+  "fontes_ok": 69,
+  "itens_brutos": 3497,
+  "itens_na_janela": 750,
+  "novos_nesta_execucao": 297,
+  "no_escopo_nesta_execucao": 423,
+  "novos_fora_escopo_nesta_execucao": 327,
+  "no_escopo_no_dia": 393,
+  "fora_escopo_no_dia": 319,
+  "novos": 569,
+  "repetidos_de_edicoes_anteriores": 181,
+  "agrupados_por_titulo_parecido": 44,
   "descartados": 0,
-  "cotacoes_coletadas": 17
+  "cotacoes_coletadas": 18
  },
- "n_falhas": 6,
+ "n_falhas": 4,
  "n_fontes": 72,
- "n_entradas_cobertura": 78,
- "cotacoes": 14,
+ "n_entradas_cobertura": 75,
+ "cotacoes": 15,
  "cotacoes_mensais": 3,
- "itens": 337,
- "itens_revisao": 50,
- "itens_fora_escopo": 377,
+ "itens": 393,
+ "itens_revisao": 38,
+ "itens_fora_escopo": 319,
  "saude_fontes": {
   "sem_acesso": [
-   {
-    "fonte": "Money Times",
-    "camada": "RSS",
-    "erro": "HTTP 403",
-    "tentativas": [
-     "direta"
-    ]
-   },
    {
     "fonte": "globalmeatnews.com",
     "camada": "Site via Google News",
@@ -63,15 +55,6 @@
     ]
    },
    {
-    "fonte": "CADE ato de concentração agronegócio",
-    "camada": "Consulta Google News",
-    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
-    "tentativas": [
-     "direta",
-     "sem acento"
-    ]
-   },
-   {
     "fonte": "fato relevante venda de ativos agronegócio",
     "camada": "Consulta Google News",
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
@@ -86,11 +69,6 @@
     "fonte": "capitalaberto.com.br",
     "camada": "Site via Google News",
     "itens_brutos": 100
-   },
-   {
-    "fonte": "agropages.com",
-    "camada": "Site via Google News",
-    "itens_brutos": 71
    },
    {
     "fonte": "feedstrategy.com",
@@ -110,12 +88,12 @@
    {
     "fonte": "poultryworld.net",
     "camada": "Site via Google News",
-    "itens_brutos": 12
+    "itens_brutos": 11
    },
    {
     "fonte": "pigprogress.net",
     "camada": "Site via Google News",
-    "itens_brutos": 5
+    "itens_brutos": 6
    },
    {
     "fonte": "thefishsite.com",
@@ -143,12 +121,12 @@
     "itens_brutos": 100
    },
    {
-    "fonte": "timber forestry acquisition",
-    "camada": "Consulta Google News",
-    "itens_brutos": 1
+    "fonte": "argusmedia.com",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
    },
    {
-    "fonte": "CADE ato de concentração mineração",
+    "fonte": "CVM fato relevante aquisição agro",
     "camada": "Consulta Google News",
     "itens_brutos": 2
    }
@@ -157,82 +135,89 @@
    {
     "fonte": "feedstrategy.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 14,
+    "execucoes_sem_item": 15,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "wattagnet.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 14,
+    "execucoes_sem_item": 15,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "allaboutfeed.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 14,
+    "execucoes_sem_item": 15,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "poultryworld.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 14,
+    "execucoes_sem_item": 15,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "pigprogress.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 14,
+    "execucoes_sem_item": 15,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "futurefarming.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 14,
+    "execucoes_sem_item": 15,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "globalmeatnews.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 14,
+    "execucoes_sem_item": 15,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "agriinvestor.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 14,
+    "execucoes_sem_item": 15,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "fusoesaquisicoes.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 14,
+    "execucoes_sem_item": 15,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "aviculturaindustrial.com.br",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 14,
+    "execucoes_sem_item": 15,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": false
    },
    {
-    "fonte": "CADE ato de concentração agronegócio",
+    "fonte": "portaldbo.com.br",
+    "camada": "Site via Google News",
+    "execucoes_sem_item": 5,
+    "ultima_com_item": "2026-08-12T12:34:04.116517-03:00",
+    "acesso_ok_na_ultima": true
+   },
+   {
+    "fonte": "fato relevante venda de ativos agronegócio",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 6,
-    "ultima_com_item": "2026-08-10T12:35:36.514775-03:00",
+    "execucoes_sem_item": 5,
+    "ultima_com_item": "2026-08-12T12:34:04.116517-03:00",
     "acesso_ok_na_ultima": false
    }
   ],
-  "execucoes_no_ledger": 14,
+  "execucoes_no_ledger": 15,
   "nota": "Fonte silenciosa NAO e fonte morta: veiculo especializado publica algumas vezes por semana. Nenhuma URL e removida automaticamente. Só 'sem_acesso' pede conferencia de URL."
  }
 }
