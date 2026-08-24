@@ -1,6 +1,6 @@
 {
  "schema": "radar-agro-arquivo-indice/2",
- "atualizado_em": "2026-08-21T14:14:40",
+ "atualizado_em": "2026-08-24T14:31:35",
  "dias": [
   {
    "dia": "2026-08-05",
@@ -53,7 +53,11 @@
   {
    "dia": "2026-08-21",
    "total": 642
+  },
+  {
+   "dia": "2026-08-24",
+   "total": 672
   }
  ],
- "total_geral": 10482
+ "total_geral": 11154
 }
