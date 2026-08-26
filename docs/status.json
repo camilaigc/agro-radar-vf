@@ -1,34 +1,42 @@
 {
  "schema": "radar-agro-status/2",
- "data": "2026-08-25",
- "gerado_em": "2026-08-25T11:31:15.025068-03:00",
+ "data": "2026-08-26",
+ "gerado_em": "2026-08-26T11:30:24.977310-03:00",
  "execucoes_no_dia": 1,
  "resumo": {
   "fontes_testadas": 78,
-  "fontes_ok": 65,
-  "itens_brutos": 3405,
-  "itens_na_janela": 685,
-  "novos_nesta_execucao": 284,
-  "no_escopo_nesta_execucao": 355,
-  "novos_fora_escopo_nesta_execucao": 330,
-  "no_escopo_no_dia": 351,
-  "fora_escopo_no_dia": 321,
-  "novos": 571,
-  "repetidos_de_edicoes_anteriores": 114,
-  "agrupados_por_titulo_parecido": 29,
+  "fontes_ok": 67,
+  "itens_brutos": 3448,
+  "itens_na_janela": 658,
+  "novos_nesta_execucao": 233,
+  "no_escopo_nesta_execucao": 335,
+  "novos_fora_escopo_nesta_execucao": 323,
+  "no_escopo_no_dia": 321,
+  "fora_escopo_no_dia": 318,
+  "novos": 499,
+  "repetidos_de_edicoes_anteriores": 159,
+  "agrupados_por_titulo_parecido": 33,
   "descartados": 0,
-  "cotacoes_coletadas": 18
+  "cotacoes_coletadas": 17
  },
- "n_falhas": 7,
+ "n_falhas": 6,
  "n_fontes": 72,
  "n_entradas_cobertura": 78,
- "cotacoes": 15,
+ "cotacoes": 14,
  "cotacoes_mensais": 3,
- "itens": 351,
- "itens_revisao": 31,
- "itens_fora_escopo": 321,
+ "itens": 321,
+ "itens_revisao": 27,
+ "itens_fora_escopo": 318,
  "saude_fontes": {
   "sem_acesso": [
+   {
+    "fonte": "Money Times",
+    "camada": "RSS",
+    "erro": "ReadTimeout: HTTPSConnectionPool(host='www.moneytimes.com.br', port=443): Read timed out. (read timeout=30)",
+    "tentativas": [
+     "direta"
+    ]
+   },
    {
     "fonte": "globalmeatnews.com",
     "camada": "Site via Google News",
@@ -46,24 +54,6 @@
     ]
    },
    {
-    "fonte": "aquisição usina açúcar etanol",
-    "camada": "Consulta Google News",
-    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
-    "tentativas": [
-     "direta",
-     "sem acento"
-    ]
-   },
-   {
-    "fonte": "aquisição revenda insumos agrícolas",
-    "camada": "Consulta Google News",
-    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
-    "tentativas": [
-     "direta",
-     "sem acento"
-    ]
-   },
-   {
     "fonte": "CADE ato de concentração agronegócio",
     "camada": "Consulta Google News",
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
@@ -73,7 +63,7 @@
     ]
    },
    {
-    "fonte": "CVM fato relevante aquisição agro",
+    "fonte": "CADE aprova aquisição alimentos",
     "camada": "Consulta Google News",
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
     "tentativas": [
@@ -115,12 +105,17 @@
    {
     "fonte": "poultryworld.net",
     "camada": "Site via Google News",
-    "itens_brutos": 8
+    "itens_brutos": 7
    },
    {
     "fonte": "pigprogress.net",
     "camada": "Site via Google News",
-    "itens_brutos": 3
+    "itens_brutos": 4
+   },
+   {
+    "fonte": "thefishsite.com",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
    },
    {
     "fonte": "futurefarming.com",
@@ -143,105 +138,96 @@
     "itens_brutos": 100
    },
    {
-    "fonte": "argusmedia.com",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
+    "fonte": "agribusiness acquisition Brazil",
+    "camada": "Consulta Google News",
+    "itens_brutos": 6
+   },
+   {
+    "fonte": "CADE ato de concentração mineração",
+    "camada": "Consulta Google News",
+    "itens_brutos": 3
    }
   ],
   "silenciosas_5_execucoes": [
    {
     "fonte": "wattagnet.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 19,
+    "execucoes_sem_item": 20,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "allaboutfeed.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 19,
+    "execucoes_sem_item": 20,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "poultryworld.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 19,
+    "execucoes_sem_item": 20,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "pigprogress.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 19,
+    "execucoes_sem_item": 20,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "futurefarming.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 19,
+    "execucoes_sem_item": 20,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "globalmeatnews.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 19,
+    "execucoes_sem_item": 20,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "agriinvestor.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 19,
+    "execucoes_sem_item": 20,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "fusoesaquisicoes.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 19,
+    "execucoes_sem_item": 20,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "aviculturaindustrial.com.br",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 19,
+    "execucoes_sem_item": 20,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "portaldbo.com.br",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 9,
+    "execucoes_sem_item": 10,
     "ultima_com_item": "2026-08-12T12:34:04.116517-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "fato relevante venda de ativos agronegócio",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 9,
+    "execucoes_sem_item": 10,
     "ultima_com_item": "2026-08-12T12:34:04.116517-03:00",
-    "acesso_ok_na_ultima": false
-   },
-   {
-    "fonte": "aquisição revenda insumos agrícolas",
-    "camada": "Consulta Google News",
-    "execucoes_sem_item": 6,
-    "ultima_com_item": "2026-08-17T11:02:54.691424-03:00",
-    "acesso_ok_na_ultima": false
-   },
-   {
-    "fonte": "CVM fato relevante aquisição agro",
-    "camada": "Consulta Google News",
-    "execucoes_sem_item": 5,
-    "ultima_com_item": "2026-08-18T11:09:57.100268-03:00",
     "acesso_ok_na_ultima": false
    }
   ],
-  "execucoes_no_ledger": 19,
+  "execucoes_no_ledger": 20,
   "nota": "Fonte silenciosa NAO e fonte morta: veiculo especializado publica algumas vezes por semana. Nenhuma URL e removida automaticamente. Só 'sem_acesso' pede conferencia de URL."
  }
 }
