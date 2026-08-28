@@ -21,513 +21,514 @@
   "2026-08-24T11:27:45.122249-03:00",
   "2026-08-25T11:31:15.025068-03:00",
   "2026-08-26T11:30:24.977310-03:00",
-  "2026-08-28T17:58:16.852215-03:00"
+  "2026-08-28T17:58:16.852215-03:00",
+  "2026-08-28T18:50:43.967433-03:00"
  ],
  "fontes": {
   "AgFeed": {
    "camada": "RSS",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "The AgriBiz": {
    "camada": "RSS",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "Canal Rural": {
    "camada": "RSS",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "Globo Rural": {
    "camada": "RSS",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "NeoFeed": {
    "camada": "RSS",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "Brazil Journal": {
    "camada": "RSS",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "Money Times": {
    "camada": "RSS",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "InfoMoney": {
    "camada": "RSS",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "Exame": {
    "camada": "RSS",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "AgFunder News": {
    "camada": "RSS",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "Seed World": {
    "camada": "RSS",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "Undercurrent News": {
    "camada": "RSS",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "Mining.com": {
    "camada": "RSS",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "CropLife": {
    "camada": "RSS",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "Beef Central": {
    "camada": "RSS",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "noticiasagricolas.com.br": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "novacana.com": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "udop.com.br": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "brasilmineral.com.br": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "pipelinevalor.globo.com": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "capitalaberto.com.br": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "agropages.com": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "seedquest.com": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
+   "execucoes_vistas": 22,
    "ultima_com_item": "2026-08-24T11:27:45.122249-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
-   "execucoes_sem_item": 3
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
+   "execucoes_sem_item": 4
   },
   "world-grain.com": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "feedstrategy.com": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
+   "execucoes_vistas": 22,
    "ultima_com_item": "2026-08-21T11:10:23.682431-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
-   "execucoes_sem_item": 4
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
+   "execucoes_sem_item": 5
   },
   "wattagnet.com": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
+   "execucoes_vistas": 22,
    "ultima_com_item": null,
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
-   "execucoes_sem_item": 21
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
+   "execucoes_sem_item": 22
   },
   "allaboutfeed.net": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
+   "execucoes_vistas": 22,
    "ultima_com_item": null,
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
-   "execucoes_sem_item": 21
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
+   "execucoes_sem_item": 22
   },
   "poultryworld.net": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
+   "execucoes_vistas": 22,
    "ultima_com_item": null,
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
-   "execucoes_sem_item": 21
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
+   "execucoes_sem_item": 22
   },
   "pigprogress.net": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
+   "execucoes_vistas": 22,
    "ultima_com_item": null,
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
-   "execucoes_sem_item": 21
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
+   "execucoes_sem_item": 22
   },
   "thefishsite.com": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
+   "execucoes_vistas": 22,
    "ultima_com_item": "2026-08-25T11:31:15.025068-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
-   "execucoes_sem_item": 2
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
+   "execucoes_sem_item": 3
   },
   "seafoodsource.com": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "petfoodindustry.com": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "miningweekly.com": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "bnamericas.com": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "futurefarming.com": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
+   "execucoes_vistas": 22,
    "ultima_com_item": null,
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
-   "execucoes_sem_item": 21
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
+   "execucoes_sem_item": 22
   },
   "valor.globo.com": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "estadao.com.br": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "globalmeatnews.com": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
+   "execucoes_vistas": 22,
    "ultima_com_item": null,
    "ultimo_acesso_ok": null,
-   "execucoes_sem_item": 21
+   "execucoes_sem_item": 22
   },
   "agriinvestor.com": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
+   "execucoes_vistas": 22,
    "ultima_com_item": null,
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
-   "execucoes_sem_item": 21
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
+   "execucoes_sem_item": 22
   },
   "fusoesaquisicoes.com": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
+   "execucoes_vistas": 22,
    "ultima_com_item": null,
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
-   "execucoes_sem_item": 21
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
+   "execucoes_sem_item": 22
   },
   "noticiasdemineracao.com": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "agrolink.com.br": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "portaldbo.com.br": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
+   "execucoes_vistas": 22,
    "ultima_com_item": "2026-08-12T12:34:04.116517-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
-   "execucoes_sem_item": 11
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
+   "execucoes_sem_item": 12
   },
   "aviculturaindustrial.com.br": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
+   "execucoes_vistas": 22,
    "ultima_com_item": null,
    "ultimo_acesso_ok": null,
-   "execucoes_sem_item": 21
+   "execucoes_sem_item": 22
   },
   "fastmarkets.com": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "argusmedia.com": {
    "camada": "Site via Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "aquisição agronegócio": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "aquisição OR fusão fertilizantes": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "aquisição frigorífico": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "aquisição sementes Brasil": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "aquisição usina açúcar etanol": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "aquisição revenda insumos agrícolas": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "aquisição nutrição animal": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "recuperação judicial agronegócio": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "CRA OR Fiagro emissão": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "aquisição mineração Brasil": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "aquisição hortifrúti OR FLV": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
+   "execucoes_vistas": 22,
    "ultima_com_item": "2026-08-26T11:30:24.977310-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
-   "execucoes_sem_item": 1
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
+   "execucoes_sem_item": 2
   },
   "aquisição pet food Brasil": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "agribusiness acquisition Brazil": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "fertilizer company acquisition": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "animal nutrition acquisition": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "seed company acquisition": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "crop protection acquisition": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "pet food acquisition": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "aquaculture acquisition": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "mining acquisition Latin America": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "timber forestry acquisition": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "CADE ato de concentração agronegócio": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
+   "execucoes_vistas": 22,
    "ultima_com_item": "2026-08-20T11:21:09.850301-03:00",
    "ultimo_acesso_ok": "2026-08-24T11:27:45.122249-03:00",
-   "execucoes_sem_item": 5
+   "execucoes_sem_item": 6
   },
   "CADE ato de concentração mineração": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "CADE aprova aquisição alimentos": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
+   "execucoes_vistas": 22,
    "ultima_com_item": "2026-08-25T11:31:15.025068-03:00",
    "ultimo_acesso_ok": "2026-08-25T11:31:15.025068-03:00",
-   "execucoes_sem_item": 2
+   "execucoes_sem_item": 3
   },
   "CVM fato relevante aquisição agro": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
-   "ultima_com_item": "2026-08-28T17:58:16.852215-03:00",
-   "ultimo_acesso_ok": "2026-08-28T17:58:16.852215-03:00",
+   "execucoes_vistas": 22,
+   "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
+   "ultimo_acesso_ok": "2026-08-28T18:50:43.967433-03:00",
    "execucoes_sem_item": 0
   },
   "fato relevante venda de ativos agronegócio": {
    "camada": "Consulta Google News",
-   "execucoes_vistas": 21,
+   "execucoes_vistas": 22,
    "ultima_com_item": "2026-08-12T12:34:04.116517-03:00",
    "ultimo_acesso_ok": "2026-08-13T12:37:52.363490-03:00",
-   "execucoes_sem_item": 11
+   "execucoes_sem_item": 12
   }
  },
- "atualizado_em": "2026-08-28T17:58:16.852215-03:00"
+ "atualizado_em": "2026-08-28T18:50:43.967433-03:00"
 }

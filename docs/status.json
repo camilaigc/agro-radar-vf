@@ -1,21 +1,21 @@
 {
  "schema": "radar-agro-status/2",
  "data": "2026-08-28",
- "gerado_em": "2026-08-28T17:58:16.852215-03:00",
- "execucoes_no_dia": 1,
+ "gerado_em": "2026-08-28T18:50:43.967433-03:00",
+ "execucoes_no_dia": 2,
  "resumo": {
   "fontes_testadas": 76,
   "fontes_ok": 67,
-  "itens_brutos": 3485,
-  "itens_na_janela": 832,
-  "novos_nesta_execucao": 396,
-  "no_escopo_nesta_execucao": 416,
-  "novos_fora_escopo_nesta_execucao": 416,
-  "no_escopo_no_dia": 401,
-  "fora_escopo_no_dia": 406,
-  "novos": 794,
-  "repetidos_de_edicoes_anteriores": 38,
-  "agrupados_por_titulo_parecido": 38,
+  "itens_brutos": 3531,
+  "itens_na_janela": 831,
+  "novos_nesta_execucao": 16,
+  "no_escopo_nesta_execucao": 418,
+  "novos_fora_escopo_nesta_execucao": 413,
+  "no_escopo_no_dia": 417,
+  "fora_escopo_no_dia": 431,
+  "novos": 41,
+  "repetidos_de_edicoes_anteriores": 790,
+  "agrupados_por_titulo_parecido": 36,
   "descartados": 0,
   "cotacoes_coletadas": 18
  },
@@ -24,9 +24,9 @@
  "n_entradas_cobertura": 76,
  "cotacoes": 15,
  "cotacoes_mensais": 3,
- "itens": 401,
- "itens_revisao": 50,
- "itens_fora_escopo": 406,
+ "itens": 417,
+ "itens_revisao": 52,
+ "itens_fora_escopo": 431,
  "saude_fontes": {
   "sem_acesso": [
    {
@@ -92,12 +92,12 @@
    {
     "fonte": "allaboutfeed.net",
     "camada": "Site via Google News",
-    "itens_brutos": 9
+    "itens_brutos": 12
    },
    {
     "fonte": "poultryworld.net",
     "camada": "Site via Google News",
-    "itens_brutos": 8
+    "itens_brutos": 9
    },
    {
     "fonte": "pigprogress.net",
@@ -139,89 +139,96 @@
    {
     "fonte": "wattagnet.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 21,
+    "execucoes_sem_item": 22,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "allaboutfeed.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 21,
+    "execucoes_sem_item": 22,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "poultryworld.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 21,
+    "execucoes_sem_item": 22,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "pigprogress.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 21,
+    "execucoes_sem_item": 22,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "futurefarming.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 21,
+    "execucoes_sem_item": 22,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "globalmeatnews.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 21,
+    "execucoes_sem_item": 22,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "agriinvestor.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 21,
+    "execucoes_sem_item": 22,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "fusoesaquisicoes.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 21,
+    "execucoes_sem_item": 22,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "aviculturaindustrial.com.br",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 21,
+    "execucoes_sem_item": 22,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "portaldbo.com.br",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 11,
+    "execucoes_sem_item": 12,
     "ultima_com_item": "2026-08-12T12:34:04.116517-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "fato relevante venda de ativos agronegócio",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 11,
+    "execucoes_sem_item": 12,
     "ultima_com_item": "2026-08-12T12:34:04.116517-03:00",
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "CADE ato de concentração agronegócio",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 5,
+    "execucoes_sem_item": 6,
     "ultima_com_item": "2026-08-20T11:21:09.850301-03:00",
     "acesso_ok_na_ultima": false
+   },
+   {
+    "fonte": "feedstrategy.com",
+    "camada": "Site via Google News",
+    "execucoes_sem_item": 5,
+    "ultima_com_item": "2026-08-21T11:10:23.682431-03:00",
+    "acesso_ok_na_ultima": true
    }
   ],
-  "execucoes_no_ledger": 21,
+  "execucoes_no_ledger": 22,
   "nota": "Fonte silenciosa NAO e fonte morta: veiculo especializado publica algumas vezes por semana. Nenhuma URL e removida automaticamente. Só 'sem_acesso' pede conferencia de URL."
  }
 }
