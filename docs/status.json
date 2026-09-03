@@ -1,36 +1,156 @@
 {
  "schema": "radar-agro-status/2",
- "data": "2026-09-02",
- "gerado_em": "2026-09-02T09:35:34.545229-03:00",
+ "data": "2026-09-03",
+ "gerado_em": "2026-09-03T09:35:12.752272-03:00",
  "execucoes_no_dia": 1,
  "resumo": {
-  "fontes_testadas": 80,
-  "fontes_ok": 63,
-  "itens_brutos": 3430,
-  "itens_na_janela": 631,
-  "novos_nesta_execucao": 249,
-  "no_escopo_nesta_execucao": 318,
-  "novos_fora_escopo_nesta_execucao": 313,
-  "no_escopo_no_dia": 302,
-  "fora_escopo_no_dia": 309,
-  "novos": 524,
-  "repetidos_de_edicoes_anteriores": 107,
-  "agrupados_por_titulo_parecido": 24,
+  "fontes_testadas": 86,
+  "fontes_ok": 44,
+  "itens_brutos": 1644,
+  "itens_na_janela": 347,
+  "novos_nesta_execucao": 137,
+  "no_escopo_nesta_execucao": 174,
+  "novos_fora_escopo_nesta_execucao": 173,
+  "no_escopo_no_dia": 168,
+  "fora_escopo_no_dia": 172,
+  "novos": 293,
+  "repetidos_de_edicoes_anteriores": 54,
+  "agrupados_por_titulo_parecido": 15,
   "descartados": 0,
-  "cotacoes_coletadas": 17
+  "cotacoes_coletadas": 15
  },
- "n_falhas": 10,
+ "n_falhas": 29,
  "n_fontes": 72,
- "n_entradas_cobertura": 80,
- "cotacoes": 14,
+ "n_entradas_cobertura": 86,
+ "cotacoes": 12,
  "cotacoes_mensais": 3,
- "itens": 302,
- "itens_revisao": 25,
- "itens_fora_escopo": 309,
+ "itens": 168,
+ "itens_revisao": 17,
+ "itens_fora_escopo": 172,
  "saude_fontes": {
   "sem_acesso": [
    {
+    "fonte": "novacana.com",
+    "camada": "Site via Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "udop.com.br",
+    "camada": "Site via Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "brasilmineral.com.br",
+    "camada": "Site via Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "capitalaberto.com.br",
+    "camada": "Site via Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "agropages.com",
+    "camada": "Site via Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "world-grain.com",
+    "camada": "Site via Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "thefishsite.com",
+    "camada": "Site via Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "petfoodindustry.com",
+    "camada": "Site via Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "bnamericas.com",
+    "camada": "Site via Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "futurefarming.com",
+    "camada": "Site via Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "valor.globo.com",
+    "camada": "Site via Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
     "fonte": "globalmeatnews.com",
+    "camada": "Site via Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "agriinvestor.com",
+    "camada": "Site via Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "fusoesaquisicoes.com",
+    "camada": "Site via Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "agrolink.com.br",
+    "camada": "Site via Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "portaldbo.com.br",
     "camada": "Site via Google News",
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
     "tentativas": [
@@ -46,7 +166,59 @@
     ]
    },
    {
+    "fonte": "fastmarkets.com",
+    "camada": "Site via Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "argusmedia.com",
+    "camada": "Site via Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "aquisição agronegócio",
+    "camada": "Consulta Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
+    "fonte": "aquisição OR fusão fertilizantes",
+    "camada": "Consulta Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
+    "fonte": "aquisição sementes Brasil",
+    "camada": "Consulta Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
     "fonte": "aquisição revenda insumos agrícolas",
+    "camada": "Consulta Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
+    "fonte": "aquisição mineração Brasil",
     "camada": "Consulta Google News",
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
     "tentativas": [
@@ -64,7 +236,15 @@
     ]
    },
    {
-    "fonte": "crop protection acquisition",
+    "fonte": "pet food acquisition",
+    "camada": "Consulta Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "mining acquisition Latin America",
     "camada": "Consulta Google News",
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
     "tentativas": [
@@ -73,33 +253,6 @@
    },
    {
     "fonte": "CADE ato de concentração agronegócio",
-    "camada": "Consulta Google News",
-    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
-    "tentativas": [
-     "direta",
-     "sem acento"
-    ]
-   },
-   {
-    "fonte": "CADE ato de concentração mineração",
-    "camada": "Consulta Google News",
-    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
-    "tentativas": [
-     "direta",
-     "sem acento"
-    ]
-   },
-   {
-    "fonte": "CADE aprova aquisição alimentos",
-    "camada": "Consulta Google News",
-    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
-    "tentativas": [
-     "direta",
-     "sem acento"
-    ]
-   },
-   {
-    "fonte": "CVM fato relevante aquisição agro",
     "camada": "Consulta Google News",
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
     "tentativas": [
@@ -119,11 +272,6 @@
   ],
   "silenciosas_hoje": [
    {
-    "fonte": "agropages.com",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
-   },
-   {
     "fonte": "feedstrategy.com",
     "camada": "Site via Google News",
     "itens_brutos": 100
@@ -136,150 +284,135 @@
    {
     "fonte": "allaboutfeed.net",
     "camada": "Site via Google News",
-    "itens_brutos": 9
+    "itens_brutos": 8
    },
    {
     "fonte": "poultryworld.net",
     "camada": "Site via Google News",
-    "itens_brutos": 18
+    "itens_brutos": 17
    },
    {
     "fonte": "pigprogress.net",
     "camada": "Site via Google News",
-    "itens_brutos": 12
+    "itens_brutos": 11
    },
    {
-    "fonte": "thefishsite.com",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
+    "fonte": "aquisição frigorífico",
+    "camada": "Consulta Google News",
+    "itens_brutos": 1
    },
    {
-    "fonte": "futurefarming.com",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
+    "fonte": "aquisição nutrição animal",
+    "camada": "Consulta Google News",
+    "itens_brutos": 7
    },
    {
-    "fonte": "agriinvestor.com",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
-   },
-   {
-    "fonte": "fusoesaquisicoes.com",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
-   },
-   {
-    "fonte": "portaldbo.com.br",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
-   },
-   {
-    "fonte": "argusmedia.com",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
+    "fonte": "aquisição hortifrúti OR FLV",
+    "camada": "Consulta Google News",
+    "itens_brutos": 1
    }
   ],
   "silenciosas_5_execucoes": [
    {
     "fonte": "wattagnet.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 25,
+    "execucoes_sem_item": 26,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "allaboutfeed.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 25,
+    "execucoes_sem_item": 26,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "poultryworld.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 25,
+    "execucoes_sem_item": 26,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "pigprogress.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 25,
+    "execucoes_sem_item": 26,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "futurefarming.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 25,
+    "execucoes_sem_item": 26,
     "ultima_com_item": null,
-    "acesso_ok_na_ultima": true
+    "acesso_ok_na_ultima": false
    },
    {
     "fonte": "globalmeatnews.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 25,
+    "execucoes_sem_item": 26,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "agriinvestor.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 25,
+    "execucoes_sem_item": 26,
     "ultima_com_item": null,
-    "acesso_ok_na_ultima": true
+    "acesso_ok_na_ultima": false
    },
    {
     "fonte": "fusoesaquisicoes.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 25,
+    "execucoes_sem_item": 26,
     "ultima_com_item": null,
-    "acesso_ok_na_ultima": true
+    "acesso_ok_na_ultima": false
    },
    {
     "fonte": "aviculturaindustrial.com.br",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 25,
+    "execucoes_sem_item": 26,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "portaldbo.com.br",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 15,
+    "execucoes_sem_item": 16,
     "ultima_com_item": "2026-08-12T12:34:04.116517-03:00",
-    "acesso_ok_na_ultima": true
+    "acesso_ok_na_ultima": false
    },
    {
     "fonte": "fato relevante venda de ativos agronegócio",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 15,
+    "execucoes_sem_item": 16,
     "ultima_com_item": "2026-08-12T12:34:04.116517-03:00",
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "CADE ato de concentração agronegócio",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 9,
+    "execucoes_sem_item": 10,
     "ultima_com_item": "2026-08-20T11:21:09.850301-03:00",
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "feedstrategy.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 8,
+    "execucoes_sem_item": 9,
     "ultima_com_item": "2026-08-21T11:10:23.682431-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "thefishsite.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 6,
+    "execucoes_sem_item": 7,
     "ultima_com_item": "2026-08-25T11:31:15.025068-03:00",
-    "acesso_ok_na_ultima": true
+    "acesso_ok_na_ultima": false
    }
   ],
-  "execucoes_no_ledger": 25,
+  "execucoes_no_ledger": 26,
   "nota": "Fonte silenciosa NAO e fonte morta: veiculo especializado publica algumas vezes por semana. Nenhuma URL e removida automaticamente. Só 'sem_acesso' pede conferencia de URL."
  }
 }

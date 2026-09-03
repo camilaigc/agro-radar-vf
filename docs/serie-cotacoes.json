@@ -211,6 +211,11 @@
     "preco": 5.157,
     "unidade": "R$/US$",
     "fonte": "Banco Central do Brasil, SGS serie 1"
+   },
+   "2026-09-02": {
+    "preco": 5.1273,
+    "unidade": "R$/US$",
+    "fonte": "Banco Central do Brasil, SGS serie 1"
    }
   },
   "ouro_pm": {
@@ -291,6 +296,11 @@
    },
    "2026-09-01": {
     "preco": 4353.15,
+    "unidade": "US$/oz t",
+    "fonte": "LBMA (prices.lbma.org.uk), serie diaria oficial"
+   },
+   "2026-09-02": {
+    "preco": 4382.25,
     "unidade": "US$/oz t",
     "fonte": "LBMA (prices.lbma.org.uk), serie diaria oficial"
    }
@@ -375,6 +385,11 @@
     "preco": 4367.25,
     "unidade": "US$/oz t",
     "fonte": "LBMA (prices.lbma.org.uk), serie diaria oficial"
+   },
+   "2026-09-02": {
+    "preco": 4308.7,
+    "unidade": "US$/oz t",
+    "fonte": "LBMA (prices.lbma.org.uk), serie diaria oficial"
    }
   },
   "prata": {
@@ -457,9 +472,14 @@
     "preco": 64.77,
     "unidade": "US$/oz t",
     "fonte": "LBMA (prices.lbma.org.uk), serie diaria oficial"
+   },
+   "2026-09-02": {
+    "preco": 63.7,
+    "unidade": "US$/oz t",
+    "fonte": "LBMA (prices.lbma.org.uk), serie diaria oficial"
    }
   }
  },
- "atualizado_em": "2026-09-02T12:38:50",
- "total_pontos": 90
+ "atualizado_em": "2026-09-03T12:37:52",
+ "total_pontos": 94
 }
