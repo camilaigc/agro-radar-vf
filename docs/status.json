@@ -1,44 +1,36 @@
 {
  "schema": "radar-agro-status/2",
  "data": "2026-09-04",
- "gerado_em": "2026-09-04T08:52:07.034990-03:00",
- "execucoes_no_dia": 1,
+ "gerado_em": "2026-09-04T09:34:40.655781-03:00",
+ "execucoes_no_dia": 2,
  "resumo": {
-  "fontes_testadas": 80,
-  "fontes_ok": 67,
-  "itens_brutos": 3333,
-  "itens_na_janela": 545,
-  "novos_nesta_execucao": 260,
-  "no_escopo_nesta_execucao": 291,
-  "novos_fora_escopo_nesta_execucao": 254,
-  "no_escopo_no_dia": 281,
-  "fora_escopo_no_dia": 250,
-  "novos": 487,
-  "repetidos_de_edicoes_anteriores": 58,
-  "agrupados_por_titulo_parecido": 17,
+  "fontes_testadas": 81,
+  "fontes_ok": 68,
+  "itens_brutos": 3401,
+  "itens_na_janela": 630,
+  "novos_nesta_execucao": 34,
+  "no_escopo_nesta_execucao": 318,
+  "novos_fora_escopo_nesta_execucao": 312,
+  "no_escopo_no_dia": 322,
+  "fora_escopo_no_dia": 327,
+  "novos": 109,
+  "repetidos_de_edicoes_anteriores": 521,
+  "agrupados_por_titulo_parecido": 20,
   "descartados": 0,
-  "cotacoes_coletadas": 17
+  "cotacoes_coletadas": 15
  },
- "n_falhas": 8,
+ "n_falhas": 7,
  "n_fontes": 72,
- "n_entradas_cobertura": 80,
- "cotacoes": 14,
+ "n_entradas_cobertura": 81,
+ "cotacoes": 12,
  "cotacoes_mensais": 3,
- "itens": 281,
- "itens_revisao": 24,
- "itens_fora_escopo": 250,
+ "itens": 322,
+ "itens_revisao": 28,
+ "itens_fora_escopo": 327,
  "saude_fontes": {
   "sem_acesso": [
    {
-    "fonte": "noticiasagricolas.com.br",
-    "camada": "Site via Google News",
-    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
-    "tentativas": [
-     "direta"
-    ]
-   },
-   {
-    "fonte": "valor.globo.com",
+    "fonte": "seafoodsource.com",
     "camada": "Site via Google News",
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
     "tentativas": [
@@ -110,11 +102,6 @@
     "itens_brutos": 100
    },
    {
-    "fonte": "feedstrategy.com",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
-   },
-   {
     "fonte": "wattagnet.com",
     "camada": "Site via Google News",
     "itens_brutos": 100
@@ -122,7 +109,7 @@
    {
     "fonte": "allaboutfeed.net",
     "camada": "Site via Google News",
-    "itens_brutos": 8
+    "itens_brutos": 7
    },
    {
     "fonte": "poultryworld.net",
@@ -174,110 +161,110 @@
    {
     "fonte": "wattagnet.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 27,
+    "execucoes_sem_item": 28,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "allaboutfeed.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 27,
+    "execucoes_sem_item": 28,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "poultryworld.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 27,
+    "execucoes_sem_item": 28,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "pigprogress.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 27,
+    "execucoes_sem_item": 28,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "futurefarming.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 27,
+    "execucoes_sem_item": 28,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "globalmeatnews.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 27,
+    "execucoes_sem_item": 28,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "agriinvestor.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 27,
+    "execucoes_sem_item": 28,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "fusoesaquisicoes.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 27,
+    "execucoes_sem_item": 28,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "aviculturaindustrial.com.br",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 27,
+    "execucoes_sem_item": 28,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "portaldbo.com.br",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 17,
+    "execucoes_sem_item": 18,
     "ultima_com_item": "2026-08-12T12:34:04.116517-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "fato relevante venda de ativos agronegócio",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 17,
+    "execucoes_sem_item": 18,
     "ultima_com_item": "2026-08-12T12:34:04.116517-03:00",
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "CADE ato de concentração agronegócio",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 11,
+    "execucoes_sem_item": 12,
     "ultima_com_item": "2026-08-20T11:21:09.850301-03:00",
     "acesso_ok_na_ultima": false
    },
    {
-    "fonte": "feedstrategy.com",
-    "camada": "Site via Google News",
-    "execucoes_sem_item": 10,
-    "ultima_com_item": "2026-08-21T11:10:23.682431-03:00",
-    "acesso_ok_na_ultima": true
-   },
-   {
     "fonte": "thefishsite.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 8,
+    "execucoes_sem_item": 9,
     "ultima_com_item": "2026-08-25T11:31:15.025068-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "agropages.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 5,
+    "execucoes_sem_item": 6,
     "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
     "acesso_ok_na_ultima": true
+   },
+   {
+    "fonte": "aquisição revenda insumos agrícolas",
+    "camada": "Consulta Google News",
+    "execucoes_sem_item": 5,
+    "ultima_com_item": "2026-08-31T09:23:35.411561-03:00",
+    "acesso_ok_na_ultima": false
    }
   ],
-  "execucoes_no_ledger": 27,
+  "execucoes_no_ledger": 28,
   "nota": "Fonte silenciosa NAO e fonte morta: veiculo especializado publica algumas vezes por semana. Nenhuma URL e removida automaticamente. Só 'sem_acesso' pede conferencia de URL."
  }
 }
