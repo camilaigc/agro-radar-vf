@@ -1,42 +1,34 @@
 {
  "schema": "radar-agro-status/2",
- "data": "2026-09-04",
- "gerado_em": "2026-09-04T09:34:40.655781-03:00",
- "execucoes_no_dia": 2,
+ "data": "2026-09-07",
+ "gerado_em": "2026-09-07T14:45:30.745506-03:00",
+ "execucoes_no_dia": 1,
  "resumo": {
-  "fontes_testadas": 81,
+  "fontes_testadas": 78,
   "fontes_ok": 68,
-  "itens_brutos": 3401,
-  "itens_na_janela": 630,
-  "novos_nesta_execucao": 34,
-  "no_escopo_nesta_execucao": 318,
-  "novos_fora_escopo_nesta_execucao": 312,
-  "no_escopo_no_dia": 322,
-  "fora_escopo_no_dia": 327,
-  "novos": 109,
-  "repetidos_de_edicoes_anteriores": 521,
-  "agrupados_por_titulo_parecido": 20,
+  "itens_brutos": 3486,
+  "itens_na_janela": 741,
+  "novos_nesta_execucao": 314,
+  "no_escopo_nesta_execucao": 357,
+  "novos_fora_escopo_nesta_execucao": 384,
+  "no_escopo_no_dia": 351,
+  "fora_escopo_no_dia": 375,
+  "novos": 666,
+  "repetidos_de_edicoes_anteriores": 75,
+  "agrupados_por_titulo_parecido": 26,
   "descartados": 0,
-  "cotacoes_coletadas": 15
+  "cotacoes_coletadas": 18
  },
- "n_falhas": 7,
+ "n_falhas": 6,
  "n_fontes": 72,
- "n_entradas_cobertura": 81,
- "cotacoes": 12,
+ "n_entradas_cobertura": 78,
+ "cotacoes": 15,
  "cotacoes_mensais": 3,
- "itens": 322,
- "itens_revisao": 28,
- "itens_fora_escopo": 327,
+ "itens": 351,
+ "itens_revisao": 24,
+ "itens_fora_escopo": 375,
  "saude_fontes": {
   "sem_acesso": [
-   {
-    "fonte": "seafoodsource.com",
-    "camada": "Site via Google News",
-    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
-    "tentativas": [
-     "direta"
-    ]
-   },
    {
     "fonte": "globalmeatnews.com",
     "camada": "Site via Google News",
@@ -63,12 +55,11 @@
     ]
    },
    {
-    "fonte": "CADE ato de concentração agronegócio",
+    "fonte": "agribusiness acquisition Brazil",
     "camada": "Consulta Google News",
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
     "tentativas": [
-     "direta",
-     "sem acento"
+     "direta"
     ]
    },
    {
@@ -102,6 +93,11 @@
     "itens_brutos": 100
    },
    {
+    "fonte": "feedstrategy.com",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
+   },
+   {
     "fonte": "wattagnet.com",
     "camada": "Site via Google News",
     "itens_brutos": 100
@@ -109,17 +105,17 @@
    {
     "fonte": "allaboutfeed.net",
     "camada": "Site via Google News",
-    "itens_brutos": 7
+    "itens_brutos": 4
    },
    {
     "fonte": "poultryworld.net",
     "camada": "Site via Google News",
-    "itens_brutos": 17
+    "itens_brutos": 4
    },
    {
     "fonte": "pigprogress.net",
     "camada": "Site via Google News",
-    "itens_brutos": 10
+    "itens_brutos": 1
    },
    {
     "fonte": "thefishsite.com",
@@ -142,129 +138,115 @@
     "itens_brutos": 100
    },
    {
-    "fonte": "portaldbo.com.br",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
+    "fonte": "aquisição hortifrúti OR FLV",
+    "camada": "Consulta Google News",
+    "itens_brutos": 1
    },
    {
-    "fonte": "aquisição sementes Brasil",
+    "fonte": "aquisição pet food Brasil",
     "camada": "Consulta Google News",
-    "itens_brutos": 4
+    "itens_brutos": 11
    },
    {
     "fonte": "CADE aprova aquisição alimentos",
     "camada": "Consulta Google News",
-    "itens_brutos": 4
+    "itens_brutos": 2
    }
   ],
   "silenciosas_5_execucoes": [
    {
     "fonte": "wattagnet.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 28,
+    "execucoes_sem_item": 29,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "allaboutfeed.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 28,
+    "execucoes_sem_item": 29,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "poultryworld.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 28,
+    "execucoes_sem_item": 29,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "pigprogress.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 28,
+    "execucoes_sem_item": 29,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "futurefarming.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 28,
+    "execucoes_sem_item": 29,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "globalmeatnews.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 28,
+    "execucoes_sem_item": 29,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "agriinvestor.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 28,
+    "execucoes_sem_item": 29,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "fusoesaquisicoes.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 28,
+    "execucoes_sem_item": 29,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "aviculturaindustrial.com.br",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 28,
+    "execucoes_sem_item": 29,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": false
    },
    {
-    "fonte": "portaldbo.com.br",
-    "camada": "Site via Google News",
-    "execucoes_sem_item": 18,
-    "ultima_com_item": "2026-08-12T12:34:04.116517-03:00",
-    "acesso_ok_na_ultima": true
-   },
-   {
     "fonte": "fato relevante venda de ativos agronegócio",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 18,
+    "execucoes_sem_item": 19,
     "ultima_com_item": "2026-08-12T12:34:04.116517-03:00",
-    "acesso_ok_na_ultima": false
-   },
-   {
-    "fonte": "CADE ato de concentração agronegócio",
-    "camada": "Consulta Google News",
-    "execucoes_sem_item": 12,
-    "ultima_com_item": "2026-08-20T11:21:09.850301-03:00",
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "thefishsite.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 9,
+    "execucoes_sem_item": 10,
     "ultima_com_item": "2026-08-25T11:31:15.025068-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "agropages.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 6,
+    "execucoes_sem_item": 7,
     "ultima_com_item": "2026-08-28T18:50:43.967433-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "aquisição revenda insumos agrícolas",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 5,
+    "execucoes_sem_item": 6,
     "ultima_com_item": "2026-08-31T09:23:35.411561-03:00",
     "acesso_ok_na_ultima": false
    }
   ],
-  "execucoes_no_ledger": 28,
+  "execucoes_no_ledger": 29,
   "nota": "Fonte silenciosa NAO e fonte morta: veiculo especializado publica algumas vezes por semana. Nenhuma URL e removida automaticamente. Só 'sem_acesso' pede conferencia de URL."
  }
 }
