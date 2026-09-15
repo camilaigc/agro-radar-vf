@@ -1,21 +1,21 @@
 {
  "schema": "radar-agro-status/2",
- "data": "2026-09-14",
- "gerado_em": "2026-09-14T15:05:41.173563-03:00",
- "execucoes_no_dia": 2,
+ "data": "2026-09-15",
+ "gerado_em": "2026-09-15T14:02:30.732906-03:00",
+ "execucoes_no_dia": 1,
  "resumo": {
   "fontes_testadas": 78,
-  "fontes_ok": 66,
-  "itens_brutos": 3461,
-  "itens_na_janela": 814,
-  "novos_nesta_execucao": 134,
-  "no_escopo_nesta_execucao": 413,
-  "novos_fora_escopo_nesta_execucao": 401,
-  "no_escopo_no_dia": 434,
-  "fora_escopo_no_dia": 519,
-  "novos": 313,
-  "repetidos_de_edicoes_anteriores": 501,
-  "agrupados_por_titulo_parecido": 30,
+  "fontes_ok": 65,
+  "itens_brutos": 3399,
+  "itens_na_janela": 765,
+  "novos_nesta_execucao": 232,
+  "no_escopo_nesta_execucao": 368,
+  "novos_fora_escopo_nesta_execucao": 397,
+  "no_escopo_no_dia": 352,
+  "fora_escopo_no_dia": 393,
+  "novos": 534,
+  "repetidos_de_edicoes_anteriores": 231,
+  "agrupados_por_titulo_parecido": 33,
   "descartados": 0,
   "cotacoes_coletadas": 18
  },
@@ -24,9 +24,9 @@
  "n_entradas_cobertura": 78,
  "cotacoes": 15,
  "cotacoes_mensais": 3,
- "itens": 434,
+ "itens": 352,
  "itens_revisao": 41,
- "itens_fora_escopo": 519,
+ "itens_fora_escopo": 393,
  "saude_fontes": {
   "sem_acesso": [
    {
@@ -93,7 +93,12 @@
   ],
   "silenciosas_hoje": [
    {
-    "fonte": "seedquest.com",
+    "fonte": "capitalaberto.com.br",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
+   },
+   {
+    "fonte": "agropages.com",
     "camada": "Site via Google News",
     "itens_brutos": 100
    },
@@ -110,7 +115,7 @@
    {
     "fonte": "allaboutfeed.net",
     "camada": "Site via Google News",
-    "itens_brutos": 4
+    "itens_brutos": 5
    },
    {
     "fonte": "poultryworld.net",
@@ -143,119 +148,119 @@
     "itens_brutos": 100
    },
    {
-    "fonte": "CRA OR Fiagro emissão",
-    "camada": "Consulta Google News",
-    "itens_brutos": 6
+    "fonte": "portaldbo.com.br",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
    }
   ],
   "silenciosas_5_execucoes": [
    {
     "fonte": "wattagnet.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 36,
+    "execucoes_sem_item": 37,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "allaboutfeed.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 36,
+    "execucoes_sem_item": 37,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "poultryworld.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 36,
+    "execucoes_sem_item": 37,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "pigprogress.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 36,
+    "execucoes_sem_item": 37,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "futurefarming.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 36,
+    "execucoes_sem_item": 37,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "globalmeatnews.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 36,
+    "execucoes_sem_item": 37,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "agriinvestor.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 36,
+    "execucoes_sem_item": 37,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "fusoesaquisicoes.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 36,
+    "execucoes_sem_item": 37,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "aviculturaindustrial.com.br",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 36,
+    "execucoes_sem_item": 37,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "fato relevante venda de ativos agronegócio",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 26,
+    "execucoes_sem_item": 27,
     "ultima_com_item": "2026-08-12T12:34:04.116517-03:00",
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "thefishsite.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 17,
+    "execucoes_sem_item": 18,
     "ultima_com_item": "2026-08-25T11:31:15.025068-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "CVM fato relevante aquisição agro",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 10,
+    "execucoes_sem_item": 11,
     "ultima_com_item": "2026-09-03T09:35:12.752272-03:00",
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "feedstrategy.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 8,
+    "execucoes_sem_item": 9,
     "ultima_com_item": "2026-09-04T09:34:40.655781-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "CADE ato de concentração agronegócio",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 7,
+    "execucoes_sem_item": 8,
     "ultima_com_item": "2026-09-07T14:45:30.745506-03:00",
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "aquisição pet food Brasil",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 5,
+    "execucoes_sem_item": 6,
     "ultima_com_item": "2026-09-09T13:41:21.102758-03:00",
     "acesso_ok_na_ultima": false
    }
   ],
-  "execucoes_no_ledger": 36,
+  "execucoes_no_ledger": 37,
   "nota": "Fonte silenciosa NAO e fonte morta: veiculo especializado publica algumas vezes por semana. Nenhuma URL e removida automaticamente. Só 'sem_acesso' pede conferencia de URL."
  }
 }
