@@ -1,32 +1,32 @@
 {
  "schema": "radar-agro-status/2",
- "data": "2026-09-16",
- "gerado_em": "2026-09-16T14:01:11.826275-03:00",
+ "data": "2026-09-17",
+ "gerado_em": "2026-09-17T14:02:30.950333-03:00",
  "execucoes_no_dia": 1,
  "resumo": {
-  "fontes_testadas": 77,
-  "fontes_ok": 66,
-  "itens_brutos": 3440,
-  "itens_na_janela": 717,
-  "novos_nesta_execucao": 240,
-  "no_escopo_nesta_execucao": 374,
-  "novos_fora_escopo_nesta_execucao": 343,
-  "no_escopo_no_dia": 358,
-  "fora_escopo_no_dia": 336,
-  "novos": 498,
-  "repetidos_de_edicoes_anteriores": 219,
-  "agrupados_por_titulo_parecido": 34,
+  "fontes_testadas": 78,
+  "fontes_ok": 69,
+  "itens_brutos": 3467,
+  "itens_na_janela": 716,
+  "novos_nesta_execucao": 246,
+  "no_escopo_nesta_execucao": 369,
+  "novos_fora_escopo_nesta_execucao": 347,
+  "no_escopo_no_dia": 357,
+  "fora_escopo_no_dia": 338,
+  "novos": 523,
+  "repetidos_de_edicoes_anteriores": 193,
+  "agrupados_por_titulo_parecido": 27,
   "descartados": 0,
   "cotacoes_coletadas": 18
  },
- "n_falhas": 6,
+ "n_falhas": 5,
  "n_fontes": 72,
- "n_entradas_cobertura": 77,
+ "n_entradas_cobertura": 78,
  "cotacoes": 15,
  "cotacoes_mensais": 3,
- "itens": 358,
- "itens_revisao": 34,
- "itens_fora_escopo": 336,
+ "itens": 357,
+ "itens_revisao": 30,
+ "itens_fora_escopo": 338,
  "saude_fontes": {
   "sem_acesso": [
    {
@@ -64,15 +64,6 @@
     ]
    },
    {
-    "fonte": "CADE ato de concentração agronegócio",
-    "camada": "Consulta Google News",
-    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
-    "tentativas": [
-     "direta",
-     "sem acento"
-    ]
-   },
-   {
     "fonte": "CVM fato relevante aquisição agro",
     "camada": "Consulta Google News",
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
@@ -95,6 +86,11 @@
    },
    {
     "fonte": "agropages.com",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
+   },
+   {
+    "fonte": "seedquest.com",
     "camada": "Site via Google News",
     "itens_brutos": 100
    },
@@ -134,7 +130,17 @@
     "itens_brutos": 100
    },
    {
+    "fonte": "agriinvestor.com",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
+   },
+   {
     "fonte": "fusoesaquisicoes.com",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
+   },
+   {
+    "fonte": "portaldbo.com.br",
     "camada": "Site via Google News",
     "itens_brutos": 100
    },
@@ -142,102 +148,112 @@
     "fonte": "aquisição revenda insumos agrícolas",
     "camada": "Consulta Google News",
     "itens_brutos": 1
+   },
+   {
+    "fonte": "CADE ato de concentração mineração",
+    "camada": "Consulta Google News",
+    "itens_brutos": 2
+   },
+   {
+    "fonte": "fato relevante venda de ativos agronegócio",
+    "camada": "Consulta Google News",
+    "itens_brutos": 2
    }
   ],
   "silenciosas_5_execucoes": [
    {
     "fonte": "wattagnet.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 38,
+    "execucoes_sem_item": 39,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "allaboutfeed.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 38,
+    "execucoes_sem_item": 39,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "poultryworld.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 38,
+    "execucoes_sem_item": 39,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "pigprogress.net",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 38,
+    "execucoes_sem_item": 39,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "futurefarming.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 38,
+    "execucoes_sem_item": 39,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "globalmeatnews.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 38,
+    "execucoes_sem_item": 39,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "fusoesaquisicoes.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 38,
+    "execucoes_sem_item": 39,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "aviculturaindustrial.com.br",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 38,
+    "execucoes_sem_item": 39,
     "ultima_com_item": null,
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "thefishsite.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 19,
+    "execucoes_sem_item": 20,
     "ultima_com_item": "2026-08-25T11:31:15.025068-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "CVM fato relevante aquisição agro",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 12,
+    "execucoes_sem_item": 13,
     "ultima_com_item": "2026-09-03T09:35:12.752272-03:00",
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "feedstrategy.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 10,
+    "execucoes_sem_item": 11,
     "ultima_com_item": "2026-09-04T09:34:40.655781-03:00",
     "acesso_ok_na_ultima": true
    },
    {
-    "fonte": "CADE ato de concentração agronegócio",
+    "fonte": "aquisição pet food Brasil",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 9,
-    "ultima_com_item": "2026-09-07T14:45:30.745506-03:00",
+    "execucoes_sem_item": 8,
+    "ultima_com_item": "2026-09-09T13:41:21.102758-03:00",
     "acesso_ok_na_ultima": false
    },
    {
-    "fonte": "aquisição pet food Brasil",
+    "fonte": "aquisição hortifrúti OR FLV",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 7,
-    "ultima_com_item": "2026-09-09T13:41:21.102758-03:00",
+    "execucoes_sem_item": 5,
+    "ultima_com_item": "2026-09-11T13:31:54.506858-03:00",
     "acesso_ok_na_ultima": false
    }
   ],
-  "execucoes_no_ledger": 38,
+  "execucoes_no_ledger": 39,
   "nota": "Fonte silenciosa NAO e fonte morta: veiculo especializado publica algumas vezes por semana. Nenhuma URL e removida automaticamente. Só 'sem_acesso' pede conferencia de URL."
  }
 }
