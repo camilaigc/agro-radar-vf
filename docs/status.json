@@ -1,32 +1,32 @@
 {
  "schema": "radar-agro-status/2",
- "data": "2026-09-21",
- "gerado_em": "2026-09-21T15:13:34.890901-03:00",
+ "data": "2026-09-22",
+ "gerado_em": "2026-09-22T09:44:35.782014-03:00",
  "execucoes_no_dia": 1,
  "resumo": {
-  "fontes_testadas": 77,
-  "fontes_ok": 68,
-  "itens_brutos": 3494,
-  "itens_na_janela": 864,
-  "novos_nesta_execucao": 346,
-  "no_escopo_nesta_execucao": 453,
-  "novos_fora_escopo_nesta_execucao": 411,
-  "no_escopo_no_dia": 428,
-  "fora_escopo_no_dia": 399,
-  "novos": 714,
-  "repetidos_de_edicoes_anteriores": 150,
-  "agrupados_por_titulo_parecido": 49,
+  "fontes_testadas": 79,
+  "fontes_ok": 66,
+  "itens_brutos": 3387,
+  "itens_na_janela": 733,
+  "novos_nesta_execucao": 199,
+  "no_escopo_nesta_execucao": 373,
+  "novos_fora_escopo_nesta_execucao": 360,
+  "no_escopo_no_dia": 349,
+  "fora_escopo_no_dia": 350,
+  "novos": 420,
+  "repetidos_de_edicoes_anteriores": 313,
+  "agrupados_por_titulo_parecido": 41,
   "descartados": 0,
-  "cotacoes_coletadas": 17
+  "cotacoes_coletadas": 18
  },
- "n_falhas": 5,
+ "n_falhas": 8,
  "n_fontes": 72,
- "n_entradas_cobertura": 77,
- "cotacoes": 14,
+ "n_entradas_cobertura": 79,
+ "cotacoes": 15,
  "cotacoes_mensais": 3,
- "itens": 428,
- "itens_revisao": 37,
- "itens_fora_escopo": 399,
+ "itens": 349,
+ "itens_revisao": 27,
+ "itens_fora_escopo": 350,
  "saude_fontes": {
   "sem_acesso": [
    {
@@ -46,7 +46,33 @@
     ]
    },
    {
-    "fonte": "aquisição hortifrúti OR FLV",
+    "fonte": "aquisição pet food Brasil",
+    "camada": "Consulta Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
+    "fonte": "agribusiness acquisition Brazil",
+    "camada": "Consulta Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "CADE ato de concentração agronegócio",
+    "camada": "Consulta Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
+    "fonte": "CADE ato de concentração mineração",
     "camada": "Consulta Google News",
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
     "tentativas": [
@@ -75,7 +101,7 @@
   ],
   "silenciosas_hoje": [
    {
-    "fonte": "capitalaberto.com.br",
+    "fonte": "agropages.com",
     "camada": "Site via Google News",
     "itens_brutos": 100
    },
@@ -125,19 +151,9 @@
     "itens_brutos": 100
    },
    {
-    "fonte": "portaldbo.com.br",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
-   },
-   {
-    "fonte": "CADE ato de concentração agronegócio",
+    "fonte": "aquisição frigorífico",
     "camada": "Consulta Google News",
     "itens_brutos": 2
-   },
-   {
-    "fonte": "CADE ato de concentração mineração",
-    "camada": "Consulta Google News",
-    "itens_brutos": 1
    }
   ],
   "silenciosas_5_execucoes": [
@@ -200,23 +216,16 @@
    {
     "fonte": "thefishsite.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 22,
+    "execucoes_sem_item": 23,
     "ultima_com_item": "2026-08-25T11:31:15.025068-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "feedstrategy.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 13,
+    "execucoes_sem_item": 14,
     "ultima_com_item": "2026-09-04T09:34:40.655781-03:00",
     "acesso_ok_na_ultima": true
-   },
-   {
-    "fonte": "aquisição hortifrúti OR FLV",
-    "camada": "Consulta Google News",
-    "execucoes_sem_item": 7,
-    "ultima_com_item": "2026-09-11T13:31:54.506858-03:00",
-    "acesso_ok_na_ultima": false
    }
   ],
   "execucoes_no_ledger": 40,
