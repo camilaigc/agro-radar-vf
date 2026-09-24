@@ -1,34 +1,42 @@
 {
  "schema": "radar-agro-status/2",
- "data": "2026-09-23",
- "gerado_em": "2026-09-23T14:05:39.271986-03:00",
+ "data": "2026-09-24",
+ "gerado_em": "2026-09-24T14:14:38.022381-03:00",
  "execucoes_no_dia": 1,
  "resumo": {
-  "fontes_testadas": 79,
-  "fontes_ok": 71,
-  "itens_brutos": 3458,
-  "itens_na_janela": 796,
-  "novos_nesta_execucao": 264,
-  "no_escopo_nesta_execucao": 438,
-  "novos_fora_escopo_nesta_execucao": 358,
-  "no_escopo_no_dia": 415,
-  "fora_escopo_no_dia": 353,
-  "novos": 537,
-  "repetidos_de_edicoes_anteriores": 259,
-  "agrupados_por_titulo_parecido": 43,
+  "fontes_testadas": 80,
+  "fontes_ok": 66,
+  "itens_brutos": 3385,
+  "itens_na_janela": 764,
+  "novos_nesta_execucao": 263,
+  "no_escopo_nesta_execucao": 405,
+  "novos_fora_escopo_nesta_execucao": 359,
+  "no_escopo_no_dia": 388,
+  "fora_escopo_no_dia": 356,
+  "novos": 554,
+  "repetidos_de_edicoes_anteriores": 210,
+  "agrupados_por_titulo_parecido": 27,
   "descartados": 0,
-  "cotacoes_coletadas": 18
+  "cotacoes_coletadas": 15
  },
- "n_falhas": 5,
+ "n_falhas": 7,
  "n_fontes": 72,
- "n_entradas_cobertura": 79,
+ "n_entradas_cobertura": 80,
  "cotacoes": 15,
- "cotacoes_mensais": 3,
- "itens": 415,
- "itens_revisao": 35,
- "itens_fora_escopo": 353,
+ "cotacoes_mensais": 0,
+ "itens": 388,
+ "itens_revisao": 29,
+ "itens_fora_escopo": 356,
  "saude_fontes": {
   "sem_acesso": [
+   {
+    "fonte": "seafoodsource.com",
+    "camada": "Site via Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta"
+    ]
+   },
    {
     "fonte": "globalmeatnews.com",
     "camada": "Site via Google News",
@@ -43,6 +51,15 @@
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
     "tentativas": [
      "direta"
+    ]
+   },
+   {
+    "fonte": "aquisição revenda insumos agrícolas",
+    "camada": "Consulta Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta",
+     "sem acento"
     ]
    },
    {
@@ -76,6 +93,11 @@
   "silenciosas_hoje": [
    {
     "fonte": "agropages.com",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
+   },
+   {
+    "fonte": "seedquest.com",
     "camada": "Site via Google News",
     "itens_brutos": 100
    },
@@ -130,12 +152,22 @@
     "itens_brutos": 100
    },
    {
-    "fonte": "aquisição revenda insumos agrícolas",
+    "fonte": "argusmedia.com",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
+   },
+   {
+    "fonte": "aquisição hortifrúti OR FLV",
+    "camada": "Consulta Google News",
+    "itens_brutos": 3
+   },
+   {
+    "fonte": "aquisição pet food Brasil",
     "camada": "Consulta Google News",
     "itens_brutos": 2
    },
    {
-    "fonte": "timber forestry acquisition",
+    "fonte": "CVM fato relevante aquisição agro",
     "camada": "Consulta Google News",
     "itens_brutos": 2
    }
@@ -200,42 +232,42 @@
    {
     "fonte": "thefishsite.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 25,
+    "execucoes_sem_item": 26,
     "ultima_com_item": "2026-08-25T11:31:15.025068-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "feedstrategy.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 16,
+    "execucoes_sem_item": 17,
     "ultima_com_item": "2026-09-04T09:34:40.655781-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "agriinvestor.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 6,
+    "execucoes_sem_item": 7,
     "ultima_com_item": "2026-09-16T14:01:11.826275-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "fato relevante venda de ativos agronegócio",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 6,
+    "execucoes_sem_item": 7,
     "ultima_com_item": "2026-09-16T14:01:11.826275-03:00",
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "CADE ato de concentração agronegócio",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 5,
+    "execucoes_sem_item": 6,
     "ultima_com_item": "2026-09-17T14:02:30.950333-03:00",
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "CADE aprova aquisição alimentos",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 5,
+    "execucoes_sem_item": 6,
     "ultima_com_item": "2026-09-17T14:02:30.950333-03:00",
     "acesso_ok_na_ultima": false
    }
