@@ -463,6 +463,11 @@
     "preco": 4266.4,
     "unidade": "US$/oz t",
     "fonte": "LBMA (prices.lbma.org.uk), serie diaria oficial"
+   },
+   "2026-09-25": {
+    "preco": 4261.05,
+    "unidade": "US$/oz t",
+    "fonte": "LBMA (prices.lbma.org.uk), serie diaria oficial"
    }
   },
   "ouro_am": {
@@ -628,6 +633,11 @@
    },
    "2026-09-24": {
     "preco": 4255.55,
+    "unidade": "US$/oz t",
+    "fonte": "LBMA (prices.lbma.org.uk), serie diaria oficial"
+   },
+   "2026-09-25": {
+    "preco": 4290.75,
     "unidade": "US$/oz t",
     "fonte": "LBMA (prices.lbma.org.uk), serie diaria oficial"
    }
@@ -797,9 +807,14 @@
     "preco": 63.58,
     "unidade": "US$/oz t",
     "fonte": "LBMA (prices.lbma.org.uk), serie diaria oficial"
+   },
+   "2026-09-25": {
+    "preco": 65.02,
+    "unidade": "US$/oz t",
+    "fonte": "LBMA (prices.lbma.org.uk), serie diaria oficial"
    }
   }
  },
- "atualizado_em": "2026-09-25T17:18:34",
- "total_pontos": 158
+ "atualizado_em": "2026-09-28T05:02:57",
+ "total_pontos": 161
 }
