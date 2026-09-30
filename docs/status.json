@@ -1,34 +1,42 @@
 {
  "schema": "radar-agro-status/2",
- "data": "2026-09-29",
- "gerado_em": "2026-09-29T15:07:06.938464-03:00",
+ "data": "2026-09-30",
+ "gerado_em": "2026-09-30T13:21:00.722477-03:00",
  "execucoes_no_dia": 1,
  "resumo": {
-  "fontes_testadas": 75,
+  "fontes_testadas": 76,
   "fontes_ok": 67,
-  "itens_brutos": 3391,
-  "itens_na_janela": 810,
-  "novos_nesta_execucao": 226,
-  "no_escopo_nesta_execucao": 421,
-  "novos_fora_escopo_nesta_execucao": 389,
-  "no_escopo_no_dia": 407,
-  "fora_escopo_no_dia": 382,
-  "novos": 502,
-  "repetidos_de_edicoes_anteriores": 308,
-  "agrupados_por_titulo_parecido": 30,
+  "itens_brutos": 3426,
+  "itens_na_janela": 733,
+  "novos_nesta_execucao": 247,
+  "no_escopo_nesta_execucao": 375,
+  "novos_fora_escopo_nesta_execucao": 358,
+  "no_escopo_no_dia": 363,
+  "fora_escopo_no_dia": 351,
+  "novos": 523,
+  "repetidos_de_edicoes_anteriores": 210,
+  "agrupados_por_titulo_parecido": 34,
   "descartados": 0,
-  "cotacoes_coletadas": 17
+  "cotacoes_coletadas": 16
  },
- "n_falhas": 5,
+ "n_falhas": 6,
  "n_fontes": 72,
- "n_entradas_cobertura": 75,
- "cotacoes": 14,
+ "n_entradas_cobertura": 76,
+ "cotacoes": 13,
  "cotacoes_mensais": 3,
- "itens": 407,
- "itens_revisao": 38,
- "itens_fora_escopo": 382,
+ "itens": 363,
+ "itens_revisao": 23,
+ "itens_fora_escopo": 351,
  "saude_fontes": {
   "sem_acesso": [
+   {
+    "fonte": "Money Times",
+    "camada": "RSS",
+    "erro": "ReadTimeout: HTTPSConnectionPool(host='www.moneytimes.com.br', port=443): Read timed out. (read timeout=30)",
+    "tentativas": [
+     "direta"
+    ]
+   },
    {
     "fonte": "globalmeatnews.com",
     "camada": "Site via Google News",
@@ -75,6 +83,11 @@
   ],
   "silenciosas_hoje": [
    {
+    "fonte": "capitalaberto.com.br",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
+   },
+   {
     "fonte": "agropages.com",
     "camada": "Site via Google News",
     "itens_brutos": 100
@@ -92,7 +105,7 @@
    {
     "fonte": "allaboutfeed.net",
     "camada": "Site via Google News",
-    "itens_brutos": 4
+    "itens_brutos": 5
    },
    {
     "fonte": "poultryworld.net",
@@ -123,6 +136,16 @@
     "fonte": "fusoesaquisicoes.com",
     "camada": "Site via Google News",
     "itens_brutos": 100
+   },
+   {
+    "fonte": "argusmedia.com",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
+   },
+   {
+    "fonte": "fato relevante venda de ativos agronegócio",
+    "camada": "Consulta Google News",
+    "itens_brutos": 2
    }
   ],
   "silenciosas_5_execucoes": [
@@ -185,28 +208,28 @@
    {
     "fonte": "thefishsite.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 30,
+    "execucoes_sem_item": 31,
     "ultima_com_item": "2026-08-25T11:31:15.025068-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "feedstrategy.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 21,
+    "execucoes_sem_item": 22,
     "ultima_com_item": "2026-09-04T09:34:40.655781-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "agropages.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 8,
+    "execucoes_sem_item": 9,
     "ultima_com_item": "2026-09-21T15:13:34.890901-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "CVM fato relevante aquisição agro",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 5,
+    "execucoes_sem_item": 6,
     "ultima_com_item": "2026-09-23T14:05:39.271986-03:00",
     "acesso_ok_na_ultima": false
    }
