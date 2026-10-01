@@ -1,38 +1,254 @@
 {
  "schema": "radar-agro-status/2",
  "data": "2026-10-01",
- "gerado_em": "2026-10-01T14:38:21.793572-03:00",
- "execucoes_no_dia": 1,
+ "gerado_em": "2026-10-01T15:32:31.132608-03:00",
+ "execucoes_no_dia": 2,
  "resumo": {
-  "fontes_testadas": 78,
-  "fontes_ok": 72,
-  "itens_brutos": 3521,
-  "itens_na_janela": 828,
-  "novos_nesta_execucao": 256,
-  "no_escopo_nesta_execucao": 420,
-  "novos_fora_escopo_nesta_execucao": 408,
-  "no_escopo_no_dia": 402,
-  "fora_escopo_no_dia": 405,
-  "novos": 565,
-  "repetidos_de_edicoes_anteriores": 263,
-  "agrupados_por_titulo_parecido": 37,
+  "fontes_testadas": 89,
+  "fontes_ok": 15,
+  "itens_brutos": 611,
+  "itens_na_janela": 215,
+  "novos_nesta_execucao": 12,
+  "no_escopo_nesta_execucao": 154,
+  "novos_fora_escopo_nesta_execucao": 61,
+  "no_escopo_no_dia": 414,
+  "fora_escopo_no_dia": 429,
+  "novos": 36,
+  "repetidos_de_edicoes_anteriores": 179,
+  "agrupados_por_titulo_parecido": 3,
   "descartados": 0,
   "cotacoes_coletadas": 16
  },
- "n_falhas": 4,
+ "n_falhas": 57,
  "n_fontes": 72,
- "n_entradas_cobertura": 78,
+ "n_entradas_cobertura": 89,
  "cotacoes": 13,
  "cotacoes_mensais": 3,
- "itens": 402,
- "itens_revisao": 31,
- "itens_fora_escopo": 405,
+ "itens": 414,
+ "itens_revisao": 34,
+ "itens_fora_escopo": 429,
  "saude_fontes": {
   "sem_acesso": [
    {
+    "fonte": "noticiasagricolas.com.br",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "novacana.com",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "udop.com.br",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "brasilmineral.com.br",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "pipelinevalor.globo.com",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "capitalaberto.com.br",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "agropages.com",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "seedquest.com",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "world-grain.com",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "feedstrategy.com",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "wattagnet.com",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "allaboutfeed.net",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "poultryworld.net",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "pigprogress.net",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "thefishsite.com",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "seafoodsource.com",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "petfoodindustry.com",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "miningweekly.com",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "bnamericas.com",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "futurefarming.com",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "valor.globo.com",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "estadao.com.br",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
     "fonte": "globalmeatnews.com",
     "camada": "Site via Google News",
-    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "agriinvestor.com",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "fusoesaquisicoes.com",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "noticiasdemineracao.com",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "agrolink.com.br",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "portaldbo.com.br",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
     "tentativas": [
      "direta"
     ]
@@ -40,15 +256,229 @@
    {
     "fonte": "aviculturaindustrial.com.br",
     "camada": "Site via Google News",
-    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "erro": "HTTP 503",
     "tentativas": [
      "direta"
     ]
    },
    {
+    "fonte": "fastmarkets.com",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "argusmedia.com",
+    "camada": "Site via Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "aquisição agronegócio",
+    "camada": "Consulta Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
+    "fonte": "aquisição OR fusão fertilizantes",
+    "camada": "Consulta Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
+    "fonte": "aquisição frigorífico",
+    "camada": "Consulta Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
+    "fonte": "aquisição sementes Brasil",
+    "camada": "Consulta Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
+    "fonte": "aquisição usina açúcar etanol",
+    "camada": "Consulta Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
     "fonte": "aquisição revenda insumos agrícolas",
     "camada": "Consulta Google News",
-    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
+    "fonte": "aquisição nutrição animal",
+    "camada": "Consulta Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
+    "fonte": "recuperação judicial agronegócio",
+    "camada": "Consulta Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
+    "fonte": "CRA OR Fiagro emissão",
+    "camada": "Consulta Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
+    "fonte": "aquisição mineração Brasil",
+    "camada": "Consulta Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
+    "fonte": "aquisição hortifrúti OR FLV",
+    "camada": "Consulta Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
+    "fonte": "aquisição pet food Brasil",
+    "camada": "Consulta Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
+    "fonte": "agribusiness acquisition Brazil",
+    "camada": "Consulta Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "fertilizer company acquisition",
+    "camada": "Consulta Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "animal nutrition acquisition",
+    "camada": "Consulta Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "seed company acquisition",
+    "camada": "Consulta Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "crop protection acquisition",
+    "camada": "Consulta Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "pet food acquisition",
+    "camada": "Consulta Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "aquaculture acquisition",
+    "camada": "Consulta Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "mining acquisition Latin America",
+    "camada": "Consulta Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "timber forestry acquisition",
+    "camada": "Consulta Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
+    "fonte": "CADE ato de concentração agronegócio",
+    "camada": "Consulta Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
+    "fonte": "CADE ato de concentração mineração",
+    "camada": "Consulta Google News",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
+    "fonte": "CADE aprova aquisição alimentos",
+    "camada": "Consulta Google News",
+    "erro": "HTTP 503",
     "tentativas": [
      "direta",
      "sem acento"
@@ -57,130 +487,58 @@
    {
     "fonte": "CVM fato relevante aquisição agro",
     "camada": "Consulta Google News",
-    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "erro": "HTTP 503",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
+    "fonte": "fato relevante venda de ativos agronegócio",
+    "camada": "Consulta Google News",
+    "erro": "HTTP 503",
     "tentativas": [
      "direta",
      "sem acento"
     ]
    }
   ],
-  "silenciosas_hoje": [
-   {
-    "fonte": "capitalaberto.com.br",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
-   },
-   {
-    "fonte": "agropages.com",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
-   },
-   {
-    "fonte": "feedstrategy.com",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
-   },
-   {
-    "fonte": "wattagnet.com",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
-   },
-   {
-    "fonte": "allaboutfeed.net",
-    "camada": "Site via Google News",
-    "itens_brutos": 5
-   },
-   {
-    "fonte": "poultryworld.net",
-    "camada": "Site via Google News",
-    "itens_brutos": 2
-   },
-   {
-    "fonte": "pigprogress.net",
-    "camada": "Site via Google News",
-    "itens_brutos": 2
-   },
-   {
-    "fonte": "thefishsite.com",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
-   },
-   {
-    "fonte": "futurefarming.com",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
-   },
-   {
-    "fonte": "agriinvestor.com",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
-   },
-   {
-    "fonte": "fusoesaquisicoes.com",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
-   },
-   {
-    "fonte": "aquisição sementes Brasil",
-    "camada": "Consulta Google News",
-    "itens_brutos": 2
-   },
-   {
-    "fonte": "aquisição pet food Brasil",
-    "camada": "Consulta Google News",
-    "itens_brutos": 2
-   },
-   {
-    "fonte": "timber forestry acquisition",
-    "camada": "Consulta Google News",
-    "itens_brutos": 4
-   },
-   {
-    "fonte": "CADE ato de concentração agronegócio",
-    "camada": "Consulta Google News",
-    "itens_brutos": 4
-   },
-   {
-    "fonte": "fato relevante venda de ativos agronegócio",
-    "camada": "Consulta Google News",
-    "itens_brutos": 2
-   }
-  ],
+  "silenciosas_hoje": [],
   "silenciosas_5_execucoes": [
    {
     "fonte": "wattagnet.com",
     "camada": "Site via Google News",
     "execucoes_sem_item": 40,
     "ultima_com_item": null,
-    "acesso_ok_na_ultima": true
+    "acesso_ok_na_ultima": false
    },
    {
     "fonte": "allaboutfeed.net",
     "camada": "Site via Google News",
     "execucoes_sem_item": 40,
     "ultima_com_item": null,
-    "acesso_ok_na_ultima": true
+    "acesso_ok_na_ultima": false
    },
    {
     "fonte": "poultryworld.net",
     "camada": "Site via Google News",
     "execucoes_sem_item": 40,
     "ultima_com_item": null,
-    "acesso_ok_na_ultima": true
+    "acesso_ok_na_ultima": false
    },
    {
     "fonte": "pigprogress.net",
     "camada": "Site via Google News",
     "execucoes_sem_item": 40,
     "ultima_com_item": null,
-    "acesso_ok_na_ultima": true
+    "acesso_ok_na_ultima": false
    },
    {
     "fonte": "futurefarming.com",
     "camada": "Site via Google News",
     "execucoes_sem_item": 40,
     "ultima_com_item": null,
-    "acesso_ok_na_ultima": true
+    "acesso_ok_na_ultima": false
    },
    {
     "fonte": "globalmeatnews.com",
@@ -194,7 +552,7 @@
     "camada": "Site via Google News",
     "execucoes_sem_item": 40,
     "ultima_com_item": null,
-    "acesso_ok_na_ultima": true
+    "acesso_ok_na_ultima": false
    },
    {
     "fonte": "aviculturaindustrial.com.br",
@@ -206,36 +564,43 @@
    {
     "fonte": "thefishsite.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 33,
+    "execucoes_sem_item": 34,
     "ultima_com_item": "2026-08-25T11:31:15.025068-03:00",
-    "acesso_ok_na_ultima": true
+    "acesso_ok_na_ultima": false
    },
    {
     "fonte": "feedstrategy.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 24,
+    "execucoes_sem_item": 25,
     "ultima_com_item": "2026-09-04T09:34:40.655781-03:00",
-    "acesso_ok_na_ultima": true
+    "acesso_ok_na_ultima": false
    },
    {
     "fonte": "agropages.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 11,
+    "execucoes_sem_item": 12,
     "ultima_com_item": "2026-09-21T15:13:34.890901-03:00",
-    "acesso_ok_na_ultima": true
+    "acesso_ok_na_ultima": false
    },
    {
     "fonte": "CVM fato relevante aquisição agro",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 8,
+    "execucoes_sem_item": 9,
     "ultima_com_item": "2026-09-23T14:05:39.271986-03:00",
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "aquisição revenda insumos agrícolas",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 5,
+    "execucoes_sem_item": 6,
     "ultima_com_item": "2026-09-28T01:59:50.036151-03:00",
+    "acesso_ok_na_ultima": false
+   },
+   {
+    "fonte": "agriinvestor.com",
+    "camada": "Site via Google News",
+    "execucoes_sem_item": 5,
+    "ultima_com_item": "2026-09-28T16:42:12.930214-03:00",
     "acesso_ok_na_ultima": false
    }
   ],
