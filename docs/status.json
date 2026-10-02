@@ -1,32 +1,32 @@
 {
  "schema": "radar-agro-status/2",
  "data": "2026-10-02",
- "gerado_em": "2026-10-02T13:06:28.041589-03:00",
- "execucoes_no_dia": 1,
+ "gerado_em": "2026-10-02T14:53:58.578697-03:00",
+ "execucoes_no_dia": 2,
  "resumo": {
-  "fontes_testadas": 78,
-  "fontes_ok": 69,
-  "itens_brutos": 3493,
-  "itens_na_janela": 758,
-  "novos_nesta_execucao": 251,
-  "no_escopo_nesta_execucao": 415,
-  "novos_fora_escopo_nesta_execucao": 343,
-  "no_escopo_no_dia": 401,
-  "fora_escopo_no_dia": 338,
-  "novos": 498,
-  "repetidos_de_edicoes_anteriores": 260,
-  "agrupados_por_titulo_parecido": 23,
+  "fontes_testadas": 77,
+  "fontes_ok": 67,
+  "itens_brutos": 3473,
+  "itens_na_janela": 770,
+  "novos_nesta_execucao": 29,
+  "no_escopo_nesta_execucao": 413,
+  "novos_fora_escopo_nesta_execucao": 357,
+  "no_escopo_no_dia": 431,
+  "fora_escopo_no_dia": 427,
+  "novos": 117,
+  "repetidos_de_edicoes_anteriores": 653,
+  "agrupados_por_titulo_parecido": 19,
   "descartados": 0,
-  "cotacoes_coletadas": 16
+  "cotacoes_coletadas": 13
  },
- "n_falhas": 6,
+ "n_falhas": 7,
  "n_fontes": 72,
- "n_entradas_cobertura": 78,
+ "n_entradas_cobertura": 77,
  "cotacoes": 13,
- "cotacoes_mensais": 3,
- "itens": 401,
- "itens_revisao": 39,
- "itens_fora_escopo": 338,
+ "cotacoes_mensais": 0,
+ "itens": 431,
+ "itens_revisao": 45,
+ "itens_fora_escopo": 427,
  "saude_fontes": {
   "sem_acesso": [
    {
@@ -52,6 +52,14 @@
     "tentativas": [
      "direta",
      "sem acento"
+    ]
+   },
+   {
+    "fonte": "mining acquisition Latin America",
+    "camada": "Consulta Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta"
     ]
    },
    {
@@ -213,56 +221,56 @@
    {
     "fonte": "thefishsite.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 35,
+    "execucoes_sem_item": 36,
     "ultima_com_item": "2026-08-25T11:31:15.025068-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "feedstrategy.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 26,
+    "execucoes_sem_item": 27,
     "ultima_com_item": "2026-09-04T09:34:40.655781-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "agropages.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 13,
+    "execucoes_sem_item": 14,
     "ultima_com_item": "2026-09-21T15:13:34.890901-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "CVM fato relevante aquisição agro",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 10,
+    "execucoes_sem_item": 11,
     "ultima_com_item": "2026-09-23T14:05:39.271986-03:00",
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "aquisição revenda insumos agrícolas",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 7,
+    "execucoes_sem_item": 8,
     "ultima_com_item": "2026-09-28T01:59:50.036151-03:00",
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "agriinvestor.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 6,
+    "execucoes_sem_item": 7,
     "ultima_com_item": "2026-09-28T16:42:12.930214-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "capitalaberto.com.br",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 5,
+    "execucoes_sem_item": 6,
     "ultima_com_item": "2026-09-29T15:07:06.938464-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "fato relevante venda de ativos agronegócio",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 5,
+    "execucoes_sem_item": 6,
     "ultima_com_item": "2026-09-29T15:07:06.938464-03:00",
     "acesso_ok_na_ultima": false
    }
