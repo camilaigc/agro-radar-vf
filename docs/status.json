@@ -1,32 +1,32 @@
 {
  "schema": "radar-agro-status/2",
- "data": "2026-10-05",
- "gerado_em": "2026-10-05T17:40:56.133249-03:00",
+ "data": "2026-10-06",
+ "gerado_em": "2026-10-06T12:20:07.774564-03:00",
  "execucoes_no_dia": 1,
  "resumo": {
-  "fontes_testadas": 77,
-  "fontes_ok": 67,
-  "itens_brutos": 3511,
-  "itens_na_janela": 872,
-  "novos_nesta_execucao": 342,
-  "no_escopo_nesta_execucao": 465,
-  "novos_fora_escopo_nesta_execucao": 407,
-  "no_escopo_no_dia": 440,
-  "fora_escopo_no_dia": 401,
-  "novos": 687,
-  "repetidos_de_edicoes_anteriores": 185,
-  "agrupados_por_titulo_parecido": 71,
+  "fontes_testadas": 79,
+  "fontes_ok": 64,
+  "itens_brutos": 3359,
+  "itens_na_janela": 673,
+  "novos_nesta_execucao": 187,
+  "no_escopo_nesta_execucao": 390,
+  "novos_fora_escopo_nesta_execucao": 283,
+  "no_escopo_no_dia": 370,
+  "fora_escopo_no_dia": 275,
+  "novos": 379,
+  "repetidos_de_edicoes_anteriores": 294,
+  "agrupados_por_titulo_parecido": 37,
   "descartados": 0,
   "cotacoes_coletadas": 16
  },
- "n_falhas": 6,
+ "n_falhas": 8,
  "n_fontes": 72,
- "n_entradas_cobertura": 77,
+ "n_entradas_cobertura": 79,
  "cotacoes": 13,
  "cotacoes_mensais": 3,
- "itens": 440,
- "itens_revisao": 36,
- "itens_fora_escopo": 401,
+ "itens": 370,
+ "itens_revisao": 22,
+ "itens_fora_escopo": 275,
  "saude_fontes": {
   "sem_acesso": [
    {
@@ -55,6 +55,15 @@
     ]
    },
    {
+    "fonte": "aquisição hortifrúti OR FLV",
+    "camada": "Consulta Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
     "fonte": "aquisição pet food Brasil",
     "camada": "Consulta Google News",
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
@@ -73,7 +82,16 @@
     ]
    },
    {
-    "fonte": "CVM fato relevante aquisição agro",
+    "fonte": "CADE ato de concentração mineração",
+    "camada": "Consulta Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
+    "fonte": "fato relevante venda de ativos agronegócio",
     "camada": "Consulta Google News",
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
     "tentativas": [
@@ -83,11 +101,6 @@
    }
   ],
   "silenciosas_hoje": [
-   {
-    "fonte": "capitalaberto.com.br",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
-   },
    {
     "fonte": "agropages.com",
     "camada": "Site via Google News",
@@ -135,6 +148,11 @@
    },
    {
     "fonte": "fusoesaquisicoes.com",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
+   },
+   {
+    "fonte": "portaldbo.com.br",
     "camada": "Site via Google News",
     "itens_brutos": 100
    }
@@ -199,63 +217,49 @@
    {
     "fonte": "thefishsite.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 37,
+    "execucoes_sem_item": 38,
     "ultima_com_item": "2026-08-25T11:31:15.025068-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "feedstrategy.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 28,
+    "execucoes_sem_item": 29,
     "ultima_com_item": "2026-09-04T09:34:40.655781-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "agropages.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 15,
+    "execucoes_sem_item": 16,
     "ultima_com_item": "2026-09-21T15:13:34.890901-03:00",
     "acesso_ok_na_ultima": true
    },
    {
-    "fonte": "CVM fato relevante aquisição agro",
-    "camada": "Consulta Google News",
-    "execucoes_sem_item": 12,
-    "ultima_com_item": "2026-09-23T14:05:39.271986-03:00",
-    "acesso_ok_na_ultima": false
-   },
-   {
     "fonte": "aquisição revenda insumos agrícolas",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 9,
+    "execucoes_sem_item": 10,
     "ultima_com_item": "2026-09-28T01:59:50.036151-03:00",
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "agriinvestor.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 8,
+    "execucoes_sem_item": 9,
     "ultima_com_item": "2026-09-28T16:42:12.930214-03:00",
-    "acesso_ok_na_ultima": true
-   },
-   {
-    "fonte": "capitalaberto.com.br",
-    "camada": "Site via Google News",
-    "execucoes_sem_item": 7,
-    "ultima_com_item": "2026-09-29T15:07:06.938464-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "aquisição pet food Brasil",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 5,
+    "execucoes_sem_item": 6,
     "ultima_com_item": "2026-09-30T15:01:06.793639-03:00",
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "CADE ato de concentração agronegócio",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 5,
+    "execucoes_sem_item": 6,
     "ultima_com_item": "2026-09-30T15:01:06.793639-03:00",
     "acesso_ok_na_ultima": false
    }
