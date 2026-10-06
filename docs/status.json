@@ -1,32 +1,32 @@
 {
  "schema": "radar-agro-status/2",
  "data": "2026-10-06",
- "gerado_em": "2026-10-06T12:20:07.774564-03:00",
- "execucoes_no_dia": 1,
+ "gerado_em": "2026-10-06T15:27:27.975925-03:00",
+ "execucoes_no_dia": 2,
  "resumo": {
   "fontes_testadas": 79,
   "fontes_ok": 64,
-  "itens_brutos": 3359,
-  "itens_na_janela": 673,
-  "novos_nesta_execucao": 187,
-  "no_escopo_nesta_execucao": 390,
-  "novos_fora_escopo_nesta_execucao": 283,
-  "no_escopo_no_dia": 370,
-  "fora_escopo_no_dia": 275,
-  "novos": 379,
-  "repetidos_de_edicoes_anteriores": 294,
-  "agrupados_por_titulo_parecido": 37,
+  "itens_brutos": 3373,
+  "itens_na_janela": 752,
+  "novos_nesta_execucao": 54,
+  "no_escopo_nesta_execucao": 430,
+  "novos_fora_escopo_nesta_execucao": 322,
+  "no_escopo_no_dia": 426,
+  "fora_escopo_no_dia": 376,
+  "novos": 155,
+  "repetidos_de_edicoes_anteriores": 597,
+  "agrupados_por_titulo_parecido": 45,
   "descartados": 0,
-  "cotacoes_coletadas": 16
+  "cotacoes_coletadas": 13
  },
  "n_falhas": 8,
  "n_fontes": 72,
  "n_entradas_cobertura": 79,
  "cotacoes": 13,
- "cotacoes_mensais": 3,
- "itens": 370,
- "itens_revisao": 22,
- "itens_fora_escopo": 275,
+ "cotacoes_mensais": 0,
+ "itens": 426,
+ "itens_revisao": 27,
+ "itens_fora_escopo": 376,
  "saude_fontes": {
   "sem_acesso": [
    {
@@ -217,49 +217,49 @@
    {
     "fonte": "thefishsite.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 38,
+    "execucoes_sem_item": 39,
     "ultima_com_item": "2026-08-25T11:31:15.025068-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "feedstrategy.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 29,
+    "execucoes_sem_item": 30,
     "ultima_com_item": "2026-09-04T09:34:40.655781-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "agropages.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 16,
+    "execucoes_sem_item": 17,
     "ultima_com_item": "2026-09-21T15:13:34.890901-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "aquisição revenda insumos agrícolas",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 10,
+    "execucoes_sem_item": 11,
     "ultima_com_item": "2026-09-28T01:59:50.036151-03:00",
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "agriinvestor.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 9,
+    "execucoes_sem_item": 10,
     "ultima_com_item": "2026-09-28T16:42:12.930214-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "aquisição pet food Brasil",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 6,
+    "execucoes_sem_item": 7,
     "ultima_com_item": "2026-09-30T15:01:06.793639-03:00",
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "CADE ato de concentração agronegócio",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 6,
+    "execucoes_sem_item": 7,
     "ultima_com_item": "2026-09-30T15:01:06.793639-03:00",
     "acesso_ok_na_ultima": false
    }
