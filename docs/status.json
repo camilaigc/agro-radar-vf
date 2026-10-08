@@ -1,32 +1,32 @@
 {
  "schema": "radar-agro-status/2",
- "data": "2026-10-07",
- "gerado_em": "2026-10-07T15:58:22.660188-03:00",
+ "data": "2026-10-08",
+ "gerado_em": "2026-10-08T15:52:43.632676-03:00",
  "execucoes_no_dia": 1,
  "resumo": {
   "fontes_testadas": 78,
   "fontes_ok": 67,
-  "itens_brutos": 3440,
-  "itens_na_janela": 813,
-  "novos_nesta_execucao": 288,
-  "no_escopo_nesta_execucao": 458,
-  "novos_fora_escopo_nesta_execucao": 355,
-  "no_escopo_no_dia": 430,
-  "fora_escopo_no_dia": 350,
-  "novos": 562,
-  "repetidos_de_edicoes_anteriores": 251,
-  "agrupados_por_titulo_parecido": 43,
+  "itens_brutos": 3446,
+  "itens_na_janela": 756,
+  "novos_nesta_execucao": 237,
+  "no_escopo_nesta_execucao": 443,
+  "novos_fora_escopo_nesta_execucao": 313,
+  "no_escopo_no_dia": 422,
+  "fora_escopo_no_dia": 309,
+  "novos": 465,
+  "repetidos_de_edicoes_anteriores": 291,
+  "agrupados_por_titulo_parecido": 35,
   "descartados": 0,
-  "cotacoes_coletadas": 16
+  "cotacoes_coletadas": 17
  },
  "n_falhas": 6,
  "n_fontes": 72,
  "n_entradas_cobertura": 78,
- "cotacoes": 13,
+ "cotacoes": 14,
  "cotacoes_mensais": 3,
- "itens": 430,
- "itens_revisao": 26,
- "itens_fora_escopo": 350,
+ "itens": 422,
+ "itens_revisao": 25,
+ "itens_fora_escopo": 309,
  "saude_fontes": {
   "sem_acesso": [
    {
@@ -55,15 +55,6 @@
     ]
    },
    {
-    "fonte": "aquisição hortifrúti OR FLV",
-    "camada": "Consulta Google News",
-    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
-    "tentativas": [
-     "direta",
-     "sem acento"
-    ]
-   },
-   {
     "fonte": "CADE ato de concentração agronegócio",
     "camada": "Consulta Google News",
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
@@ -74,6 +65,15 @@
    },
    {
     "fonte": "CADE ato de concentração mineração",
+    "camada": "Consulta Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta",
+     "sem acento"
+    ]
+   },
+   {
+    "fonte": "CVM fato relevante aquisição agro",
     "camada": "Consulta Google News",
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
     "tentativas": [
@@ -101,7 +101,7 @@
    {
     "fonte": "allaboutfeed.net",
     "camada": "Site via Google News",
-    "itens_brutos": 3
+    "itens_brutos": 2
    },
    {
     "fonte": "poultryworld.net",
@@ -139,9 +139,14 @@
     "itens_brutos": 100
    },
    {
-    "fonte": "CVM fato relevante aquisição agro",
+    "fonte": "argusmedia.com",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
+   },
+   {
+    "fonte": "aquisição usina açúcar etanol",
     "camada": "Consulta Google News",
-    "itens_brutos": 4
+    "itens_brutos": 3
    }
   ],
   "silenciosas_5_execucoes": [
@@ -211,35 +216,35 @@
    {
     "fonte": "feedstrategy.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 31,
+    "execucoes_sem_item": 32,
     "ultima_com_item": "2026-09-04T09:34:40.655781-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "agropages.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 18,
+    "execucoes_sem_item": 19,
     "ultima_com_item": "2026-09-21T15:13:34.890901-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "aquisição revenda insumos agrícolas",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 12,
+    "execucoes_sem_item": 13,
     "ultima_com_item": "2026-09-28T01:59:50.036151-03:00",
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "agriinvestor.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 11,
+    "execucoes_sem_item": 12,
     "ultima_com_item": "2026-09-28T16:42:12.930214-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "CADE ato de concentração agronegócio",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 8,
+    "execucoes_sem_item": 9,
     "ultima_com_item": "2026-09-30T15:01:06.793639-03:00",
     "acesso_ok_na_ultima": false
    }
