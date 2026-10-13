@@ -346,6 +346,11 @@
     "preco": 4.9892,
     "unidade": "R$/US$",
     "fonte": "Banco Central do Brasil, SGS serie 1"
+   },
+   "2026-10-13": {
+    "preco": 5.0096,
+    "unidade": "R$/US$",
+    "fonte": "Banco Central do Brasil, SGS serie 1"
    }
   },
   "ouro_pm": {
@@ -880,6 +885,6 @@
    }
   }
  },
- "atualizado_em": "2026-10-12T21:21:21",
- "total_pontos": 174
+ "atualizado_em": "2026-10-13T19:22:38",
+ "total_pontos": 175
 }
