@@ -1,32 +1,32 @@
 {
  "schema": "radar-agro-status/2",
- "data": "2026-10-15",
- "gerado_em": "2026-10-15T14:04:49.196547-03:00",
+ "data": "2026-10-16",
+ "gerado_em": "2026-10-16T13:42:50.301477-03:00",
  "execucoes_no_dia": 1,
  "resumo": {
-  "fontes_testadas": 80,
+  "fontes_testadas": 79,
   "fontes_ok": 69,
-  "itens_brutos": 3434,
-  "itens_na_janela": 777,
-  "novos_nesta_execucao": 249,
-  "no_escopo_nesta_execucao": 416,
-  "novos_fora_escopo_nesta_execucao": 361,
-  "no_escopo_no_dia": 394,
-  "fora_escopo_no_dia": 356,
-  "novos": 533,
-  "repetidos_de_edicoes_anteriores": 244,
-  "agrupados_por_titulo_parecido": 34,
+  "itens_brutos": 3460,
+  "itens_na_janela": 776,
+  "novos_nesta_execucao": 281,
+  "no_escopo_nesta_execucao": 442,
+  "novos_fora_escopo_nesta_execucao": 334,
+  "no_escopo_no_dia": 407,
+  "fora_escopo_no_dia": 329,
+  "novos": 527,
+  "repetidos_de_edicoes_anteriores": 249,
+  "agrupados_por_titulo_parecido": 50,
   "descartados": 0,
   "cotacoes_coletadas": 16
  },
  "n_falhas": 5,
  "n_fontes": 72,
- "n_entradas_cobertura": 80,
+ "n_entradas_cobertura": 79,
  "cotacoes": 13,
  "cotacoes_mensais": 3,
- "itens": 394,
- "itens_revisao": 22,
- "itens_fora_escopo": 356,
+ "itens": 407,
+ "itens_revisao": 15,
+ "itens_fora_escopo": 329,
  "saude_fontes": {
   "sem_acesso": [
    {
@@ -80,6 +80,11 @@
     "itens_brutos": 100
    },
    {
+    "fonte": "feedstrategy.com",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
+   },
+   {
     "fonte": "wattagnet.com",
     "camada": "Site via Google News",
     "itens_brutos": 100
@@ -100,11 +105,6 @@
     "itens_brutos": 1
    },
    {
-    "fonte": "thefishsite.com",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
-   },
-   {
     "fonte": "futurefarming.com",
     "camada": "Site via Google News",
     "itens_brutos": 100
@@ -120,19 +120,9 @@
     "itens_brutos": 100
    },
    {
-    "fonte": "portaldbo.com.br",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
-   },
-   {
     "fonte": "aquisição usina açúcar etanol",
     "camada": "Consulta Google News",
-    "itens_brutos": 4
-   },
-   {
-    "fonte": "CADE ato de concentração mineração",
-    "camada": "Consulta Google News",
-    "itens_brutos": 1
+    "itens_brutos": 2
    }
   ],
   "silenciosas_5_execucoes": [
@@ -195,42 +185,28 @@
    {
     "fonte": "agropages.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 24,
+    "execucoes_sem_item": 25,
     "ultima_com_item": "2026-09-21T15:13:34.890901-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "agriinvestor.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 17,
+    "execucoes_sem_item": 18,
     "ultima_com_item": "2026-09-28T16:42:12.930214-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "CADE ato de concentração agronegócio",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 14,
+    "execucoes_sem_item": 15,
     "ultima_com_item": "2026-09-30T15:01:06.793639-03:00",
     "acesso_ok_na_ultima": false
    },
    {
-    "fonte": "portaldbo.com.br",
-    "camada": "Site via Google News",
-    "execucoes_sem_item": 9,
-    "ultima_com_item": "2026-10-05T17:40:56.133249-03:00",
-    "acesso_ok_na_ultima": true
-   },
-   {
-    "fonte": "CADE ato de concentração mineração",
-    "camada": "Consulta Google News",
-    "execucoes_sem_item": 9,
-    "ultima_com_item": "2026-10-05T17:40:56.133249-03:00",
-    "acesso_ok_na_ultima": true
-   },
-   {
     "fonte": "CVM fato relevante aquisição agro",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 7,
+    "execucoes_sem_item": 8,
     "ultima_com_item": "2026-10-06T15:27:27.975925-03:00",
     "acesso_ok_na_ultima": false
    }
