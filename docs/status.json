@@ -1,32 +1,32 @@
 {
  "schema": "radar-agro-status/2",
- "data": "2026-10-20",
- "gerado_em": "2026-10-20T14:12:23.299095-03:00",
+ "data": "2026-10-21",
+ "gerado_em": "2026-10-21T14:15:54.557669-03:00",
  "execucoes_no_dia": 1,
  "resumo": {
-  "fontes_testadas": 78,
-  "fontes_ok": 64,
-  "itens_brutos": 3383,
-  "itens_na_janela": 833,
-  "novos_nesta_execucao": 277,
+  "fontes_testadas": 76,
+  "fontes_ok": 68,
+  "itens_brutos": 3446,
+  "itens_na_janela": 836,
+  "novos_nesta_execucao": 294,
   "no_escopo_nesta_execucao": 469,
-  "novos_fora_escopo_nesta_execucao": 364,
-  "no_escopo_no_dia": 445,
-  "fora_escopo_no_dia": 359,
-  "novos": 546,
-  "repetidos_de_edicoes_anteriores": 287,
-  "agrupados_por_titulo_parecido": 54,
+  "novos_fora_escopo_nesta_execucao": 367,
+  "no_escopo_no_dia": 435,
+  "fora_escopo_no_dia": 361,
+  "novos": 578,
+  "repetidos_de_edicoes_anteriores": 258,
+  "agrupados_por_titulo_parecido": 53,
   "descartados": 0,
-  "cotacoes_coletadas": 15
+  "cotacoes_coletadas": 13
  },
- "n_falhas": 8,
+ "n_falhas": 5,
  "n_fontes": 72,
- "n_entradas_cobertura": 78,
+ "n_entradas_cobertura": 76,
  "cotacoes": 13,
- "cotacoes_mensais": 2,
- "itens": 445,
- "itens_revisao": 48,
- "itens_fora_escopo": 359,
+ "cotacoes_mensais": 0,
+ "itens": 435,
+ "itens_revisao": 34,
+ "itens_fora_escopo": 361,
  "saude_fontes": {
   "sem_acesso": [
    {
@@ -46,7 +46,7 @@
     ]
    },
    {
-    "fonte": "aquisição revenda insumos agrícolas",
+    "fonte": "aquisição sementes Brasil",
     "camada": "Consulta Google News",
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
     "tentativas": [
@@ -64,33 +64,7 @@
     ]
    },
    {
-    "fonte": "agribusiness acquisition Brazil",
-    "camada": "Consulta Google News",
-    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
-    "tentativas": [
-     "direta"
-    ]
-   },
-   {
     "fonte": "CADE ato de concentração agronegócio",
-    "camada": "Consulta Google News",
-    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
-    "tentativas": [
-     "direta",
-     "sem acento"
-    ]
-   },
-   {
-    "fonte": "CADE ato de concentração mineração",
-    "camada": "Consulta Google News",
-    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
-    "tentativas": [
-     "direta",
-     "sem acento"
-    ]
-   },
-   {
-    "fonte": "fato relevante venda de ativos agronegócio",
     "camada": "Consulta Google News",
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
     "tentativas": [
@@ -101,19 +75,9 @@
   ],
   "silenciosas_hoje": [
    {
-    "fonte": "capitalaberto.com.br",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
-   },
-   {
     "fonte": "agropages.com",
     "camada": "Site via Google News",
-    "itens_brutos": 86
-   },
-   {
-    "fonte": "seedquest.com",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
+    "itens_brutos": 77
    },
    {
     "fonte": "feedstrategy.com",
@@ -166,7 +130,7 @@
     "itens_brutos": 100
    },
    {
-    "fonte": "aquisição sementes Brasil",
+    "fonte": "CVM fato relevante aquisição agro",
     "camada": "Consulta Google News",
     "itens_brutos": 2
    }
@@ -231,28 +195,28 @@
    {
     "fonte": "agropages.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 27,
+    "execucoes_sem_item": 28,
     "ultima_com_item": "2026-09-21T15:13:34.890901-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "agriinvestor.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 20,
+    "execucoes_sem_item": 21,
     "ultima_com_item": "2026-09-28T16:42:12.930214-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "CADE ato de concentração agronegócio",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 17,
+    "execucoes_sem_item": 18,
     "ultima_com_item": "2026-09-30T15:01:06.793639-03:00",
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "aquisição pet food Brasil",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 5,
+    "execucoes_sem_item": 6,
     "ultima_com_item": "2026-10-13T16:19:16.762792-03:00",
     "acesso_ok_na_ultima": false
    }
