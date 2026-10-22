@@ -1,32 +1,32 @@
 {
  "schema": "radar-agro-status/2",
- "data": "2026-10-21",
- "gerado_em": "2026-10-21T14:15:54.557669-03:00",
+ "data": "2026-10-22",
+ "gerado_em": "2026-10-22T14:14:09.208515-03:00",
  "execucoes_no_dia": 1,
  "resumo": {
-  "fontes_testadas": 76,
-  "fontes_ok": 68,
-  "itens_brutos": 3446,
-  "itens_na_janela": 836,
-  "novos_nesta_execucao": 294,
-  "no_escopo_nesta_execucao": 469,
-  "novos_fora_escopo_nesta_execucao": 367,
-  "no_escopo_no_dia": 435,
-  "fora_escopo_no_dia": 361,
-  "novos": 578,
-  "repetidos_de_edicoes_anteriores": 258,
-  "agrupados_por_titulo_parecido": 53,
+  "fontes_testadas": 75,
+  "fontes_ok": 70,
+  "itens_brutos": 3433,
+  "itens_na_janela": 776,
+  "novos_nesta_execucao": 251,
+  "no_escopo_nesta_execucao": 412,
+  "novos_fora_escopo_nesta_execucao": 364,
+  "no_escopo_no_dia": 398,
+  "fora_escopo_no_dia": 359,
+  "novos": 532,
+  "repetidos_de_edicoes_anteriores": 244,
+  "agrupados_por_titulo_parecido": 23,
   "descartados": 0,
   "cotacoes_coletadas": 13
  },
- "n_falhas": 5,
+ "n_falhas": 3,
  "n_fontes": 72,
- "n_entradas_cobertura": 76,
+ "n_entradas_cobertura": 75,
  "cotacoes": 13,
  "cotacoes_mensais": 0,
- "itens": 435,
- "itens_revisao": 34,
- "itens_fora_escopo": 361,
+ "itens": 398,
+ "itens_revisao": 22,
+ "itens_fora_escopo": 359,
  "saude_fontes": {
   "sem_acesso": [
    {
@@ -46,25 +46,7 @@
     ]
    },
    {
-    "fonte": "aquisição sementes Brasil",
-    "camada": "Consulta Google News",
-    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
-    "tentativas": [
-     "direta",
-     "sem acento"
-    ]
-   },
-   {
     "fonte": "aquisição pet food Brasil",
-    "camada": "Consulta Google News",
-    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
-    "tentativas": [
-     "direta",
-     "sem acento"
-    ]
-   },
-   {
-    "fonte": "CADE ato de concentração agronegócio",
     "camada": "Consulta Google News",
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
     "tentativas": [
@@ -77,7 +59,7 @@
    {
     "fonte": "agropages.com",
     "camada": "Site via Google News",
-    "itens_brutos": 77
+    "itens_brutos": 73
    },
    {
     "fonte": "feedstrategy.com",
@@ -97,17 +79,12 @@
    {
     "fonte": "poultryworld.net",
     "camada": "Site via Google News",
-    "itens_brutos": 2
+    "itens_brutos": 1
    },
    {
     "fonte": "pigprogress.net",
     "camada": "Site via Google News",
     "itens_brutos": 1
-   },
-   {
-    "fonte": "thefishsite.com",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
    },
    {
     "fonte": "futurefarming.com",
@@ -130,9 +107,14 @@
     "itens_brutos": 100
    },
    {
+    "fonte": "aquisição revenda insumos agrícolas",
+    "camada": "Consulta Google News",
+    "itens_brutos": 4
+   },
+   {
     "fonte": "CVM fato relevante aquisição agro",
     "camada": "Consulta Google News",
-    "itens_brutos": 2
+    "itens_brutos": 1
    }
   ],
   "silenciosas_5_execucoes": [
@@ -195,30 +177,30 @@
    {
     "fonte": "agropages.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 28,
+    "execucoes_sem_item": 29,
     "ultima_com_item": "2026-09-21T15:13:34.890901-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "agriinvestor.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 21,
+    "execucoes_sem_item": 22,
     "ultima_com_item": "2026-09-28T16:42:12.930214-03:00",
     "acesso_ok_na_ultima": true
    },
    {
-    "fonte": "CADE ato de concentração agronegócio",
+    "fonte": "aquisição pet food Brasil",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 18,
-    "ultima_com_item": "2026-09-30T15:01:06.793639-03:00",
+    "execucoes_sem_item": 7,
+    "ultima_com_item": "2026-10-13T16:19:16.762792-03:00",
     "acesso_ok_na_ultima": false
    },
    {
-    "fonte": "aquisição pet food Brasil",
-    "camada": "Consulta Google News",
-    "execucoes_sem_item": 6,
-    "ultima_com_item": "2026-10-13T16:19:16.762792-03:00",
-    "acesso_ok_na_ultima": false
+    "fonte": "feedstrategy.com",
+    "camada": "Site via Google News",
+    "execucoes_sem_item": 5,
+    "ultima_com_item": "2026-10-15T14:04:49.196547-03:00",
+    "acesso_ok_na_ultima": true
    }
   ],
   "execucoes_no_ledger": 40,
