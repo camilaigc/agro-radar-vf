@@ -1,32 +1,32 @@
 {
  "schema": "radar-agro-status/2",
- "data": "2026-10-28",
- "gerado_em": "2026-10-28T15:22:18.426858-03:00",
+ "data": "2026-10-29",
+ "gerado_em": "2026-10-29T15:30:01.600634-03:00",
  "execucoes_no_dia": 1,
  "resumo": {
-  "fontes_testadas": 77,
-  "fontes_ok": 67,
-  "itens_brutos": 3175,
-  "itens_na_janela": 871,
-  "novos_nesta_execucao": 314,
-  "no_escopo_nesta_execucao": 505,
-  "novos_fora_escopo_nesta_execucao": 366,
-  "no_escopo_no_dia": 489,
-  "fora_escopo_no_dia": 358,
-  "novos": 591,
-  "repetidos_de_edicoes_anteriores": 280,
-  "agrupados_por_titulo_parecido": 35,
+  "fontes_testadas": 76,
+  "fontes_ok": 68,
+  "itens_brutos": 3227,
+  "itens_na_janela": 804,
+  "novos_nesta_execucao": 289,
+  "no_escopo_nesta_execucao": 440,
+  "novos_fora_escopo_nesta_execucao": 364,
+  "no_escopo_no_dia": 424,
+  "fora_escopo_no_dia": 356,
+  "novos": 575,
+  "repetidos_de_edicoes_anteriores": 229,
+  "agrupados_por_titulo_parecido": 31,
   "descartados": 0,
-  "cotacoes_coletadas": 13
+  "cotacoes_coletadas": 14
  },
- "n_falhas": 6,
+ "n_falhas": 5,
  "n_fontes": 72,
- "n_entradas_cobertura": 77,
+ "n_entradas_cobertura": 76,
  "cotacoes": 13,
- "cotacoes_mensais": 0,
- "itens": 489,
- "itens_revisao": 25,
- "itens_fora_escopo": 358,
+ "cotacoes_mensais": 1,
+ "itens": 424,
+ "itens_revisao": 24,
+ "itens_fora_escopo": 356,
  "saude_fontes": {
   "sem_acesso": [
    {
@@ -46,7 +46,7 @@
     ]
    },
    {
-    "fonte": "aquisição revenda insumos agrícolas",
+    "fonte": "CADE ato de concentração agronegócio",
     "camada": "Consulta Google News",
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
     "tentativas": [
@@ -55,7 +55,7 @@
     ]
    },
    {
-    "fonte": "CADE ato de concentração agronegócio",
+    "fonte": "CADE ato de concentração mineração",
     "camada": "Consulta Google News",
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
     "tentativas": [
@@ -71,22 +71,28 @@
      "direta",
      "sem acento"
     ]
-   },
-   {
-    "fonte": "fato relevante venda de ativos agronegócio",
-    "camada": "Consulta Google News",
-    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
-    "tentativas": [
-     "direta",
-     "sem acento"
-    ]
    }
   ],
   "silenciosas_hoje": [
    {
+    "fonte": "capitalaberto.com.br",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
+   },
+   {
     "fonte": "agropages.com",
     "camada": "Site via Google News",
-    "itens_brutos": 58
+    "itens_brutos": 48
+   },
+   {
+    "fonte": "feedstrategy.com",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
+   },
+   {
+    "fonte": "wattagnet.com",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
    },
    {
     "fonte": "allaboutfeed.net",
@@ -109,24 +115,19 @@
     "itens_brutos": 100
    },
    {
+    "fonte": "agriinvestor.com",
+    "camada": "Site via Google News",
+    "itens_brutos": 62
+   },
+   {
     "fonte": "fusoesaquisicoes.com",
     "camada": "Site via Google News",
-    "itens_brutos": 60
+    "itens_brutos": 100
    },
    {
-    "fonte": "noticiasdemineracao.com",
-    "camada": "Site via Google News",
-    "itens_brutos": 59
-   },
-   {
-    "fonte": "aquaculture acquisition",
+    "fonte": "agribusiness acquisition Brazil",
     "camada": "Consulta Google News",
-    "itens_brutos": 3
-   },
-   {
-    "fonte": "CADE ato de concentração mineração",
-    "camada": "Consulta Google News",
-    "itens_brutos": 4
+    "itens_brutos": 1
    }
   ],
   "silenciosas_5_execucoes": [
@@ -175,9 +176,16 @@
    {
     "fonte": "agropages.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 33,
+    "execucoes_sem_item": 34,
     "ultima_com_item": "2026-09-21T15:13:34.890901-03:00",
     "acesso_ok_na_ultima": true
+   },
+   {
+    "fonte": "CADE aprova aquisição alimentos",
+    "camada": "Consulta Google News",
+    "execucoes_sem_item": 5,
+    "ultima_com_item": "2026-10-22T14:14:09.208515-03:00",
+    "acesso_ok_na_ultima": false
    }
   ],
   "execucoes_no_ledger": 40,
