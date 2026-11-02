@@ -1,32 +1,32 @@
 {
  "schema": "radar-agro-status/2",
- "data": "2026-10-30",
- "gerado_em": "2026-10-30T15:02:09.264799-03:00",
+ "data": "2026-11-02",
+ "gerado_em": "2026-11-02T18:43:59.523527-03:00",
  "execucoes_no_dia": 1,
  "resumo": {
-  "fontes_testadas": 78,
-  "fontes_ok": 70,
-  "itens_brutos": 3197,
-  "itens_na_janela": 818,
-  "novos_nesta_execucao": 280,
-  "no_escopo_nesta_execucao": 459,
-  "novos_fora_escopo_nesta_execucao": 359,
-  "no_escopo_no_dia": 435,
-  "fora_escopo_no_dia": 352,
-  "novos": 557,
-  "repetidos_de_edicoes_anteriores": 261,
-  "agrupados_por_titulo_parecido": 49,
+  "fontes_testadas": 77,
+  "fontes_ok": 67,
+  "itens_brutos": 3109,
+  "itens_na_janela": 918,
+  "novos_nesta_execucao": 346,
+  "no_escopo_nesta_execucao": 481,
+  "novos_fora_escopo_nesta_execucao": 437,
+  "no_escopo_no_dia": 467,
+  "fora_escopo_no_dia": 430,
+  "novos": 711,
+  "repetidos_de_edicoes_anteriores": 207,
+  "agrupados_por_titulo_parecido": 28,
   "descartados": 0,
-  "cotacoes_coletadas": 15
+  "cotacoes_coletadas": 16
  },
  "n_falhas": 5,
  "n_fontes": 72,
- "n_entradas_cobertura": 78,
+ "n_entradas_cobertura": 77,
  "cotacoes": 13,
- "cotacoes_mensais": 2,
- "itens": 435,
- "itens_revisao": 31,
- "itens_fora_escopo": 352,
+ "cotacoes_mensais": 3,
+ "itens": 467,
+ "itens_revisao": 42,
+ "itens_fora_escopo": 430,
  "saude_fontes": {
   "sem_acesso": [
    {
@@ -55,7 +55,7 @@
     ]
    },
    {
-    "fonte": "CADE ato de concentração mineração",
+    "fonte": "CADE aprova aquisição alimentos",
     "camada": "Consulta Google News",
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
     "tentativas": [
@@ -64,7 +64,7 @@
     ]
    },
    {
-    "fonte": "CADE aprova aquisição alimentos",
+    "fonte": "CVM fato relevante aquisição agro",
     "camada": "Consulta Google News",
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
     "tentativas": [
@@ -75,19 +75,19 @@
   ],
   "silenciosas_hoje": [
    {
+    "fonte": "capitalaberto.com.br",
+    "camada": "Site via Google News",
+    "itens_brutos": 100
+   },
+   {
     "fonte": "agropages.com",
     "camada": "Site via Google News",
-    "itens_brutos": 58
+    "itens_brutos": 67
    },
    {
     "fonte": "seedquest.com",
     "camada": "Site via Google News",
     "itens_brutos": 60
-   },
-   {
-    "fonte": "wattagnet.com",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
    },
    {
     "fonte": "allaboutfeed.net",
@@ -102,15 +102,10 @@
    {
     "fonte": "pigprogress.net",
     "camada": "Site via Google News",
-    "itens_brutos": 4
+    "itens_brutos": 6
    },
    {
-    "fonte": "thefishsite.com",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
-   },
-   {
-    "fonte": "agriinvestor.com",
+    "fonte": "futurefarming.com",
     "camada": "Site via Google News",
     "itens_brutos": 100
    },
@@ -120,24 +115,14 @@
     "itens_brutos": 60
    },
    {
-    "fonte": "noticiasdemineracao.com",
-    "camada": "Site via Google News",
-    "itens_brutos": 100
+    "fonte": "aquisição revenda insumos agrícolas",
+    "camada": "Consulta Google News",
+    "itens_brutos": 1
    },
    {
-    "fonte": "aquisição nutrição animal",
+    "fonte": "fato relevante venda de ativos agronegócio",
     "camada": "Consulta Google News",
-    "itens_brutos": 10
-   },
-   {
-    "fonte": "aquisição pet food Brasil",
-    "camada": "Consulta Google News",
-    "itens_brutos": 4
-   },
-   {
-    "fonte": "CVM fato relevante aquisição agro",
-    "camada": "Consulta Google News",
-    "itens_brutos": 3
+    "itens_brutos": 1
    }
   ],
   "silenciosas_5_execucoes": [
@@ -186,15 +171,22 @@
    {
     "fonte": "agropages.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 35,
+    "execucoes_sem_item": 36,
     "ultima_com_item": "2026-09-21T15:13:34.890901-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "CADE aprova aquisição alimentos",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 6,
+    "execucoes_sem_item": 7,
     "ultima_com_item": "2026-10-22T14:14:09.208515-03:00",
+    "acesso_ok_na_ultima": false
+   },
+   {
+    "fonte": "CADE ato de concentração agronegócio",
+    "camada": "Consulta Google News",
+    "execucoes_sem_item": 5,
+    "ultima_com_item": "2026-10-26T15:42:11.486697-03:00",
     "acesso_ok_na_ultima": false
    }
   ],
