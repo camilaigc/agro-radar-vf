@@ -1,32 +1,32 @@
 {
  "schema": "radar-agro-status/2",
- "data": "2026-11-04",
- "gerado_em": "2026-11-04T16:48:28.524605-03:00",
+ "data": "2026-11-05",
+ "gerado_em": "2026-11-05T16:59:33.587567-03:00",
  "execucoes_no_dia": 1,
  "resumo": {
-  "fontes_testadas": 78,
-  "fontes_ok": 65,
-  "itens_brutos": 2904,
-  "itens_na_janela": 937,
-  "novos_nesta_execucao": 321,
-  "no_escopo_nesta_execucao": 539,
-  "novos_fora_escopo_nesta_execucao": 398,
-  "no_escopo_no_dia": 511,
-  "fora_escopo_no_dia": 392,
-  "novos": 627,
-  "repetidos_de_edicoes_anteriores": 310,
-  "agrupados_por_titulo_parecido": 45,
+  "fontes_testadas": 79,
+  "fontes_ok": 64,
+  "itens_brutos": 2903,
+  "itens_na_janela": 909,
+  "novos_nesta_execucao": 311,
+  "no_escopo_nesta_execucao": 500,
+  "novos_fora_escopo_nesta_execucao": 409,
+  "no_escopo_no_dia": 484,
+  "fora_escopo_no_dia": 400,
+  "novos": 614,
+  "repetidos_de_edicoes_anteriores": 295,
+  "agrupados_por_titulo_parecido": 38,
   "descartados": 0,
-  "cotacoes_coletadas": 16
+  "cotacoes_coletadas": 15
  },
- "n_falhas": 7,
+ "n_falhas": 8,
  "n_fontes": 72,
- "n_entradas_cobertura": 78,
- "cotacoes": 13,
+ "n_entradas_cobertura": 79,
+ "cotacoes": 12,
  "cotacoes_mensais": 3,
- "itens": 511,
- "itens_revisao": 24,
- "itens_fora_escopo": 392,
+ "itens": 484,
+ "itens_revisao": 37,
+ "itens_fora_escopo": 400,
  "saude_fontes": {
   "sem_acesso": [
    {
@@ -55,6 +55,14 @@
     ]
    },
    {
+    "fonte": "agribusiness acquisition Brazil",
+    "camada": "Consulta Google News",
+    "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
+    "tentativas": [
+     "direta"
+    ]
+   },
+   {
     "fonte": "CADE ato de concentração agronegócio",
     "camada": "Consulta Google News",
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
@@ -64,7 +72,7 @@
     ]
    },
    {
-    "fonte": "CADE ato de concentração mineração",
+    "fonte": "CADE aprova aquisição alimentos",
     "camada": "Consulta Google News",
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
     "tentativas": [
@@ -73,7 +81,7 @@
     ]
    },
    {
-    "fonte": "CADE aprova aquisição alimentos",
+    "fonte": "CVM fato relevante aquisição agro",
     "camada": "Consulta Google News",
     "erro": "respondeu HTTP 200 mas 0 itens: nao e um feed valido",
     "tentativas": [
@@ -95,7 +103,7 @@
    {
     "fonte": "agropages.com",
     "camada": "Site via Google News",
-    "itens_brutos": 50
+    "itens_brutos": 48
    },
    {
     "fonte": "seedquest.com",
@@ -115,7 +123,7 @@
    {
     "fonte": "pigprogress.net",
     "camada": "Site via Google News",
-    "itens_brutos": 2
+    "itens_brutos": 1
    },
    {
     "fonte": "fusoesaquisicoes.com",
@@ -123,9 +131,14 @@
     "itens_brutos": 60
    },
    {
-    "fonte": "agribusiness acquisition Brazil",
+    "fonte": "aquisição revenda insumos agrícolas",
     "camada": "Consulta Google News",
     "itens_brutos": 2
+   },
+   {
+    "fonte": "aquisição hortifrúti OR FLV",
+    "camada": "Consulta Google News",
+    "itens_brutos": 1
    }
   ],
   "silenciosas_5_execucoes": [
@@ -174,23 +187,30 @@
    {
     "fonte": "agropages.com",
     "camada": "Site via Google News",
-    "execucoes_sem_item": 38,
+    "execucoes_sem_item": 39,
     "ultima_com_item": "2026-09-21T15:13:34.890901-03:00",
     "acesso_ok_na_ultima": true
    },
    {
     "fonte": "CADE aprova aquisição alimentos",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 9,
+    "execucoes_sem_item": 10,
     "ultima_com_item": "2026-10-22T14:14:09.208515-03:00",
     "acesso_ok_na_ultima": false
    },
    {
     "fonte": "CADE ato de concentração agronegócio",
     "camada": "Consulta Google News",
-    "execucoes_sem_item": 7,
+    "execucoes_sem_item": 8,
     "ultima_com_item": "2026-10-26T15:42:11.486697-03:00",
     "acesso_ok_na_ultima": false
+   },
+   {
+    "fonte": "seedquest.com",
+    "camada": "Site via Google News",
+    "execucoes_sem_item": 5,
+    "ultima_com_item": "2026-10-29T15:30:01.600634-03:00",
+    "acesso_ok_na_ultima": true
    }
   ],
   "execucoes_no_ledger": 40,
